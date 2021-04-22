@@ -1,0 +1,328 @@
+title: Краски
+extends: page, catalog_item
+admin-description: Краски
+unit-template: catalog_item_default
+style: 'color:#f07100'
+groups:
+	0:
+        caption: Основные характеристики
+	1:
+        caption: Технические характеристики
+	2:
+        caption: Дополнительные характеристики
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: product
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, catalog_item, form-consult
+        systemtype: static
+
+
+# Post functions for areas. area = function
+	pre_func:
+        caption: "Пред обработчики полей"
+        type: text
+        editor: text
+        value: ''
+        systemtype: static
+
+# Native params
+
+	artikul:
+        caption: "Артикул"
+        type: text
+        editor: linetext
+        value: ''
+        
+	sklad1:
+        caption: "Склад 1"
+        type: int(11)
+        editor: integer
+        value: 0
+        
+	sklad2:
+        caption: "Склад 2"
+        type: int(11)
+        editor: integer
+        value: 0
+        
+	sklad3:
+        caption: "Склад 3"
+        type: int(11)
+        editor: integer
+        value: 0
+
+	price_float:
+        caption: "Цена товара"
+        type: decimal(9,2)
+        editor: integer
+        gen: true
+                
+	opt_type:
+        caption: "Тип продукции"
+        type: text
+        editor: multiselect
+        select:
+            grunt: "Грунт"
+            shpaklevka: "Шпаклевка"
+            kraska: "Краска"
+        opt: true
+        gen: true
+
+	opt_brand:
+        caption: "Бренд"
+        type: text
+        editor: multiselect
+        select:
+            ferra: "Ферра"
+            architect: "Архитектор"
+            penetreks: "Пенетрекс"
+        opt: true
+        gen: true
+        filter: true 
+
+	opt_property:
+        caption: "По назначению"
+        type: text
+        editor: multiselect
+        select:
+            metal: "Окраска металлоконструкций"
+            mashine: "Окраска изделий и машиностроения"
+            antikor: "Антикоррозийная защита"
+            okrasmashine: "Окраска изделий и машиностроения"
+            okrastechob: "Окраска технологического оборудования"
+            okrassuda: "Окраска судов"
+            okrasdrevesina: "Защита древесины"
+        opt: true
+        gen: true
+
+	opt_color:
+        caption: "Цвета RAL"
+        type: text
+        editor: multiselect
+        select:
+            1000: "RAL 1000 | #CCC58F"
+            1001: "RAL 1001 | #D1BC8A"
+            1002: "RAL 1002 | #D2B773"
+            1003: "RAL 1003 | #F7BA0B"
+            1004: "RAL 1004 | #E2B007"
+            1005: "RAL 1005 | #C89F04"
+            1006: "RAL 1006 | #E1A100"
+            1007: "RAL 1007 | #E79C00"
+            1011: "RAL 1011 | #AF8A54"
+            1012: "RAL 1012 | #D9C022"
+            1013: "RAL 1013 | #E9E5CE"
+            1014: "RAL 1014 | #DED09F"
+            1015: "RAL 1015 | #EADEBD"
+            1016: "RAL 1016 | #EAF044"
+            1017: "RAL 1017 | #F4B752"
+            1018: "RAL 1018 | #F3E03B"
+            1019: "RAL 1019 | #A4957D"
+            1020: "RAL 1020 | #9A9464"
+            1021: "RAL 1021 | #EEC900"
+            1023: "RAL 1023 | #F0CA00"
+            1024: "RAL 1024 | #B89C50"
+            1027: "RAL 1027 | #A38C15"
+            1028: "RAL 1028 | #FFAB00"
+            1032: "RAL 1032 | #DDB20F"
+            1033: "RAL 1033 | #FAAB21"
+            1034: "RAL 1034 | #EDAB56"
+            2000: "RAL 2000 | #DD7907"
+            2001: "RAL 2001 | #BE4E24"
+            2002: "RAL 2002 | #C63927"
+            2003: "RAL 2003 | #FA842B"
+            2004: "RAL 2004 | #E75B12"
+            2008: "RAL 2008 | #F3752C"
+            2009: "RAL 2009 | #E15501"
+            2010: "RAL 2010 | #D4652F"
+            2011: "RAL 2011 | #EC7C25"
+            2012: "RAL 2012 | #DB6A50"
+            3000: "RAL 3000 | #AB2524"
+            3001: "RAL 3001 | #A02128"
+            3002: "RAL 3002 | #A1232B"
+            3003: "RAL 3003 | #8D1D2C"
+            3004: "RAL 3004 | #701F29"
+            3005: "RAL 3005 | #5E2028"
+            3007: "RAL 3007 | #402225"
+            3009: "RAL 3009 | #703731"
+            3011: "RAL 3011 | #7E292C"
+            3012: "RAL 3012 | #CB8D73"
+            3013: "RAL 3013 | #9C322E"
+            3014: "RAL 3014 | #D47479"
+            3015: "RAL 3015 | #E1A6AD"
+            3016: "RAL 3016 | #AC4034"
+            3017: "RAL 3017 | #D3545F"
+            3018: "RAL 3018 | #D14152"
+            3020: "RAL 3020 | #C1121C"
+            3022: "RAL 3022 | #D56D56"
+            3027: "RAL 3027 | #B42041"
+            3031: "RAL 3031 | #AC323B"
+            4001: "RAL 4001 | #8A5A83"
+            4002: "RAL 4002 | #933D50"
+            4003: "RAL 4003 | #D15B8F"
+            4004: "RAL 4004 | #691639"
+            4005: "RAL 4005 | #83639D"
+            4006: "RAL 4006 | #992572"
+            4007: "RAL 4007 | #4A203B"
+            4008: "RAL 4008 | #904684"
+            4009: "RAL 4009 | #A38995"
+            5000: "RAL 5000 | #384C70"
+            5001: "RAL 5001 | #1F4764"
+            5002: "RAL 5002 | #2B2C7C"
+            5003: "RAL 5003 | #2A3756"
+            5004: "RAL 5004 | #1D1F2A"
+            5005: "RAL 5005 | #154889"
+            5007: "RAL 5007 | #41678D"
+            5008: "RAL 5008 | #313C48"
+            5009: "RAL 5009 | #2E5978"
+            5010: "RAL 5010 | #13447C"
+            5011: "RAL 5011 | #232C3F"
+            5012: "RAL 5012 | #3481B8"
+            5013: "RAL 5013 | #232D53"
+            5014: "RAL 5014 | #6C7C98"
+            5015: "RAL 5015 | #2874B2"
+            5017: "RAL 5017 | #0E518D"
+            5018: "RAL 5018 | #21888F"
+            5019: "RAL 5019 | #1A5784"
+            5020: "RAL 5020 | #0B4151"
+            5021: "RAL 5021 | #07737A"
+            5022: "RAL 5022 | #2F2A5A"
+            5023: "RAL 5023 | #4D668E"
+            5024: "RAL 5024 | #6A93B0"
+            6000: "RAL 6000 | #327662"
+            6001: "RAL 6001 | #28713E"
+            6002: "RAL 6002 | #276235"
+            6003: "RAL 6003 | #4B573E"
+            6004: "RAL 6004 | #0E4243"
+            6005: "RAL 6005 | #0F4336"
+            6006: "RAL 6006 | #40433B"
+            6007: "RAL 6007 | #283424"
+            6008: "RAL 6008 | #35382E"
+            6009: "RAL 6009 | #26392F"
+            6010: "RAL 6010 | #3E753B"
+            6011: "RAL 6011 | #66825B"
+            6012: "RAL 6012 | #31403D"
+            6013: "RAL 6013 | #797C5A"
+            6014: "RAL 6014 | #444337"
+            6015: "RAL 6015 | #3D403A"
+            6016: "RAL 6016 | #026A52"
+            6017: "RAL 6017 | #468641"
+            6018: "RAL 6018 | #48A43F"
+            6019: "RAL 6019 | #B7D9B1"
+            6020: "RAL 6020 | #354733"
+            6021: "RAL 6021 | #86A47C"
+            6022: "RAL 6022 | #3E3C32"
+            6024: "RAL 6024 | #008754"
+            6025: "RAL 6025 | #53753C"
+            6026: "RAL 6026 | #005D52"
+            6027: "RAL 6027 | #81C0BB"
+            6028: "RAL 6028 | #2D5546"
+            6029: "RAL 6029 | #007243"
+            6032: "RAL 6032 | #0F8558"
+            6033: "RAL 6033 | #478A84"
+            6034: "RAL 6034 | #7FB0B2"
+            7000: "RAL 7000 | #7E8B92"
+            7001: "RAL 7001 | #8F999F"
+            7002: "RAL 7002 | #817F68"
+            7003: "RAL 7003 | #7A7B6D"
+            7004: "RAL 7004 | #9EA0A1"
+            7005: "RAL 7005 | #6B716F"
+            7006: "RAL 7006 | #756F61"
+            7008: "RAL 7008 | #746643"
+            7009: "RAL 7009 | #5B6259"
+            7010: "RAL 7010 | #575D57"
+            7011: "RAL 7011 | #555D61"
+            7012: "RAL 7012 | #596163"
+            7013: "RAL 7013 | #555548"
+            7015: "RAL 7015 | #51565C"
+            7016: "RAL 7016 | #373F43"
+            7021: "RAL 7021 | #2E3234"
+            7022: "RAL 7022 | #4B4D46"
+            7023: "RAL 7023 | #818479"
+            7024: "RAL 7024 | #474A50"
+            7026: "RAL 7026 | #374447"
+            7030: "RAL 7030 | #939388"
+            7031: "RAL 7031 | #5D6970"
+            7032: "RAL 7032 | #B9B9A8"
+            7033: "RAL 7033 | #818979"
+            7034: "RAL 7034 | #939176"
+            7035: "RAL 7035 | #CBD0CC"
+            7036: "RAL 7036 | #9A9697"
+            7037: "RAL 7037 | #7C7F7E"
+            7038: "RAL 7038 | #B4B8B0"
+            7039: "RAL 7039 | #6B695F"
+            7040: "RAL 7040 | #9DA3A6"
+            7042: "RAL 7042 | #8F9695"
+            7043: "RAL 7043 | #4E5451"
+            7044: "RAL 7044 | #BDBDB2"
+            7045: "RAL 7045 | #91969A"
+            7046: "RAL 7046 | #82898E"
+            7047: "RAL 7047 | #CFD0CF"
+            8000: "RAL 8000 | #887142"
+            8001: "RAL 8001 | #9C6B30"
+            8002: "RAL 8002 | #7B5141"
+            8003: "RAL 8003 | #80542F"
+            8004: "RAL 8004 | #8F4E35"
+            8007: "RAL 8007 | #6F4A2F"
+            8008: "RAL 8008 | #6F4F28"
+            8011: "RAL 8011 | #5A3A29"
+            8012: "RAL 8012 | #673831"
+            8014: "RAL 8014 | #49392D"
+            8015: "RAL 8015 | #633A34"
+            8016: "RAL 8016 | #4C2F26"
+            8017: "RAL 8017 | #44322D"
+            8019: "RAL 8019 | #3F3A3A"
+            8022: "RAL 8022 | #211F20"
+            8023: "RAL 8023 | #A65E2F"
+            8024: "RAL 8024 | #79553C"
+            8025: "RAL 8025 | #755C49"
+            8028: "RAL 8028 | #4E3B2B"
+            9001: "RAL 9001 | #EFEBDC"
+            9002: "RAL 9002 | #DDDED4"
+            9003: "RAL 9003 | #F4F8F4"
+            9004: "RAL 9004 | #2E3032"
+            9005: "RAL 9005 | #0A0A0D"
+            9010: "RAL 9010 | #F7F9EF"
+            9011: "RAL 9011 | #292C2F"
+            9016: "RAL 9016 | #F7FBF5"
+            9017: "RAL 9017 | #2A2D2F"
+            9018: "RAL 9018 | #CFD3CD"
+
+        opt: true
+        gen: true
+
+	opt_height:
+        caption: "Высота"
+        type: int(11)
+        editor: integer
+
+	opt_width:
+        caption: "Ширина"
+        type: int(11)
+        editor: integer
+
+	opt_depth:
+        caption: "Глубина"
+        type: int(11)
+        editor: integer
+
+	opt_mass:
+        caption: "Вес"
+        type: int(11)
+        editor: integer

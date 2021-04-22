@@ -1,0 +1,21 @@
+
+<div class="top-panel">
+<h1><?=$DATA['_title']?></h1>
+<?=$DATA['_buttons']?>
+</div>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="table top-panel-margin" >
+<?foreach($DATA['_rows'] as $rey=>$row){?>
+<tr id="page-row-<?=$row['id']?>">
+	<?foreach($row as $key=>$value){?>
+	<?
+	if(!isset($count)) $count = 0;
+	$count++;
+	if($count<=2) $width = "width='30'"; else $width = "";
+	?>
+	<td <?=$width?>  ><div class="value"><?=($value)?></div></td>
+	<?}?>
+</tr>
+<?}?>
+</table>

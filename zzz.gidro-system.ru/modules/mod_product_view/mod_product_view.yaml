@@ -1,0 +1,22 @@
+title: Оформление продукта
+extends: module
+unit-template: left75
+admin-description: Выводит страницу по шаблону
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+	
+	template_list:
+        caption: Шаблон вывода
+        desc: Шаблон вывода продукта
+        type: text
+        editor: linetext
+		
+	image_count:
+        caption: Количество похожих товаров
+        desc: Выводить блок похожих товаров на странице продукта
+        type: int(11)
+        editor: integer
+        value: 3		

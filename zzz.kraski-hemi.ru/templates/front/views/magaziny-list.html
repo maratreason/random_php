@@ -1,0 +1,27 @@
+<?php foreach($DATA['_block'] as $item){?>
+    <?$city = func::getCityParams();?>
+    <div class="row magazine mb-50">
+        <div class="col-md-12">
+            <a class="img" href="<?=$item['url']?>">
+                <div class="h3 mb-50"><?=$item['url_name']?></div>
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="item">
+                <div class="content">
+                    <?=$item['content_desc']?>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="magaziny-list">
+                <a class="img" href="<?=$item['url']?>"><img src="<?=$item['url_image']?>" alt=""></a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="magaziny-map">
+                <?=Func::templateCityVars($city['map']);?>
+            </div>
+        </div>
+    </div>
+<?}?>

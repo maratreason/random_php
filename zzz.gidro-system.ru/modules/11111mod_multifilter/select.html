@@ -1,0 +1,21 @@
+<?/*
+<div class="jedfilter select" id="filter_<?=$DATA['filter']['name']?>">
+    <div class="name"><?=$DATA['caption']?></div>
+    <?foreach($DATA['select'] as $value=>$name){?>
+    <label><input type="radio" name="<?=$DATA['filter']['name']?>" value="<?=$value?>" <?=$DATA["_checked"][$value]?>><span><?=$name?></span></label>
+    <?}?>
+</div>
+*/?>
+<div class="jedfilter multiselect" id="filter_<?=$DATA['name']?>">
+    <div class="name"><?=$DATA['caption']?></div>
+    <?foreach($DATA['select'] as $value=>$name){?>
+
+    <label <?=$hide?>><input type="radio" name="group_<?=$DATA['name']?>" value="<?=$value?>" <?=@$DATA["_checked"][$value]?>><span>
+		<?if($DATA["_url"][$value]){?>
+		<a href="<?=$DATA["_url"][$value]?>"><?=$name['caption']?></a>
+		<?} else {?>
+			<span><?=$name['caption']?></span>
+		<?}?>
+		</span></label>
+    <?}?>
+</div>

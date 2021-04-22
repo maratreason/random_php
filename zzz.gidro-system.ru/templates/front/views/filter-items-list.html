@@ -1,0 +1,51 @@
+<?
+  foreach($DATA as $item){
+    $images = json_decode($item['multi_images']);
+    $existOnCart = isset($_SESSION['basket'][$item['id']]) ? $_SESSION['basket'][$item['id']] : false;
+?>
+
+  <div class="col-md-4 product-left">
+    <div class="product-main simpleCart_shelfItem">
+      <a href="<?=$DATA['url']?>" class="mask"><img class="img-responsive zoom-img" src="/uploads/gidro-images/catalog/truby-1.jpeg" alt="" /></a>
+      <div class="product-bottom">
+        <h3><?=$DATA['url_name']?></h3>
+        <p>
+          <?=$DATA['content']?>
+        </p>
+      </div>
+      <div class="srch">
+        <span>-50%</span>
+      </div>
+    </div>
+  </div>
+
+  // <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  //   <div class="card-item" itemscope itemtype="http://schema.org/Product">
+  //     <?// if ($images) ?>
+  //     <a href="<?//=$item['url']?>"><img itemprop="image" src="<?//=$images[0][0]?>" alt="<?//=$images[0][1]?>" /></a>
+
+  //       <a href="<?//=$item['url']?>"><div itemprop="name" class="card-item__title"><?//=Func::templateCityVars($item['url_name']);?></div></a>
+  //       <div itemprop="description" class="card-item__subtitle">&nbsp;<?//=Func::templateCityVars($item['content_title']);?></div>
+  //       <hr />
+  //       <div class="card-item__summ" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+  //         <div class="card-item__price" itemprop="price">
+  //           <?//=//number_format($item['price_float'], 0, '.', ' ');?>
+  //         </div>
+  //         <span itemprop="priceCurrency" >&#x20bd;</span>
+  //       </div>
+  //       <hr />
+  //       <div class="card__item-buttons">
+  //         <a class="btn btn-success btn-sm form-modal" data-info="Требуется консультация по <?//=$item['artikul']?>" data-desc="<?//=$item['artikul']?>" href="#form-consult">Консультация</a>
+  //           <button
+  //             class="<?//=$existOnCart ? "btn btn-primary btn-sm cart-button addBasketButton add" : "btn btn-primary btn-sm cart-button addBasketButton"; ?>
+  //             data-target="<?//=Func::templateCityVars($item['artikul']);?>"
+  //             data-price="<?//=$item['price_float'];?>"
+  //             data-id="<?//=$item['artikul']?>"
+  //           >
+  //             <?//=$existOnCart ? "Удалить" : "В корзину ";?>
+  //             <span><img src="/img/logo/cart-white.png" alt=""/></span>
+  //           </button>
+  //       </div>
+  //   </div>
+  // </div>
+<?}?>

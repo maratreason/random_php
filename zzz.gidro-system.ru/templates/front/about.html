@@ -1,0 +1,53 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="product about contact bg2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs-main">
+                        <ol class="breadcrumb">
+                            <?=Engine::module('mod_path')->main()?>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-title p70">
+                    <div class="h1"><?=Func::templateCityVars($DATA['url_name']);?></div>
+                </div>
+
+                <div class="about-top grid-1">
+                    <?php $images = json_decode($DATA['multi_images']); ?>
+                    <?php  foreach($images as $image) {?>
+                    <a class="about-left about-page project-page" href="<?=$image[0]?>">
+                        <figure class="effect-bubba about-page">
+                            <img class="img-responsive" src="<?=$image[0]?>" alt="<?=$images[1]?>" />
+                            <figcaption></figcaption>
+                        </figure>
+                    </a>
+                    <?php } ?>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="about-text"><?=Func::templateCityVars($DATA['content']);?></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?=Engine::position('advantage-parallax-block-2')?>
+
+<div class="block pb70 block-feedback-form">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 col-md-offset-3">
+                <?=Engine::position('forms');?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

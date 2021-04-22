@@ -1,0 +1,84 @@
+<div class="top-panel">
+<h1><?=$DATA['_panel_title']?></h1>
+<?=$DATA['_buttons']?>
+</div>
+<div class="table top-panel-margin table-page" >
+<div class="row captions">
+	<div width="20" class="superadmin idnomer">id</div>
+	<div class="btns">&nbsp;</div>
+	<div class="move">&nbsp;</div>
+	<div class="row-name">Название</div>
+	<div class="url">url</div>
+	<?/*<div>Сайт</div>*/?>
+	<div class="superadmin unit-btn">&nbsp;</div>
+	<div class="superadmin unit">Unit</div>
+
+	<div class="delete-btn">&nbsp;</div>
+</div>
+	<?
+		if(isset($DATA['_hitId'])) echo "<div class='LIST isParent' data-id='group-{$DATA['_hitId']}'>";
+	?>
+	<?=printTableLines($DATA['_pages'])?>
+	<?
+		if(isset($DATA['_hitId'])) echo "</div>";
+	?>
+</div>
+
+
+
+<?
+	function printTableLines($rows){
+		foreach($rows as $page){
+		echo "<div class='LIST'>";
+?>
+<div class="row thisIsPage page-type-<?=$page['type']?> page-status-<?=$page['status']?> <?=$page['_close']?> <?=$page['_class']?> group-<?=$page['parent']?>" id="page-row-<?=$page['id']?>" close="">
+	<div class="superadmin idnomer" width="20"><?=$page['id']?></div>
+	<div class="color-column btns">
+		<?=$page['_buttons']?>
+		<?=$page['_buttons_hittab']?>
+	</div>
+	<div class="move">
+		<?if($page['unit']!="main"){?>
+		<img src="/templates/admin/img/icons/icon-sort.png" class="sort">
+		<?}?>
+	</div>
+    <?if($page['iscat']==1&&$page['unit']!="main") $dotted = "dotted"; else $dotted = "";?>
+	<div valign="middle" class="row-name " style="<?=$page['_style']?> !important; <?=$page['_padding_text']?>">
+		<?if(isset($page['_padding'])) echo $page['_padding']?>
+		<?$parent_class=""?>
+        <?if($page['iscat']==1&&!$page['_url_hittab']){
+		$parent_class = "parentMargin";
+		?>
+        <?if($page['unit']=="main"){?>
+			<div class="parent-icon-main"></div>
+		<?} else {?>
+			<div class="parent-icon" data-pid="<?=$page['id']?>" data-level='<?=$page['_level']?>'></div>
+		<?}?>
+
+        <?}?>
+		<span class="<?=$parent_class?>">
+		<?if($page['_url_hittab']){?>
+			<a href="<?=$page['_url_hittab']?>" class="link-hittab " style="<?=$page['_style']?>"><?=$page['url_name']?></a> <div class="count">(<?=$page['_url_hittab_count']?>)</div></span>
+		<?} else {?>
+			<?=strip_tags($page['url_name'])?> <div class="count"><?=@$page['model_name']?></div>
+		<?}?>
+		</span>
+	</div>
+	<div class="url"><a href="<?=$page['url']?>" target="blank_"><?=$page['url']?></a></div>
+	<div class="superadmin unit-btn"><?=$page['_buttons_unit']?></div>
+	<div class="superadmin unit"><?=$page['unit']?></div>
+	<div class="delete-btn"><?=$page['_buttons_status']?><?=$page['_buttons_delete']?></div>
+</div>
+
+<?
+
+	if(count(@$page['_child'])>0){
+		echo "<div class='LIST isParent' data-id='group-{$page['id']}'>";
+		printTableLines($page['_child']);
+		echo "</div>";
+	}
+
+	echo "</div>";
+		}
+	}
+?>

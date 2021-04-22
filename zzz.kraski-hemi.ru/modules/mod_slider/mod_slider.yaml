@@ -1,0 +1,15 @@
+title: Слайдер
+extends: module
+unit-template: left75
+admin-description: Слайдер
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	array:
+        caption: Массив
+        type: text
+        editor: hidden

@@ -1,0 +1,52 @@
+
+.multiimages-block{
+    padding-top: 10px;
+    clear: both;
+}
+.multi-image-table{
+	display: block;
+	width:100%;
+    margin-top: 10px;
+    overflow: auto;
+}
+.multi-image-table .row{
+	display:table-row;
+}
+
+.multi-image-area{
+    width: 24.4%;
+    display: block;
+    float: left;
+    padding: 10px;
+    border: 1px solid #CCC;
+    margin: 0.3%;
+    box-sizing: border-box;
+}
+
+.multi-image-area label{
+    margin-bottom: 0px;
+}
+.multi-image-area label{
+	padding:0px;
+
+
+}
+ .multi-image-area:active{
+    border:1px solid #888;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+.multiimages-block .image{
+	display:block;
+	height:200px;
+    background-color: #DDD;
+    margin: 4px 0px;
+	background-size:100%;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.add-new-image{
+    font-weight: 100;
+    clear: both;
+}

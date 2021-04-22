@@ -1,0 +1,14 @@
+<? foreach($DATA['_block'] as $news) {?>
+<div class="brand-news">
+    <div class="brand__news-item clearfix" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="<?=$news['url']?>">
+            <div class="h2 brand__news-item__title"><?=$news['url_name']?></div>
+        </a>
+        <a href="<?=$news['url']?>">
+            <div class="brand-img"><img src="<?=$news['url_image'];?>" alt="<?=$news['url_image'];?>"
+                    itemprop="contentUrl"></div>
+        </a>
+        <div class="brand__news-item__text"><?=$news['content_desc']?></div>
+    </div>
+</div>
+<?}?>

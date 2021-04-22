@@ -1,0 +1,54 @@
+title: Разбивка текстовой области
+extends: module
+unit-template: left75
+admin-description: Позволяет разбивать указанное поле страницы на подблоки с учетом указанных строк поиска начала и конца строки 
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	page_id:
+        caption: ID страницы
+        desc: ID страницы с которой брать поле, если указать 0, то будет взято указанное поле с текущей страницы
+        type: int(11)
+        editor: integer
+        
+	page_field:
+        caption: Поле
+        desc: Индификатор поля указанной страницы в которой находится текст
+        type: text
+        editor: linetext
+
+	find_f1:
+        caption: Строка начала поиска
+        desc: Начальные символы поиска
+        type: text
+        editor: linetext
+
+	find_f2:
+        caption: Строка конца поиска
+        desc: Закончить поиск если втретятся следующие символы
+        type: text
+        editor: linetext
+        
+	template_list:
+        caption: Шаблон вывода
+        desc: Шаблон вывода разбитого текста
+        type: text
+        editor: linetext
+	
+	block_caption:
+        caption: Заголовок 
+        desc: 
+        type: text
+        editor: linetext
+		
+	block_count:
+        caption: Количество блоков
+        desc: Максимальное количество выводимых блоков
+        type: int(11)
+        editor: integer
+		
+		

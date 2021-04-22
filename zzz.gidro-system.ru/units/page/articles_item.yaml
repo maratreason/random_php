@@ -1,0 +1,77 @@
+title: Статья
+extends: page
+admin-description: Статья
+style: 'color:#FF05B9'
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: innerText
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, block-news
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: article
+        systemtype: static
+
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+        
+	# Native params
+	content_date:
+        caption: "Дата публикации"
+        type: datetime
+        editor: datetime
+
+	url_image:
+        caption: "Главная картинка статьи"
+        type: text
+        editor: image
+
+	url_name:
+        caption: "Название статьи"
+        type: text
+        editor: linetext
+
+	content_title:
+        caption: "Заголовок статьи"
+        type: text
+        editor: linetext
+
+	content_desc:
+        caption: "Обзор"
+        type: text
+        editor: tiny
+
+	content:
+        caption: "Статья"
+        type: text
+        editor: tiny
+
+	popular:
+        caption: "Популярность"
+        type: int(11)
+        editor: integer

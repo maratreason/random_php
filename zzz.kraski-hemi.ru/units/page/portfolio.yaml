@@ -1,0 +1,30 @@
+title: Блоки
+extends: page
+admin-description: Портфолио
+style: 'color:#333; font-weight:600'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: portfolio_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	

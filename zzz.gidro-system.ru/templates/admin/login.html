@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title><?=$DATA['title']?></title>
+		<meta name="description" content="<?=$DATA['description']?>" />
+		<meta name="keywords" content="<?=$DATA['keywords']?>" />
+		<link href="<?=Config::$back_template?>/css/style-light.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/jquery-2.1.1.js"></script>
+
+		<!-----JQuery UI---->
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/jquery-ui/jquery-ui-1.9.2.custom.min.js"></script>
+		<link href="<?=Config::$back_template?>/css/ui-dark/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body class="login-bg">
+
+			<form action="/unit/login" method="post"  class="login-form">
+				<img class="logo" src="<?=Config::$back_template?>/img/logo-black.png" width=160 height=60/><h1>Вход в систему</h1>
+				<label>Логин<input name="login" type="text" class="input"/></label>
+				<label>Пароль<input name="pass" type="password" class="input"/></label>
+				<div class="outline"></div>
+				<input name="enter" type="submit" value="Вход" class="button"/>
+			</form>
+			<?=Engine::module("mod_login")->main()?>
+
+	</body>
+</html>

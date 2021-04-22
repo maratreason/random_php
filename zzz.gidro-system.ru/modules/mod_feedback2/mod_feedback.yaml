@@ -1,0 +1,80 @@
+title: Форма обратной связи
+extends: module
+unit-template: left75
+admin-description: Конструктор формы обратной связи
+areas:
+    # Static params
+    # Super admin params
+
+    # Params
+
+	emails:
+        caption: Адреса для получения писем
+        type: text
+        editor: linetext
+
+	mail_title:
+        caption: Заголовок письма
+        type: text
+        editor: linetext
+
+	mail_template:
+        caption: Шаблон письма
+        desc: "Шаблон письма, который будет отправлен на указанные Email адреса. В шаблоне используются ключи [#NAME#], где NAME название ID в параметрах."
+        type: text
+        editor: codehtml
+        systemtype: superadmin
+
+	target_id:
+        caption: Индификатор цели
+        desc: "Индефикатор цели в Яндексе"
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+	template_list:
+        caption: Шаблон формы
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+	input_class:
+        caption: Class полей
+        type: text
+        editor: linetext
+        value: input
+        systemtype: superadmin
+
+	button_class:
+        caption: Class кнопки
+        type: text
+        editor: linetext
+        value: button
+        systemtype: superadmin
+
+	form_title:
+        caption: Заголовок формы
+        type: text
+        editor: linetext
+
+	form_desc:
+        caption: Описание формы
+        type: text
+        editor: linetext
+
+	button_name:
+        caption: Название кнопки "Отправить"
+        type: text
+        editor: linetext
+
+	send_ok:
+        caption: Сообщение для пользователя при успешной отправке
+        type: text
+        editor: text
+
+	options:
+        caption: Параметры полей
+        desc: Используется массив [[ID,TYPE,LABEL,Q],[ID,TYPE,LABEL,Q],...,[ID,TYPE,LABEL,Q]] ID - индификатор поля, далее используется в шаблоне письма, TYPE - тип поля (string,telefon,email,text), LABEL - название поля, Q - обязательное поле или нет (*). Все поля указываются в кавычках.
+        type: text
+        editor: codehtml
+        systemtype: superadmin

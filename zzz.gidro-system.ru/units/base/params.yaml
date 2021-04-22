@@ -1,0 +1,23 @@
+title: Константы
+admin-description: Список определённых констант на сайте
+icon: icon-var.png
+areas:
+	caption:
+        caption: Описание
+        type: text
+        editor: linetext
+        table: show
+
+	name:
+        caption: Уникальный индификатор
+        type: text
+        editor: linetext
+        table: show
+        width: 25%
+
+	value:
+        caption: Значение
+        type: text
+        editor: text
+        table: show
+        code: true

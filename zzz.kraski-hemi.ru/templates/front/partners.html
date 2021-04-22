@@ -1,0 +1,45 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<?php $partnersList = explode(";", $city['partners_list']); ?>
+
+<section class="section__about">
+    <div class="about__block">
+        <div class="container">
+            <div class="title-text">
+                <div class="h2"><?=Func::templateCityVars($DATA['url_name']);?></div>
+            </div>
+        </div>
+        <div class="container mt-50 mb-50">
+            <div class="row mb-50">
+                <div class="col-md-12">
+                    <div class="text">
+                        <div class="url-desc"><?=Func::templateCityVars($DATA['url_desc']);?></div>
+                        <div class="content"><?=Func::templateCityVars($DATA['content']);?></div>
+                    </div>
+                </div>
+                <div class="col-md-12"><?=Func::templateCityVars($DATA['content2']);?></div>
+            </div>
+            <?=Engine::position('partners-list');?>
+        </div>
+        <div class="container">
+            <div class="firmennie-magaziny__items">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contacts__label dob_nomera">
+                            <span class="mb-4">СПИСОК ПАРТНЕРОВ РОЗНИЧНОЙ СЕТИ В ПЕРМИ И ПЕРМСКОМ КРАЕ: </span>
+                            <? foreach($partnersList as $list) { ?>
+                                <p class="partners-list"><?=Func::templateCityVars($list);?></p>
+                            <?}?>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

@@ -1,0 +1,74 @@
+<table class="basketTable" cellpadding="0" cellspacing="0" border="0">
+    <tr class="captions">
+        <td class="imageTd">Картинка</td>
+        <td class="nameTd">Название</td>
+        <td>Шт.</td>
+        <td class="countTd">Количество</td>
+        <td>Цена</td>
+        <td class="deleteTd">Удалить</td>
+    </tr>
+
+<?if(count($DATA)>0)foreach ($DATA as $item) {
+    $img = func::indexMultiimage($item['multi_images'],0);
+    $count = $_SESSION['basket'][$item['id']];
+    if($item['unit']=="catalog_item"){
+        $price = $item['price_float'];
+    } else {
+        $price = $item['price_float'];
+    }
+    $name = trim($item['url_name']);
+    if(@$item['url_desc_basket']) $name = $item['url_desc_basket'];
+?>
+    <tr class="item" data-id="<?=$item['id']?>">
+        <td class="imageTd">
+            <div class="image" style="background-image:url(<?=$img?>);"></div>
+        </td>
+        <td class="nameTd">
+            <a href="<?=$item['url']?>" class="name" target="_blank"><?=$name?></a>
+        </td>
+        
+        <td>
+            <div class="price blue bold" data-value="<?=$price?>"><?if($count>1) echo $count." x ".number_format($price,0,""," ")?> ₽</div>
+        </td>
+        <td>
+            <input type="number" min="1" value="<?=$count?>" class="count jinput">
+        </td>
+        <td>
+            <div class="price-count red bold"><?=number_format($price*$count,0,""," ")?> ₽</div>
+        </td>
+        
+        <td class="deleteTd">
+            <a
+                href="ui-32.html#"
+                class="cross btn btn-sm btn-danger removeBasketButton"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Удалить"
+            >Удалить</a>
+        </td>
+    </tr>
+
+<?}?>
+
+
+
+
+<tr class="totalTr">
+    <td class="imageTd"></td>
+    <td>
+        <div class="totalCaption">Итого:</div>
+    </td>
+    <td></td>
+    <td>
+    
+    </td>
+
+    <td сolspan="2">
+        <div class="totalPrice red bold"></div>
+    </td>
+    <td>
+    </td>
+</tr>
+</table>
+
+<div class="noBasket">Вы не добавили ни одного товара в корзину</div>

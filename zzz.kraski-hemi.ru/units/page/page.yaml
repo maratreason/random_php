@@ -1,0 +1,307 @@
+title: Страница
+admin-description: Базовый Unit для страниц
+areas:
+# Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: textpage
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: unicum_content
+        systemtype: static
+
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+
+# Super admin params
+	date:
+        caption: "Дата"
+        type: datetime
+        editor: datetime
+        systemtype: superadmin
+
+	unic_template:
+        caption: "Свой шаблон"
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+	unic_modules:
+        caption: "Свои модули"
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+	domain:
+        caption: "Домен"
+        type: text
+        editor: selectdomain
+        systemtype: superadmin
+
+	alias:
+        caption: "Алиасы"
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+
+	parent:
+        caption: "Раздел"
+        desc: "Данная страница может быть вложена в любой из перечисленых ниже разделов"
+        type: int(11)
+        editor: selectparent
+
+	unit:
+        caption: "Тип"
+        desc: "У каждого типа страницы свои поля для заполнения"
+        type: varchar(100)
+        editor: selectunit
+
+	url:
+        caption: "URL"
+        type: varchar(1000)
+        editor: cirilicurl
+
+	url_link:
+        caption: "URL копия"
+        desc: "URL страницы, для которой данная страница является копией"
+        type: text
+        editor: linetext
+
+	url_generic:
+        caption: "Начало URL внутренних страниц"
+        desc: "При генерации URL для внутренних страниц будет подставлятся значение из поля. Если оставить пустым то будеи подставлятся текущий URL страницы."
+        type: text
+        editor: linetext
+        systemtype: superadmin
+
+	url_name:
+        caption: "Название страницы"
+        desc: "Используется как название пункта меню для данной страницы"
+        type: text
+        editor: linetext
+        replace: true
+
+	url_desc:
+        caption: "Описание страницы"
+        desc: "Выводятся в блоках, в списках разделов и т.д."
+        type: text
+        editor: linetext
+
+	url_menu_desc:
+        caption: "Краткое описание"
+        desc: "Выводятся в меню краткое описание"
+        type: text
+        editor: linetext
+
+	url_image:
+        caption: "Картинка страницы"
+        desc: "Может использоваться при выводе списка разделов с картинками"
+        type: text
+        editor: image
+
+	url_file:
+        caption: "Файл для скачивания"
+        type: text
+        editor: image
+
+	url_icon:
+        caption: "Иконка страницы"
+        desc: "Используется для генерации меню c иконкой"
+        type: text
+        editor: image
+
+	multi_images:
+        caption: "Дополнительные картинки"
+        desc: "Используется для вывода фотогалереи или оформления страницы графическим содержимым"
+        type: text
+        editor: multiimage
+
+
+	title:
+        caption: "Title"
+        type: text
+        editor: linetext
+        replace: true
+
+	description:
+        caption: "Description"
+        type: text
+        editor: linetext
+        replace: true
+
+	title_og:
+        caption: "og:title"
+        type: text
+        editor: linetext
+        replace: true
+
+	description_og:
+        caption: "og:description"
+        type: text
+        editor: linetext
+        replace: true
+
+	keywords:
+        caption: "Keywords"
+        type: text
+        editor: linetext
+        replace: true
+
+	meta:
+        caption: "Дополнительные meta-теги"
+        desc: "Любые meta в шапке сайта. Вебмастер Google, Yandex, дополнительные описания местоположения и т.п."
+        type: text
+        editor: text
+        replace: true
+
+	search_index:
+        caption: "Разрешить индексацию"
+        desc: "При запрете страницы не генерируется в sitemap.xml и в шаблоне прописывается meta no-index, nofollow"
+        editor: select
+        select:
+            1: Разрешить
+            0: Запретить
+        type: int(11)
+
+	content0_title:
+        caption: "Вступительный заголовок"
+        type: text
+        editor: linetext
+        replace: true
+
+	content0:
+        caption: "Вступительный контент"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content_title:
+        caption: "Заголовок контента"
+        desc: "Главный заголовок страницы, выводится в теге H1"
+        type: text
+        editor: linetext
+        replace: true
+
+	content:
+        caption: "Рекомендации по применению"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content2:
+        caption: "Технические характеристики"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content3:
+        caption: "Описание и область применения"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	color1:
+        caption: "Фон"
+        type: text
+        editor: color
+
+	color2:
+        caption: "Цвет заголовка"
+        type: text
+        editor: color
+
+	head_title:
+        caption: "Заголовок"
+        type: text
+        editor: linetext
+        replace: true
+
+	head_content:
+        caption: "Подзаголовок"
+        type: text
+        editor: codehtml
+        replace: true
+
+	color3:
+        caption: "Цвет подзаголовка"
+        type: text
+        editor: color
+
+	head_image:
+        caption: "Картинка в шапке"
+        type: text
+        editor: image
+        replace: true
+
+	head_image2:
+        caption: "Картинка в шапке №2"
+        type: text
+        editor: image
+        replace: true
+
+	head_button_desc:
+        caption: "Описание кнопки"
+        type: text
+        editor: linetext
+        replace: true
+
+	head_button_name:
+        caption: "Название кнопки"
+        type: text
+        editor: linetext
+        replace: true
+
+	head_button_url:
+        caption: "URL кнопки"
+        type: text
+        editor: linetext
+        replace: true
+
+	users_add:
+        caption: "Менеджеры"
+        type: varchar(200)
+        editor: users
+
+	file_load:
+        caption: "Файл прайса"
+        type: text
+        editor: image
+        replace: true

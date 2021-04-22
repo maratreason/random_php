@@ -1,0 +1,7 @@
+<div class="<?if($DATA[3]) echo "input_require"?> input_string">
+	<label class="label"><?=$DATA[2]?>
+		<?if($DATA[3]){?><small>*</small><span class="err_msg"></span><?}?>
+	</label>
+   	<input name="value[<?=$DATA[0]?>]" type="text" value="" class="input" readonly/>
+	<input name="label[<?=$DATA[0]?>]" type="hidden" value="<?=$DATA[2]?>" class="input"/>
+</div>

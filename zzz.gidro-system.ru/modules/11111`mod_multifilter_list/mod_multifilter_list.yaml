@@ -1,0 +1,33 @@
+title: Вывод страниц по фильтру
+extends: module
+unit-template: left75
+admin-description: 
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	category:
+        caption: Категория
+        type: text
+        editor: selectallparent
+        
+	item_template:
+        caption: Шаблон вывода элементов
+        type: text
+        editor: linetext
+    
+	count:
+        caption: Товаров на одной странице
+        desc: Сколько товаров показывать на одной странице, если количество товаров будет больше, то появляется пагинация
+        type: int(11)
+        editor: integer
+        
+	item_sort:
+        caption: Параметры сортировки
+        type: text
+        editor: codehtml
+        
+	
+	

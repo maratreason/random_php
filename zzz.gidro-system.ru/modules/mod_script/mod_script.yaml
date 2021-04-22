@@ -1,0 +1,22 @@
+title: Скрипт
+extends: module
+unit-template: left75
+admin-description: Скрипт из шаблона
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	menu_pages:
+        caption: Файл
+        type: text
+        editor: linetext
+		
+	vars:
+        caption: Переменные
+        desc: Переменные передаются в формате JSON
+        type: text
+        value: "{}"
+        editor: codehtml		

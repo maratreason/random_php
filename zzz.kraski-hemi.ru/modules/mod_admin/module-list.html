@@ -1,0 +1,33 @@
+<div class="top-panel">
+<h1>Список модулей</h1>
+<?=$DATA['_buttons']?>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" class="table top-panel-margin" >
+<tr>
+	<td width="20" class="superadmin">id</td>
+	<td width="64">&nbsp;</td>
+	<td>Описание</td>
+	<td>name</td>
+	<td>Позиция</td>
+	<td>Модуль</td>
+	<td width="32">&nbsp;</td>
+</tr>
+<?foreach($DATA['_modules'] as $module){?>
+<tr class="page-type-<?=$module['type']?> page-status-<?=$module['status']?> <?=$module['_class']?>" id="page-row-<?=$module['id']?>" style="<?=$module['_style']?> !important;">
+	<td class="superadmin"><?=$module['id']?></td>
+	<td><?=$module['_buttons']?></td>
+	<td valign="middle" style=" <?=$module['_padding_text']?>">
+		<?if(isset($module['_padding'])) echo $module['_padding']?>
+		<?if($module['iscat']==1){?>
+		<div class="parent-icon"></div>
+		<?}?>
+		<img src="<?=Config::$back_template;?>/img/icons/module-type-<?=$module['type']?>.png" width="24" height="24" class="page-type-icon"/>
+		<?=$module['caption']?>
+	</td>
+	<td><?=$module['name']?></td>
+	<td><?=$module['position']?></td>
+	<td><?=$module['unit']?></td>
+	<td><?=$module['_buttons_delete']?></td>
+</tr>
+<?}?>
+</table>

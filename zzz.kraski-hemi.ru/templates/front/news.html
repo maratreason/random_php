@@ -1,0 +1,31 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="news-page">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-3 col-offset-3">
+                <a class="some-news-link" href="<?=$news['url'];?>">
+                    <div class="some-news">
+                        <div class="some-news-item">
+                            <div class="some-news-item__title">Открытие интернет-магазина Ферра</div>
+                            <div class="some-news-item__text">Открытие магазина Ферра</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="some-news-link" href="<?=$news['url'];?>">
+                    <div class="some-news">
+                        <div class="some-news-item">
+                            <div class="some-news-item__title">Открытие интернет-магазина Ферра</div>
+                            <div class="some-news-item__text">Открытие магазина Ферра</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?=$DATA['_parent']['url']?>" class="all-some-news">Все новости</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

@@ -1,0 +1,34 @@
+title: Месенджеры
+admin-description: Телефоны и аккаунты месенджеров
+icon: icon-var.png
+areas:
+
+
+	telefon:
+        caption: Телефон (Viber)
+        type: text
+        editor: linetext
+        table: show
+
+	telegram:
+        caption: Telegram
+        type: text
+        editor: linetext
+        table: show
+
+	skype:
+        caption: Skype
+        type: text
+        editor: linetext
+        table: show
+
+	email:
+        caption: E-mail
+        type: text
+        editor: linetext
+
+	city:
+        caption: Города
+        type: text
+        editor: linetext
+        table: show

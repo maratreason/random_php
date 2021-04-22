@@ -1,0 +1,15 @@
+<div class="news-wrapper">
+    <div class="container container-100">
+        <div class="brand__news">
+            <? foreach($DATA['_block'] as $news) {?>
+            <a href="<?=$news['url'];?>">
+                <div class="brand__news-item">
+                    <div class="brand__news-item__title"><?=$news['url_name']?></div>
+                    <div class="brand__news-item__text"><?=$news['content_desc']?></div>
+                </div>
+            </a>
+            <?}?>
+            <a href="<?=$DATA['_parent']['url']?>" class="all-news">Все новости</a>
+        </div>
+    </div>
+</div>

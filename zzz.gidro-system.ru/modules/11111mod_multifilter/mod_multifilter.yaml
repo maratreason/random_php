@@ -1,0 +1,22 @@
+title: Простое меню
+extends: module
+unit-template: left75
+admin-description: Выводит список указанных страниц в виде меню
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	category:
+        caption: Категория
+        type: text
+        editor: selectallparent
+        
+	item_template:
+        caption: Шаблон вывода элементов
+        type: text
+        editor: linetext
+        
+	
+	

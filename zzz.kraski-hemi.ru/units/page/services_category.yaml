@@ -1,0 +1,70 @@
+title: Раздел услуг
+extends: page
+admin-description: Раздел услуг
+style: 'color:#8605C5; font-weight:600'
+pre_func: |
+		alias = setalias
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: innerCatalog
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, services
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: services_category, unicum_content
+        systemtype: static
+
+    # Post functions for areas. area = function
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+	# Native params
+
+	status_info:
+        caption: "Отображение"
+        editor: multiselect
+        select:
+            show_main: "Показывать данный раздел на главной странице"
+        type: varchar(100)
+
+	title_info:
+        caption: "Заголовок для главной"
+        type: text
+        editor: linetext
+
+	content_info:
+        caption: "Описание для главной"
+        type: text
+        editor: tiny
+        style: "width:800px"
+
+	url_generic:
+        caption: "Начало URL внутренних страниц"
+        desc: "При генерации URL для внутренних страниц будет подставлятся значение из поля. Если оставить пустым то будеи подставлятся текущий URL страницы."
+        value: "/"
+        type: text
+        editor: linetext

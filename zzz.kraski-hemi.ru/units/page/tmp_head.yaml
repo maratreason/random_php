@@ -1,0 +1,87 @@
+title: Шапка
+extends: tmp
+admin-description: Шапка
+unit-template: tmp
+style: 'color:#56ac01;'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value:
+        systemtype: static
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+	parent:
+        caption: "Раздел"
+        desc: "Данная страница может быть вложена в любой из перечисленых ниже разделов"
+        type: int(11)
+        editor: selectparent
+
+	unit:
+        caption: "Тип"
+        desc: "У каждого типа страницы свои поля для заполнения"
+        type: varchar(100)
+        editor: selectunit
+
+	color1:
+        caption: "Фон"
+        type: text
+        editor: color
+
+
+	block_bg:
+        caption: "Картинка-фон"
+        type: text
+        editor: image
+
+	block_bg2:
+        caption: "Картинка-фон №2"
+        type: text
+        desc: "Выводиться поверх первого фона"
+        editor: image
+
+
+	url_name:
+        caption: "Название"
+        desc: "Отображается только в системе"
+        value: "Шапка"
+        type: text
+        editor: linetext
+
+
+	content_title:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext
+	color2:
+        caption: "Цвет заголовка"
+        type: text
+        editor: color
+
+	content:
+        caption: "Подзаголовок"
+        type: text
+        editor: text
+
+	color3:
+        caption: "Цвет подзаголовка"
+        type: text
+        editor: color

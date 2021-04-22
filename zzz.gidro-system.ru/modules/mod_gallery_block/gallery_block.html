@@ -1,0 +1,9 @@
+****************
+<div class="foto-gallery-block" data-layout="<?=$DATA['image_grid']?>" data-space = "<?=$DATA['image_space']?>">
+	<?
+		if(isset($DATA['_images']))
+		foreach($DATA['_images'] as $data){
+	?>
+		<img src="<?=$data['image_preview']?>" data-highres="<?=$data['image_full']?>" alt="<?=$data['image_caption']?>"/>
+	<?}?>
+</div>

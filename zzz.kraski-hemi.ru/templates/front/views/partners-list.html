@@ -1,0 +1,13 @@
+<div class="row partners-list">
+    <?foreach($DATA['_block'] as $item){?>
+        <div class="col-md-4">
+            <div class="item">
+                <a class="img" href="<?=$item['url']?>"><img src="<?=$item['url_image']?>" alt=""></a>
+                <a class="img" href="<?=$item['url']?>"><div class="h3"><?=$item['url_name']?></div></a>
+                <div class="content">
+                    <?=$item['content_desc']?>
+                </div>
+            </div>
+        </div>
+    <?}?>
+</div>

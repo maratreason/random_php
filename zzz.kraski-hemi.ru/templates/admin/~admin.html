@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title><?=$DATA['title']?></title>
+		<meta name="description" content="<?=$DATA['description']?>" />
+		<meta name="keywords" content="<?=$DATA['keywords']?>" />
+		<link rel="shortcut icon" href="/uploads/favicon.png" type="image/png">
+		<link href="<?=Config::$back_template?>/css/style.2css" rel="stylesheet" type="text/css" />
+		<link href="<?=Config::$back_template?>/css/scss/jedstyle.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/jquery-2.1.1.js"></script>			
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/jquery.cookie.js"></script>			
+					
+		<!-----TINYMCE---->
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/tinymce/tinymce.min.js"></script>	
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/tinymce/plugins/moxiemanager/js/moxman.loader.min.js"></script>	
+		
+		<!-----ACE---->
+		<script src="<?=Config::$back_template?>/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+		<!-----JQuery UI---->
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/jquery-ui/jquery-ui-1.9.2.custom.min.js"></script>	
+		<link href="<?=Config::$back_template?>/css/ui-dark/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+		<!---- DateTimePicker ---->
+		<script type="text/javascript" src="<?=Config::$back_template?>/js/datetimepicker/jquery.datetimepicker.js"></script>	
+		<link href="<?=Config::$back_template?>/js/datetimepicker/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
+
+		<?if(isset($DATA['meta'])) echo $DATA['meta']?>
+	</head>
+	<body>
+	<div id="result"></div>
+	<div class="modal">
+		<div class="modal_content">
+			<div class="modal_text"></div>
+			<div class="modal_buttons"></div>
+		</div>
+	</div>
+	<div class="modal-overlay"></div>
+	<div class="list-211">
+		<div class="item item-20">
+			<img class="logo" src="<?=Config::$back_template?>/img/logo.png" width=160 height=60/>
+			<div class="menu">
+				<?Engine::module("mod_admin")->menu()?>
+			</div>
+		</div>
+		<div class="item item-80">
+			<div class="content">
+				<?=Engine::module("mod_admin")->main()?>
+			</div>
+		</div>
+	</div>
+	</body>
+	</html>

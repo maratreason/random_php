@@ -1,0 +1,38 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="section__news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box innerText">
+                    <div class="main">
+                        <!-- <?=Engine::module('mod_path')->main()?> -->
+                        <div class="h1"><?=Func::templateCityVars($DATA['url_name'])?></div>
+                        <div class="img"><img src="<?=$DATA['url_image']?>" alt=""></div>
+                        <div class="h3"><?=Func::templateCityVars($DATA['content_title'])?></div>
+                        <div class="content p"><?=Func::templateCityVars($DATA['content'])?></div>
+                        <?=Engine::position('docs-inner')?>
+                        <?=Engine::position('docs-list')?>
+                        <?=Engine::position('article-list')?>
+                        <?=Engine::position('counter-form')?>
+                        <?=Engine::position('dogovor-list-inner')?>
+                        <?=Engine::position('otvet-list')?>
+                        <?=Engine::position('feed-us')?>
+                        <div class="content p"></div><?=Func::templateCityVars($DATA['content2'])?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box1002 fotosBox">
+                    <div class="main">
+                        <?=Engine::position('fotos')?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

@@ -1,0 +1,42 @@
+title: Переменные городов
+admin-description: Переменные для городов
+icon: icon-var.png
+areas:
+
+	domen:
+        caption: Домен
+        type: text
+        editor: linetext
+        table: show
+	city:
+        caption: Город
+        type: text
+        editor: linetext
+        table: show
+
+	telefon:
+        caption: Телефон (через запятую)
+        type: text
+        editor: text
+        table: show
+
+	adress:
+        caption: Адрес
+        type: text
+        editor: linetext
+
+	email:
+        caption: Почта
+        type: text
+        editor: text
+        editor: linetext
+
+	map:
+        caption: Скрипт Яндекс.Карты
+        type: text
+        editor: text
+
+	dostavka:
+        caption: Информация о доставки
+        type: text
+        editor: text

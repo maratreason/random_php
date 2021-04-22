@@ -1,0 +1,51 @@
+title: Раздел каталога
+extends: page
+admin-description: Раздел каталога
+style: 'color:#dd2773; font-weight:600'
+pre_func: |
+		alias = setalias
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: catalog
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, catalog, -catalog-list, -category-list
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: filter_item
+        systemtype: static
+
+    # Post functions for areas. area = function
+	post_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+            content =
+        systemtype: static
+	# Native params
+
+	multifilter:
+        caption: "Файл фильтра"
+        desc: "Файл настройки фильтра"
+        type: text
+        editor: linetext

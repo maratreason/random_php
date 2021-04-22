@@ -1,0 +1,66 @@
+title: Отзывы
+extends: page
+admin-description: Отзывы
+style: 'color:#00a5f2; font-weight:600'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: reviews_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	
+
+	url_name:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext			
+
+	url_image:
+        caption: "Картинка"
+        desc: "Может использоваться при выводе списка разделов с картинками"
+        type: text
+        editor: image
+        
+	url_icon:
+        caption: "Иконка"
+        desc: "Используется для генерации меню c иконкой"
+        type: text
+        editor: image  	
+	
+	multi_images:
+        caption: "Дополнительные картинки"
+        desc: ""
+        type: text
+        editor: multiimage
+		
+	content_title:
+        caption: "Описание"
+        desc: ""
+        type: text
+        editor: linetext
+        
+	content:
+        caption: "Контент"
+        type: text
+        editor: tiny
+        style: "width:800px"		

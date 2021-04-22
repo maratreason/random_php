@@ -1,0 +1,69 @@
+title: Сервис
+extends: page
+admin-description: Сервис
+style: 'color:#d02ce8; font-weight:600'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: innerSerpage
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, services-blocks
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: serpage_img, serpage_text, serpage_blocks
+        systemtype: static
+
+    # Post functions for areas. area = function
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+
+	# Native params
+	head_title:
+        caption: "Заголовок в шапке"
+        type: varchar(1000)
+        editor: linetext
+
+	head_content:
+        caption: "Текст в шапке"
+        type: varchar(1000)
+        editor: linetext
+
+	head_button_name:
+        caption: "Текст кнопки"
+        type: varchar(1000)
+        editor: linetext
+
+	head_button_url:
+        caption: "Ссылка кнопки"
+        type: varchar(1000)
+        editor: linetext
+
+	head_image:
+        caption: "Фоновая картинка"
+        type: varchar(1000)
+        editor: linetext

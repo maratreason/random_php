@@ -1,0 +1,70 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href=""><div class="footer__logo">
+                    <img itemprop="image" src="/img/logo/ferra.png" alt="">
+                    <span itemprop="name">Ферра</span>
+                </div></a>
+            </div>
+            <div class="divide"></div>
+            <div class="col-lg-12 col-md-12">
+                <div class="footer__column">
+                    <p class="footer__logo-text" itemprop="description">Лакокрасочные материалы для антикоррозионной защиты</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <span class="footer-bottom__column">ООО "Фабрика 'Краски Хеми'"</span><br>
+                        <span class="footer-bottom__column" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">614065, г. Пермь, ул. Промышленная, д.59</span><br>
+                        <span class="footer-bottom__column">Тел./Факс: <a href="tel:7 (342) 296 35 77">+7(342) 296-35-77</a></span><br>
+                        <span class="footer-bottom__column">Email: <a href="mailto:info@kraskichemi.ru" itemprop="email">info@kraskichemi.ru</a></span><br>
+                        <span class="footer-bottom__column" itemprop="openingHours" content="Mo-Fr 08:00-17:00">Рабочие часы: 08:00-17:00</span>
+
+                        <p class="footer__subtitle"><b>Отдел оптовых продаж:</b></p>
+                        <span class="footer-bottom__column">Тел./Факс: <a href="tel:7 (342) 296 36 77">+7(342) 296-36-77</a></span><br>
+                        <span class="footer-bottom__column">Email: <a href="mailto:sale@kraskichemi.ru">sale@kraskichemi.ru</a></span>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <?=Engine::position('footer-menu');?>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <?=Engine::position('footer-menu2');?>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <?=Engine::position('footer-menu3');?>
+                        <ul class="footer__column">
+                            <li><a href="mailto:lab@kraskichemi.ru">lab@kraskichemi.ru</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <a href="http://www.mandarin5.ru" class="logo-mandarin__href">
+                <div class="logo-mandarin">
+                    <img src="/img/logo/logo_mandarin.png" alt="logo">
+                    <div>Сайт разработан в <span class="orange"><br>Мандарин</span></div><br>
+                </div>
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="/js/magnific/jquery.magnific-popup.min.js"></script>
+<script src="/js/main.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/js/instafeed.min.js"></script>
+
+<?=Engine::position('modal-forms')?>
+<?=Engine::position('form-opt-modal')?>
+<?=Engine::position('color-form')?>
+<?=Engine::constant('scripts_footer')?>
+</body>
+</html>

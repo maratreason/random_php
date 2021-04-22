@@ -1,0 +1,29 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="ui-32">
+  <div class="container-fluid">
+    <div class="ui-view-cart">
+      <div class="catalog__main-title">Корзина товаров</div>
+      <hr />
+      <div class="table-responsive">
+        <?=Engine::position('basket-list')?>
+      </div>
+      <?=Engine::position('form-basket')?>
+    </div>
+  </div>
+</div>
+
+<!-- Form Window -->
+<div class="order-form mfp-hide" id="test-popup">
+  <div class="container">
+    <div class="row form-close-wrapper">
+      <div class="col-md-4">&nbsp;</div>
+      <div class="col-md-4">
+        <?=Engine::position('feed-us')?>
+      </div>
+      <div class="col-md-4 form-close">&#10006;</div>
+    </div>
+  </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

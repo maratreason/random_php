@@ -1,0 +1,323 @@
+/*  STYLES JEDMEDIA.RU   */
+
+// CONFIG
+
+// colors
+$color1: #fee200;
+$color2: #e6e6e6;
+$color3: #0674ff;
+$color4: #1e1e1e;
+$color5: #FFF;
+$shadow1: 0px 0px 30px rgba(0,0,0,0.2);
+
+// rezolutions
+$width_pc: 1340px;
+$width_tablet: 980px;
+$width_mobile: 600px;
+
+// fonts
+$font_family: "Open Sans", sans-serif;
+$font_color: #000;
+$link_color: $color3;
+$link_hover_color: $color3;
+
+$h1_size: 2.57em;
+$h2_size: 2.14em;
+$h3_size: 1.5em;
+$h4_size: 1.2em;
+
+// buttons massive
+
+$button_color: (#fee200); // цвет кнопки
+$button_text_color: (#000); // цвет текста
+$button_hover_color: (#fad028); // цвет кнопки при наведении
+$button_hover_text_color: (#FFF); // цвет текста при наведении
+
+// inputs massive
+$input_height: (52px);
+$input_bg_color:(#FFF);
+$input_border_color: (#c9c9c9);
+$input_text_color: (#000);
+$input_active_bg_color: (#FFF);
+$input_active_border_color: (#000);
+$input_placeholder_color: (#AAA);
+$input_error_border_color: (#F00);
+
+
+// list & table
+$list_padding: 0px;
+$list_margin: 2%;
+// (элементов в строке для пк, элементов в строке для планшета, элементов в строке для мобильного устройства)
+$lists: (2,1,1) (2,2,1) (3,1,1) (3,2,1) (4,2,1);
+$columns: (20, 25,30,40,50,60,70,75,80);
+
+
+
+.box{
+    min-width: 940px;
+    box-sizing: border-box;
+
+}
+
+.main{
+    max-width: $width_pc - 60;
+    margin:0px auto;
+    padding: 0px 20px;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #f7f7f7;
+    color:$font_color;
+    font-family: $font_family;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+    line-height: 1.1em;
+    font-weight: 600;
+}
+
+h1, .h1{
+    font-size: $h1_size;
+    font-weight: 700;
+}
+
+h2, .h2{
+    font-size: $h2_size;
+    font-weight: 700;
+}
+
+h3, .h3{
+    font-size: $h3_size;
+}
+
+h4, .h4{
+    font-size: $h3_size;
+}
+
+a{
+    color: $link_color;
+}
+
+a:hover{
+    color: $link_hover_color;
+}
+
+a.icon{
+    position: relative;
+    padding-left: 53px;
+    font-size: 1.28em;
+    display: inline-block;
+    font-weight: 100;
+}
+a.icon img{
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+a.icon:hover{
+
+}
+
+p, .p, li{
+    line-height: 1.70em;
+    font-size: 1.2em;
+}
+
+/*TABLE*/
+@import 'import/tables.scss';
+/*LISTS*/
+@import 'import/lists.scss';
+
+/*BUTTONS*/
+@for $i from 1 through length($button_color) {
+    $name_: $i;
+    @if $i==1 {$name_:""}
+
+    $button_color_: nth($button_color, $i);
+    $button_text_color_: nth($button_text_color, $i);
+    $button_hover_color_: nth($button_hover_color, $i);
+    $button_hover_text_color_: nth($button_hover_text_color, $i);
+
+    .button#{$name_}{
+        padding: 14px 26px;
+        text-decoration: none;
+        text-align: center;
+        color:$button_text_color_;
+        background-color: $button_color_;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        transition: 0.2s;
+    }
+
+    .button#{$name_}.small{
+        padding: 8px 20px;
+        border:1px solid $button_color_;
+        font-weight: 200;
+    }
+
+    .button#{$name_}.center{
+      display: table;
+      margin: 0px auto;
+    }
+
+    .button#{$name_}.icon{
+        padding-left: 10px;
+    }
+    .button#{$name_}.icon img{
+        float: left;
+        margin-right: 4px;
+        margin-top: -1px;
+    }
+
+    .button#{$name_}.right{
+      float: right;
+    }
+
+    .button#{$name_}:hover{
+        background-color: $button_hover_color_;
+        color: $button_hover_text_color_;
+
+    }
+
+    // донастройка для разных типов
+    @if $i==1 {
+
+    }
+}
+
+/*INPUT & SELECT*/
+@for $i from 1 through length($input_height) {
+    $name_: $i;
+    @if $i==1 {$name_:""}
+
+    $input_height_: nth($input_height, $i);
+    $input_bg_color_: nth($input_bg_color, $i);
+    $input_border_color_: nth($input_border_color, $i);
+    $input_text_color_: nth($input_text_color, $i);
+    $input_active_bg_color_: nth($input_active_bg_color, $i);
+    $input_active_border_color_: nth($input_active_border_color, $i);
+    $input_placeholder_color_: nth($input_placeholder_color, $i);
+    $input_error_border_color_: nth($input_error_border_color, $i);
+
+    .selectpoint#{$name_} {
+        background-color: $input_bg_color_;
+        border: 1px solid $input_border_color_;
+        border-radius: 100px;
+        width: 23px;
+        height: 23px;
+        box-sizing: border-box;
+        float: left;
+        display: block;
+        margin-right: 8px;
+    }
+
+    .selectpoint#{$name_} span {
+        border-radius: 100px;
+        margin: 3px auto;
+        width: 15px;
+        height: 15px;
+        display: block;
+    }
+
+    .selectpoint#{$name_}:hover {
+
+    }
+
+    .selectpoint#{$name_}:hover span {
+        background-color: $input_border_color_;
+    }
+
+    .selectpoint#{$name_}.active {
+        border: 1px solid $input_active_border_color_;
+    }
+
+    .selectpoint#{$name_}.active span {
+        background-color: $input_active_border_color_;
+    }
+
+    .selectpoint#{$name_}.active:hover span {
+        background-color: $input_active_border_color_;
+    }
+
+    .input#{$name_} {
+        font-family: $font_family;
+        font-size: 1.2em;
+        color: $input_text_color_;
+        width: 100%;
+        height: $input_height_;
+        display: block;
+        box-sizing: border-box;
+        padding: 0px 15px;
+        border: 1px solid $input_border_color_;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,0.1);
+        background-color: $input_bg_color_;
+        font-weight: 100;
+        border-radius: 3px;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .input#{$name_}::-webkit-input-placeholder {
+        color: $input_placeholder_color_;
+    }
+    .input#{$name_}::-moz-placeholder {
+        color: $input_placeholder_color_;
+    }
+    /* Firefox 19+ */
+    .input#{$name_}:-moz-placeholder {
+        color: $input_placeholder_color_;
+    }
+    /* Firefox 18- */
+    .input#{$name_}:-ms-input-placeholder {
+        color: $input_placeholder_color_;
+    }
+
+    .input#{$name_}:focus {
+        border-bottom: 1px solid $input_active_border_color_;
+    }
+
+    .input#{$name_}.error {
+        border-bottom: 1px solid $input_error_border_color_;
+    }
+
+    textarea.input#{$name_} {
+
+        height: $input_height_*5;
+        resize: none;
+    }
+
+    // донастройки для разных типов
+    @if $i==1 {
+        .input#{$name_} {
+
+        }
+    }
+}
+
+/* TABLET */
+@media only screen and (max-width:$width_tablet) {
+
+    .box{
+        width: 100%;
+        min-width: inherit;
+    }
+    .main{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@import 'views/views.scss';

@@ -1,0 +1,43 @@
+<div class="top-panel">
+<h1><?=$DATA['_panel_title']?></h1>
+<?=$DATA['_buttons']?>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" class="table top-panel-margin" >
+<tr>
+	<td width="20" class="superadmin">id</td>
+	<td width="91">&nbsp;</td>
+	<td>Название</td>
+	<td>url</td>
+	<?/*<td>Сайт</td>*/?>
+	<td width="32" class="superadmin">&nbsp;</td>
+	<td class="superadmin">Unit</td>
+
+	<td width="32">&nbsp;</td>
+</tr>
+<?foreach($DATA['_pages'] as $page){?>
+<tr class="thisIsPage page-type-<?=$page['type']?> page-status-<?=$page['status']?> <?=$page['_close']?> <?=$page['_class']?> <?=$page['parent_list']?> group-<?=$page['parent']?>" id="page-row-<?=$page['id']?>" close="">
+	<td class="superadmin" width="20"><?=$page['id']?></td>
+	<td class="color-column" width = "64"><?=$page['_buttons']?><?=$page['_buttons_hittab']?></td>
+    <?if($page['iscat']==1&&$page['unit']!="main") $dotted = "dotted"; else $dotted = "";?>
+	<td valign="middle" class="row-name " style="<?=$page['_style']?> !important; <?=$page['_padding_text']?>">
+		<?if(isset($page['_padding'])) echo $page['_padding']?>
+        <?if($page['iscat']==1){?>
+        <div class="parent-icon"></div>
+        <?}?>
+        <img  src="<?=Config::$back_template;?>/img/icons/page-type-<?=$page['type']?>.png" width="24" height="24" class="page-type-icon"/>
+		<img src="<?=Config::$back_template;?>/img/icons/page-status-<?=$page['status']?>.png" width="24" height="24" class="page-status-icon"/>
+		<?if($page['_url_hittab']){?>
+		<span><a href="<?=$page['_url_hittab']?>" class="link-hittab " style="<?=$page['_style']?>"><?=$page['url_name']?></a></span>
+		<?} else {?>
+		<span class="<?=$dotted?>" pid='<?=$page['id']?>' level='<?=$page['_level']?>'><?=$page['url_name']?></span>
+		<?}?>
+	</td>
+	<td><a href="<?=$page['url']?>" target="blank_"><?=$page['url']?></a></td>
+	<?/*<td style="width:100px;"><?=Config::$domains[$page['domain']]?></td>*/?>
+	<td class="superadmin" width="32"><?=$page['_buttons_unit']?></td>
+	<td class="superadmin"><?=$page['unit']?></td>
+
+	<td width="32"><?=$page['_buttons_delete']?></td>
+</tr>
+<?}?>
+</table>

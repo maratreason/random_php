@@ -1,0 +1,16 @@
+title: Слайдер элементов
+extends: module
+unit-template: left75
+admin-description: Слайдер элементов
+
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+        
+	sql_text:
+        caption: SQL выборка элементов
+        editor: linetext
+        type: text		

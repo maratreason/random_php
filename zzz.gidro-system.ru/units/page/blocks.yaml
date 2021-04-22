@@ -1,0 +1,99 @@
+title: Блоки
+extends: page
+admin-description: Блоки
+style: 'color:#00cdcb; font-weight:600'
+
+areas:
+    # Static params
+    type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+    child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: blocks_item
+        systemtype: static
+
+    # Native params
+    status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+
+
+    url_name:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext
+
+    url_subname1:
+        caption: "Подзаголовок 1"
+        desc: ""
+        type: text
+        editor: linetext
+
+    url_subname2:
+        caption: "Подзаголовок 2"
+        desc: ""
+        type: text
+        editor: linetext
+
+    url_image:
+        caption: "Картинка"
+        desc: "Может использоваться при выводе списка разделов с картинками"
+        type: text
+        editor: image
+
+    url_icon:
+        caption: "Иконка"
+        desc: "Используется для генерации меню c иконкой"
+        type: text
+        editor: image
+
+    on_off_images:
+        caption: "Отображение картинок(вкл/выкл)"
+        desc: "Используется для генерации меню c иконкой"
+        type: text
+        editor: select
+        select:
+            on: "on"
+            off: "off"
+
+    multi_images:
+        caption: "Дополнительные картинки"
+        desc: ""
+        type: text
+        editor: multiimage
+
+    multi_images2:
+        caption: "Дополнительные картинки 2"
+        desc: ""
+        type: text
+        editor: multiimage
+
+    content_title:
+        caption: "Описание"
+        desc: ""
+        type: text
+        editor: linetext
+
+    content:
+        caption: "Контент"
+        type: text
+        editor: tiny
+        style: "width:800px"
+
+    content2:
+        caption: "Контент 2"
+        type: text
+        editor: tiny
+        style: "width:800px"

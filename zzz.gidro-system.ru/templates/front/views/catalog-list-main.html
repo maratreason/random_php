@@ -1,0 +1,73 @@
+<div class="block main">
+    <div class="container main-top-container">
+        <div class="main-top-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block-title p70">
+                        <div class="h1"><?=Func::templateCityVars($DATA['_parent']['url_name'])?></div>
+                        <p><?=Func::templateCityVars($DATA['_parent']['content'])?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-minus-50">
+                <div class="col-md-12">
+                    <div class="main-top-icons">
+                        <div class="icon">
+                            <svg version="1.1" baseProfile="full" width="100" height="100"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <image xlink:href="/uploads/icons/svg/1/factory.svg" x="10" y="5" height="50px"
+                                    width="50px" />
+                            </svg>
+                            <div>
+                                <div class="h3">Собственный завод</div>
+                                <p>Наше производство одно из немногих которое способно в кратчайшие сроки удовлетворять
+                                    сложные заявки наших клиентов.</p>
+                            </div>
+                        </div>
+
+                        <div class="icon">
+                            <svg version="1.1" baseProfile="full" width="100" height="100"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <image xlink:href="/uploads/icons/svg/1/container-truck.svg" x="5" y="5" height="60px"
+                                    width="60px" />
+                            </svg>
+                            <div>
+                                <div class="h3">Доставка по всей России</div>
+                                <p>Наша компания имеет собственный отдел логистики, что поможет подобрать оптимальный
+                                    вариант доставки нашей продукции.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-shadow">
+        <div class="row justify-content-center">
+            <div class="about-top-1 about-top grid-1" itemscope itemtype="http://schema.org/ImageObject">
+                <?php foreach($DATA['_block'] as $i => $item) { ?>
+                <?php $images = json_decode($item['multi_images']);?>
+                <? if ($images ) { ?>
+                <a class="about-left-wrapper" href="<?=$item['url'];?>" itemprop="contentUrl">
+                    <div class="about-left">
+                        <div itemprop="name" class="h2"><?=$item['url_name'];?></div>
+                        <figure class="effect-bubba catalog-main">
+                            <img class="img-responsive" src="<?=$images[0][0]?>" alt="" itemprop="contentUrl" />
+                        </figure>
+                    </div>
+                </a>
+                <?php }} ?>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="block-button">
+                <div class="main-catalog-button-block">
+                    <a href="<?=$DATA['_parent']['url']?>" class="button-button secondary-button">Смотреть все</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

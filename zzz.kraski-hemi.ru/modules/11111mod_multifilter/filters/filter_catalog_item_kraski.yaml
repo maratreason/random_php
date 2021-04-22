@@ -1,0 +1,63 @@
+h1_start: ""
+h1_end: ""
+title_start: ""
+title_end: ""
+desc_start: ""
+desc_end: ""
+filters:
+	opt_type:
+		caption: "Тип краски"
+		name: "tip_kraski"
+		h1_show: "true"
+		h1_start: ""
+		h1_end: ""
+		title_start: ""
+		title_end: ""
+		desc_start: ""
+		desc_end: ""
+		type: "multiselect"
+		etype: "multiselect"
+		select:
+			emal:
+				caption: "Эмаль"
+				h1: "Эмаль"
+				title: ""
+				desc: ""
+			akril:
+				caption: "Акриловая"
+				h1: "Акриловая"
+				title: ""
+				desc: ""
+			silikon:
+				caption: "Силиконовая"
+				h1: "Силиконовая"
+				title: ""
+				desc: ""
+	opt_color:
+		caption: "Цвет"
+		name: "cvet"
+		h1_show: "true"
+		h1_start: ""
+		h1_end: ""
+		title_start: ""
+		title_end: ""
+		desc_start: ""
+		desc_end: ""
+		type: "multiselect"
+		etype: "multiselect"
+		select:
+			red:
+				caption: "Красный"
+				h1: "Красный"
+				title: ""
+				desc: ""
+			blue:
+				caption: "Синий"
+				h1: "Синий"
+				title: ""
+				desc: ""
+			green:
+				caption: "Зеленый"
+				h1: "Зеленый"
+				title: ""
+				desc: ""

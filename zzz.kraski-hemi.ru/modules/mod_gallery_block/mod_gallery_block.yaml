@@ -1,0 +1,65 @@
+title: Блок из фотогалереи
+extends: module
+unit-template: left75
+admin-description: Вывод нескольких картинок из фотогалереи
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	page_id:
+        caption: Категория фотогалереи
+        type: text
+        editor: selectallparent
+        
+	cur_page_id:
+        caption: Точная страница с которой брать фотографии (ID)
+        desc: Если раздел не указан, то блок будет собран из картинок указаной страницы
+        type: text
+        editor: linetext       
+        
+	page_field:
+        caption: Поле картинок
+        description: Индификатор поля в котором находятся картинки. Поле имет редактор multiimage.
+        type: text
+        editor: linetext
+        
+	template_list:
+        caption: Шаблон вывода
+        description: Шаблон вывода фотогалереи
+        type: text
+        editor: linetext
+
+	image_count:
+        caption: Количество фотографий
+        desc: 
+        type: int(11)
+        editor: integer
+        value: 3
+
+	image_space:
+        caption: Отступ между картинками
+        desc: Отступ между картинками
+        type: text
+        editor: integer
+        
+	image_width:
+        caption: Ширина картинки предосмотра
+        desc: Преобразовать размер картинки в данную ширину.
+        type: text
+        editor: integer        
+		
+	image_grid:
+        caption: Количество фотографий в строке
+        desc: Пример 42512 - на первой строке будет 4 фотографии, на второй 2 фотографии, на третьей 5 фотографий и т.д.
+        type: text
+        editor: linetext		
+		
+	block_caption:
+        caption: Вступительное описание блока 
+        desc: 
+        type: text
+        editor: tiny
+		

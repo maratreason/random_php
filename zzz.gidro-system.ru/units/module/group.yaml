@@ -1,0 +1,28 @@
+title: Базовая группа
+extends: module
+unit-template: left75
+admin-description: Обязательный наследуемый юнит групп модулей
+style: 'font-weight:bold'
+areas:
+    # Static params
+	type:
+        caption: Тип
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+             
+    
+    # Super admin params
+	
+        
+    # Params
+
+	caption:
+        caption: Описание группы
+        type: text
+        editor: linetext	
+	parent:
+        caption: Группа
+        type: int(11)
+        editor: selectgroup		

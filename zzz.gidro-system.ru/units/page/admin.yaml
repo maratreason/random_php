@@ -1,0 +1,36 @@
+title: Страница админ панели
+admin-description: Страница админ панели
+type: hidden
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1000
+        systemtype: static
+        
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: admin
+        systemtype: static
+        
+	# Native params
+	url:
+        caption: "URL"
+        type: text
+        editor: text
+	
+	url_name:
+        caption: "Название страницы"
+        
+	title:
+        caption: "Title"        
+	
+	unit:
+        caption: "Unit"
+        
+	unic_template:
+        caption: "Свой шаблон"        

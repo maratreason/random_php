@@ -1,0 +1,94 @@
+title: Меню категории
+extends: module
+unit-template: left75
+admin-description: Выводит список указанных страниц в виде меню
+areas:
+    # Static params
+    # Super admin params
+
+    # Params
+
+	menu_type:
+        caption: Тип вывода страниц
+        type: int(11)
+        editor: select
+		select:
+			0: "Текущая категория"
+			1: "Указанная категория"
+			2: "Список страниц"
+
+	menu_category:
+        caption: Категория
+        type: text
+        editor: selectallparent
+
+	menu_list:
+        caption: Список страниц
+        desc: ID страниц, которые необходимо вывести. Если перед ID страницой поставить знак -, то выпадающее меню не будет создано.
+        type: text
+        editor: linetext
+
+	menu_max_level:
+        caption: Максимальный уровень вложенности
+        desc: Максимальный уровень генерации меню. Если структура очень большая и каждая имеет в себе большое количество вложений, можно уменьшить значение для увеличения производительности.
+        type: int(11)
+        editor: integer
+
+	menu_show:
+        caption: Вывод подразделов
+        type: int(11)
+        editor: select
+		select:
+			0: "Всегда"
+			1: "Только при открытие родительского раздела"
+
+	menu_block:
+        caption: Обёртка меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+	menu_link:
+        caption: Пункт меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+	menu_selectlink:
+        caption: Выделеный пункт меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+
+	menu_link_2:
+        caption: Пункт меню второго уровня
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+	menu_selectlink_2:
+        caption: Выделеный пункт меню второго уровня
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+
+	menu_border:
+        caption: Разделитель пунктов меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+	menu_block_category:
+        caption: Обёртка подкатегорий
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+
+	sql_text:
+        caption: Дополнительный SQL
+        editor: linetext
+        type: text
+        systemtype: superadmin

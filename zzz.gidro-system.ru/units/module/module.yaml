@@ -1,0 +1,49 @@
+title: Базовый модуль
+unit-template: left75
+admin-description: Обязательный наследуемый юнит модулей
+areas:
+    # Static params
+	type:
+        caption: Тип
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+
+
+    # Super admin params
+	unit:
+        caption: Модуль
+        type: varchar(100)
+        editor: selectmodule
+		systemtype: superadmin
+	name:
+        caption: Индификатор
+        type: text
+        editor: linetext
+		systemtype: superadmin
+
+	position:
+        caption: Позиция
+        type: text
+        editor: linetext
+		systemtype: superadmin
+
+    # Params
+	status:
+        caption: Статус
+        editor: select
+        select:
+            0: НЕ ОПУБЛИКОВАНА
+            1: Опубликована
+        type: int(11)
+
+	caption:
+        caption: Описание модуля
+        type: text
+        editor: linetext
+
+	parent:
+        caption: Группа
+        type: int(11)
+        editor: selectgroup

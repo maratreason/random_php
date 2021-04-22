@@ -1,0 +1,72 @@
+title: Постраничный вывод продуктов с несколькими категориями
+extends: module
+unit-template: left75
+admin-description: Выводит постранично внутреннее содержимое раздела
+
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	count:
+        caption: Количество записей на странице
+        type: int(11)
+        editor: integer
+	
+	menu_category:
+        caption: Категория
+        type: text
+        editor: selectallparent
+		
+	category_list:
+        caption: Тип вывода
+        editor: select
+        select:
+            0: Выводить все страницы
+            1: Только страницы текущего раздела
+        type: int(11)
+		
+	page_type:
+        caption: Тип страниц для вывода
+        editor: linetext
+        type: text
+        desc: "Имя UNIT страниц, которые будут выводиться"
+	
+	template_list:
+        caption: Шаблон вывода
+        editor: linetext
+        type: text		
+        desc: "Шаблон вывода списка блоков, шаблон должен находится в папке с основным шаблоном сайта. Необходимо указать имя шаблона без расширения .html"		
+		
+	sort:
+        caption: Сортировать
+        editor: select
+        select:
+            content_date: По дате
+            popular: "По популярности"
+            auto: "Настраеваемая"			
+        type: text
+        desc: "Вид сортировки списка, в случае настраивамой сортировки, будут показаны дополнительные кнопки сортировки. Пользователи сайта, самостоятельно смогут выбирать сортировку."		
+		
+	alias_page:
+        caption: Свой алиас вывода
+        editor: linetext
+        type: text
+
+	content_flag:
+        caption: Вывод контента
+        editor: select
+        select:
+            1: Выводить только на первой странице
+            0: Выводить на всех страницах
+        type: int(11)
+		
+	page_flag:
+        caption: Выводить пагинацию
+        editor: select
+        select:
+            1: Выводить 
+            0: Не выводить
+        type: int(11)		

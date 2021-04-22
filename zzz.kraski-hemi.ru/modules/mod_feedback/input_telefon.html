@@ -1,0 +1,9 @@
+<div class="<?if($DATA[3]) echo "input_require"?> input_telefon input-box" >
+	<label>
+	    <span><?=$DATA[2]?></span>
+	   	<input name="value[<?=$DATA[0]?>]" type="tel" placeholder="<?=$DATA[2]?>" value="" class="input <?=$DATA['class_']?>"/>
+		<input name="label[<?=$DATA[0]?>]" type="hidden" value="<?=$DATA[2]?>" class="input"/>
+		<input name="type[<?=$DATA[0]?>]" type="hidden" value="input_telefon"/>
+		<?if($DATA[3]){?><span class="err_msg"></span><?}?>
+	</label>
+</div>

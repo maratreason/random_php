@@ -1,0 +1,179 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+<div class="bg2">
+    <div class="bg3">
+        <div class="catalog catalog-expand-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 product-sidebar">
+                        <?=Engine::position('sidebar-menu');?>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="single contact">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="breadcrumbs">
+                                            <div class="breadcrumbs-main">
+                                                <ol class="breadcrumb">
+                                                    <?=Engine::module('mod_path')->main()?>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 single-main-left">
+                                        <div class="sngl-top">
+                                            <?php
+                                        $images = json_decode($DATA['multi_images']);
+                                        if($images) {
+                                    ?>
+                                            <div class="col-md-5 single-top-left">
+                                                <div class="flexslider" itemscope
+                                                    itemtype="http://schema.org/ImageObject">
+                                                    <div class="flexslider-top"
+                                                        style="background: url(<?=$images[0][0]?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                                        <img itemprop="contentUrl" src="<?=$images[0][0]?>"
+                                                            alt="<?=$images[0][1]?>" style="display: none;">
+                                                    </div>
+                                                    <? if (count($images) > 1) { ?>
+                                                    <div class="flexslider-items">
+                                                        <?php foreach($images as $img) {?>
+                                                        <div class="thumb-image"
+                                                            style="background: url(<?=$img[0];?>); background-size: cover; background-position: center; background-repeat: no-repeat; background-position: center;">
+                                                            <img itemprop="contentUrl" src="<?=$images[0][0]?>"
+                                                                alt="<?=$images[0][1]?>" style="display: none;">
+                                                        </div>
+                                                        <?}?>
+                                                    </div>
+                                                    <?}?>
+                                                </div>
+
+                                            </div>
+                                            <?php }?>
+                                            <div class="col-md-7 single-top-right">
+                                                <div class="single-para simpleCart_shelfItem">
+                                                    <div class="h1"><?=Func::templateCityVars($DATA['content_title']);?></div>
+                                                    <?php if ($DATA['price_float']) { ?>
+                                                        <!-- <div class="price-float"><?//=$DATA['price_float'];?> руб.</div> -->
+                                                    <?php } else { ?>
+                                                        <p>нет цены</p>
+                                                    <?php } ?>
+                                                    <div class="single-para-desc" itemscope itemtype="http://schema.org/Product">
+                                                        <div itemprop="description"><?=Func::templateCityVars($DATA['content']);?></div>
+                                                    </div>
+                                                    <div class="buttons-group">
+                                                        <a class="button-button secondary-button order form-modal"
+                                                            data-info="Заказать продукт <?=$DATA['url_name']?>"
+                                                            data-desc="<?=$DATA['url_name']?>"
+                                                            href="#form-order">Заказать</a>
+                                                        <a class="button-button secondary-outline-button consult form-modal"
+                                                            data-info="Требуется консультация по <?=$DATA['url_name']?>"
+                                                            data-desc="<?=$DATA['url_name']?>"
+                                                            href="#form-consult">Консультация</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <? if (str_replace(',', '', $DATA['status_info']) == "show_property"){ ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="block-title p70 mt70">
+                                            <div class="h2">Характеристики товара</div>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr></tr>
+                                            </thead>
+                                            <tbody>
+                                                <? if($DATA['material']) { ?>
+                                                <tr>
+                                                    <td>Материал</td>
+                                                    <td><?=$DATA['material'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['stretch']) { ?>
+                                                <tr>
+                                                    <td>Временное сопротивление при растяжении, МПа</td>
+                                                    <td><?=$DATA['stretch'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['mass']) { ?>
+                                                <tr>
+                                                    <td>Масса, кг</td>
+                                                    <td><?=$DATA['mass'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['gabaritnye_razmery']) { ?>
+                                                <tr>
+                                                    <td>Габаритные размеры, мм</td>
+                                                    <td><?=$DATA['gabaritnye_razmery'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['diameter']) { ?>
+                                                <tr>
+                                                    <td>Диаметр, мм</td>
+                                                    <td><?=$DATA['diameter'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['razmer_proema']) { ?>
+                                                <tr>
+                                                    <td>Диаметр, мм</td>
+                                                    <td><?=$DATA['razmer_proema'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['vysota_lyuka']) { ?>
+                                                <tr>
+                                                    <td>Высота люка, мм</td>
+                                                    <td><?=$DATA['vysota_lyuka'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['diameter_proema']) { ?>
+                                                <tr>
+                                                    <td>Диаметр проема, мм</td>
+                                                    <td><?=$DATA['diameter_proema'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['nagruzka_nominal']) { ?>
+                                                <tr>
+                                                    <td>Номинальная нагрузка, кН ГОСТ 3634-99</td>
+                                                    <td><?=$DATA['nagruzka_nominal'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                                    <? if($DATA['nagruzka_ispytanie']) { ?>
+                                                <tr>
+                                                    <td>Нагрузка при испытании, кН</td>
+                                                    <td><?=$DATA['nagruzka_ispytanie'];?></td>
+                                                <tr>
+                                                    <?}?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <?}?>
+                                <? if (str_replace(',', '', $DATA['status_info']) == "show_docs"){ ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <?=Engine::position('documents');?>
+                                    </div>
+                                </div>
+                                <?}?>
+
+
+                                <div class="content2 mt70 mb70 "><?=Func::templateCityVars($DATA['content2']);?></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

@@ -1,0 +1,33 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="block some-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs-main">
+                        <ol class="breadcrumb">
+                            <?=Engine::module('mod_path')->main()?>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box innerText">
+                    <div>
+                        <div class="h2 brand__news-item__title"><?=Func::templateCityVars($DATA['content_title'])?>
+                        </div>
+                        <div class="brand-img"><img src="<?=$DATA['url_image'];?>" alt=""></div>
+                        <div class="content brand__news-item__text"><?=Func::templateCityVars($DATA['content'])?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

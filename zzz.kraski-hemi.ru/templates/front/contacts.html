@@ -1,0 +1,54 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<section class="section-contacts">
+    <div class="container">
+        <div class="row contacts-row">
+
+            <div class="col-md-12">
+                <div class="h1 contacts__title"><?=$DATA['content_title']?></div>
+                <div class="contacts-wrappeer content">
+                    <div class="contacts__label">
+                        <span>Электронная почта: </span><a
+                            href="mailto:<?=$city['email']?>"><?=Func::templateCityVars($city['email']);?></a>
+                    </div>
+                    <div class="contacts__label">
+                        <span>Почта оптовых продаж: </span><a
+                            href="mailto:<?=$city['email2']?>"><?=Func::templateCityVars($city['email2']);?></a>
+                    </div>
+                    <div class="contacts__label">
+                        <span>Телефон: </span><a
+                            href="tel:<?=$city['telefon']?>"><?=Func::templateCityVars($city['telefon']);?></a>
+                    </div>
+                    <div class="contacts__label">
+                        <span>Телефон (моб.): </span>
+                        <a href="tel:<?=Func::templateCityVars($city['telefon_mob']);?>">
+                            <?=Func::templateCityVars($city['telefon_mob']);?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="content">
+                    <?=Func::templateCityVars($DATA['content']);?>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contacts-map"><?=Func::templateCityVars($city['map']);?></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?=Func::templateCityVars($DATA['content2']);?>
+                <?=Func::templateCityVars($DATA['content3']);?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 center-block"><?=Engine::position('feed-us')?></div>
+        </div>
+    </div>
+</section>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

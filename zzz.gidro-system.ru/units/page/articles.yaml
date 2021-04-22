@@ -1,0 +1,44 @@
+title: Статьи
+extends: page
+admin-description: Статьи
+style: 'color:#FF05B9; font-weight:600'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: news
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, articles, left-menu
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: articles_item
+        systemtype: static
+
+    # Post functions for areas. area = function
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static  	
+	# Native params

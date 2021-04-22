@@ -1,0 +1,39 @@
+<div class="block parallax">
+    <div class="wrapper">
+        <div class="parallax-img2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block-title parallax-text">
+                            <div class="h2 pb30"><?=$DATA['_parent']['url_name'];?></div>
+                            <p><?=$DATA['_parent']['content'];?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="subname"><?=$DATA['_parent']['url_subname1']?></div>
+                    </div>
+                    <?php $multiImages = json_decode($DATA['_parent']['multi_images']); ?>
+                    <?php foreach($multiImages as $image) { ?>
+                    <div class="col-md-6">
+                        <div class="advantage-card parallax-card">
+                            <div class="parallax-card-svg">
+                                <svg version="1.1" baseProfile="full" width="100" height="100"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <image xlink:href="<?=$image[0];?>" x="14" y="14" height="70px" width="70px" />
+                                </svg>
+                            </div>
+                            <div class="advantage-cart-text">
+                                <div class="h3"><?=explode('---', $image[1])[0];?></div>
+                                <div class="text-advantage"><?=explode('---', $image[1])[1];?></div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

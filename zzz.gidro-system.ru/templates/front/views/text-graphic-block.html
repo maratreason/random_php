@@ -1,0 +1,29 @@
+<?php
+    $images = json_decode($DATA['_parent']['multi_images']);
+    $isOnImages = str_replace(",", "", $DATA['_parent']['on_off_images']);
+?>
+<div class="block text-block-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-title pt30">
+                    <div class="h2 padding-bottom-60"><?=Func::templateCityVars($DATA['_parent']['url_name']);?></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="graphic-block" itemscope itemtype="http://schema.org/ImageObject">
+                    <? if ($isOnImages == 'on') {?>
+                        <div class="inner-text-image" style="background: url(<?=$images[0][0];?>); background-size: cover;">
+                            <img src="<?=$images[0][0];?>" alt="<?=$images[0][1];?>" style="display: none;"
+                                itemprop="image">
+                        </div>
+                    <?}?>
+                    <div class="inner-text-desc content"><?=Func::templateCityVars($DATA['_parent']['content']);?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

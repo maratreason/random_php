@@ -1,0 +1,58 @@
+title: Блок
+extends: page
+admin-description: Блок
+style: 'color:#00cdcb;'
+areas:
+      # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: blocks_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	
+
+	url_name:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext			
+
+	url_desc:
+        caption: "Подзаголовок"
+        desc: ""
+        type: text
+        editor: linetext
+
+	url_image:
+        caption: "Картинка"
+        type: text
+        editor: image
+        
+	content:
+        caption: "Тип"
+        type: text
+        editor: tiny
+
+	content2:
+        caption: "Описание"
+        type: text
+        editor: tiny	        		
+
+

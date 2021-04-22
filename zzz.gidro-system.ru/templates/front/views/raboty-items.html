@@ -1,0 +1,12 @@
+<div>
+        <? $images = json_decode($DATA['_parent']['multi_images']); ?>
+        <?php foreach($images as $image) { ?>
+            <div class="about-left works">
+                <figure class="effect-bubba">
+                    <img class="img-responsive" src="<?=$image[0];?>" alt="<?=$image[1];?>" itemprop="image" />
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        <?}?>
+        <div class="clearfix"></div>
+</div>

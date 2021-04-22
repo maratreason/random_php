@@ -1,0 +1,165 @@
+.formid{
+	transition: 0.5s;
+}
+.formid.disable{
+	opacity: 0;
+}
+.feedback{
+	padding: 40px 40px;
+	transition: 0.3s;
+}
+
+.feedback.loading{
+	/*border-radius: 1000px;
+	overflow: hidden;
+	width: 250px;
+	height: 250px;*/
+}
+.feedback .url_before{
+	display: none;
+}
+
+.feedback .title{
+	margin-bottom:25px;
+	font-size: 2em;
+	text-transform: uppercase;
+  	margin-bottom: 0px;
+}
+
+.feedback .desc{
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+  border-bottom: 1px dashed #AAA;
+}
+.feedback .formabout{
+	font-size: 0.95em;
+	line-height: 1.1em;
+	width: 90%;
+	margin-bottom: 10px;
+}
+.feedback .formabout a{
+	text-decoration: none;
+
+}
+.feedback label {
+	position: relative;
+}
+.feedback label span{
+	font-size: 1.1em;
+	font-weight: 300;
+	text-transform: uppercase;
+	padding-left: 5px;
+	display: table;
+	z-index: 1;
+}
+
+.input-box{
+	width:100%;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.input-box .err_msg{
+    font-size:0.9em;
+	display:table;
+    background-color: #F00;
+    color: #FFF;
+    padding: 0px 5px;
+    text-align: center;
+    margin-top: 0px;
+	position: absolute;
+}
+
+.feedback label span {
+	display: inline;
+	position: relative;
+	top: -1px;
+	left: 5px;
+}
+
+.feedback_form div {
+	margin-top: 20px;
+}
+
+.feedback_form div .radio {
+	display: inline-block;
+}
+
+.feedback_form div .radio span {
+	width: 20px; margin: 0; padding: 0; color: #5e5e5e;
+}
+
+.feedback_form div .radio input {
+	width: 20px; margin: 0; padding: 0; 
+}
+
+.input-box.input_text{
+    width: 100%;
+    padding-top: 0px;
+}
+
+.feedback_form .feedback_button{
+	display:table;
+	margin-top: 7px;
+}
+
+.results .loading{
+	display:none;
+    font-size: 1.6em;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 40px 0;
+}
+
+.results .result{
+	display: none;
+	clear:both;
+	text-align:center;
+	padding-top:170px;
+	font-size:1.6em;
+	background-image: url(../mod_feedback/mail.gif);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+input[type*='file']{
+	display: none;
+}
+
+.input_file .file-name{
+	cursor: pointer;
+	border: 1px dashed #bd0021;
+	padding: 10px;
+}
+.input_file .file-name:hover{
+	border: 1px dashed #AAA;
+}
+
+
+@media only screen and (max-width:980px) {
+
+    /*
+    .input-box{
+	   width:98% !important;
+	   height:110px !important;
+       float: none !important;
+    }
+
+    .input-box .input  {
+        height: 70px;
+        display: block;
+        margin: 0px;
+        font-size: 1.2em;
+    }
+
+    .feedback_form .feedback_button{
+        margin: 0px auto 16px auto !important;
+        float:none !important;
+    }
+    .input_text{
+        height: auto !important;
+        padding-bottom: 20px;
+    }
+    */
+
+}

@@ -1,0 +1,282 @@
+# Фильтр проекторы
+h1_start: ""
+h1_end: ""
+
+title_start: "Шкафы металлические"
+title_end: "по ценам производителя"
+
+desc_start: "Металлические шкафы"
+desc_end: "в Москве"
+
+filters:
+
+	price_float:
+        caption: "Цена"
+        name: cena
+        type: range
+        etype: integer
+        h1_show: false
+        minmax: 0-200000
+        title_start: ""
+        title_end: "рублей"
+        desc_start: ""
+        desc_end: "руб."
+
+	item_discounts:
+        caption: "По акции"
+        name: discount
+        type: multiselect
+        etype: multiselect
+        h1_show: true
+        h1_start: ""
+        h1_end: ""
+        title_start: ""
+        title_end: ""
+        desc_start: ""
+        desc_end: ""
+        select:
+            11:
+                caption: "Специальная цена"
+                h1: "Специальная цена"
+                title: "Специальная цена"
+                desc:  "Специальная цена"
+            12:
+                caption: "Распродажа"
+                h1: "Распродажа"
+                title: "Распродажа"
+                desc:  "Распродажа"
+            13:
+                caption: "Товар дня"
+                h1: "Товар дня"
+                title: "Товар дня"
+                desc:  "Товар дня"
+
+	opt_height:
+        caption: "Высота"
+        name: vysota
+        type: range
+        etype: integer
+        minmax: 650-21500
+        h1_show: false
+        h1_start: ""
+        h1_end: ""
+        title_start: ""
+        title_end: ""
+        desc_start: ""
+        desc_end: ""
+
+	opt_width:
+        caption: "Ширина"
+        name: shirina
+        type: range
+        etype: integer
+        minmax: 300-12000
+        h1_show: false
+        h1_start: "Шириной"
+        h1_end: "мм"
+        title_start: ""
+        title_end: ""
+        desc_start: ""
+        desc_end: ""
+
+	opt_depth:
+        caption: "Глубина"
+        name: glubina
+        type: range
+        etype: integer
+        minmax: 400-6000
+        h1_show: false
+        h1_start: ""
+        h1_end: ""
+        title_start: ""
+        title_end: ""
+        desc_start: ""
+        desc_end: ""
+
+	opt_type:
+        caption: "Тип"
+        name: tip
+        type: multiselect
+        etype: multiselect
+        h1_show: true
+        h1_start: ""
+        h1_end: ""
+        title_start: ""
+        title_end: ""
+        desc_start: ""
+        desc_end: ""
+        select:
+
+            dlya_hraneniya:
+                caption: "Для хранения"
+                h1: "для хранения"
+                title: "для хранения"
+                desc:  "для хранения"
+
+            dlya_arhivov:
+                caption: "Для архивов"
+                h1: "для архивов"
+                title: "для архивов"
+                desc:  "для архивов"
+
+            dlay_kartotek:
+                caption: "Для картотек"
+                h1: "для картотек"
+                title: "для картотек"
+                desc:  "для картотек"
+
+            dlya_dokumentov:
+                caption: "Для документов"
+                h1: "для документов"
+                title: "для документов"
+                desc:  "для документов"
+
+            dlya_instrumentov:
+                caption: "Для инструментов"
+                h1: "для инструментов"
+                title: "для инструментов"
+                desc:  "для инструментов"
+
+            dlya_inventarya:
+                caption: "Для инвентаря"
+                h1: "для инвентаря"
+                title: "для инвентаря"
+                desc:  "для инвентаря"
+
+            dlya_oborudovaniya:
+                caption: "Для оборудования"
+                h1: "для оборудования"
+                title: "для оборудования"
+                desc:  "для оборудования"
+
+            dlya_odezhdy:
+                caption: "Для одежды"
+                h1: "для одежды"
+                title: "для одежды"
+                desc:  "для одежды"
+
+            dlya_rabochih_personala:
+                caption: "Для рабочих и персонала"
+                h1: "для рабочих и персонала"
+                title: "Для рабочих и персонала"
+                desc:  "Для рабочих и персонала"
+
+            dlya_garderobov:
+                caption: "Для гардеробов"
+                h1: "для гардеробов"
+                title: "для гардеробов"
+                desc:  "для гардеробов"
+
+            dlya_razdevalok:
+                caption: "Для раздевалок"
+                h1: "для раздевалок"
+                title: "для раздевалок"
+                desc:  "для раздевалок"
+
+            dlya_veshchey:
+                caption: "Для вещей"
+                h1: "для вещей"
+                title: "для вещей"
+                desc:  "для вещей"
+
+            dlya_sumok:
+                caption: "Для сумок"
+                h1: "для сумок"
+                title: "для сумок"
+                desc:  "для сумок"
+
+            s_yacheykami:
+                caption: "С ячейками"
+                h1: "с ячейками"
+                title: "с ячейками"
+                desc:  "с ячейками"
+
+            ofisnyy:
+                caption: "Офисный"
+                h1: "офисные"
+                title: "офисные"
+                desc:  "офисные"
+
+            buhgalterskiy:
+                caption: "Бухгалтерский"
+                h1: "бухгалтерские"
+                title: "бухгалтерские"
+                desc:  "бухгалтерские"
+
+            medicinskiy:
+                caption: "Медицинский"
+                h1: "медицинские"
+                title: "медицинские"
+                desc:  "медицинские"
+
+            sushilnyy:
+                caption: "Сушильный"
+                h1: "сушильные"
+                title: "сушильные"
+                desc:  "сушильные"
+
+            razbornyy:
+                caption: "Разборный"
+                h1: "разборные"
+                title: "разборные"
+                desc:  "разборные"
+
+            modulnyy:
+                caption: "Модульный"
+                h1: "модульные"
+                title: "модульные"
+                desc:  "модульные"
+
+            kupe:
+                caption: "Купе"
+                h1: "купе"
+                title: "купе"
+                desc:  "купе"
+
+            odnodvernyy:
+                caption: "Однодверный"
+                h1: "однодверные"
+                title: "однодверные"
+                desc:  "однодверные"
+
+            dvuhdvernyy:
+                caption: "Двухдверный"
+                h1: "двухдверные"
+                title: "двухдверные"
+                desc:  "двухдверные"
+
+            odnosekcionnyy:
+                caption: "Односекционные"
+                h1: "односекционные"
+                title: "односекционные"
+                desc:  "односекционные"
+
+            dvuhsekcionnyy:
+                caption: "Двухсекционный"
+                h1: "двухсекционные"
+                title: "двухсекционные"
+                desc:  "двухсекционные"
+
+            trehsekcionnyy:
+                caption: "Трехсекционный"
+                h1: "трехсекционные"
+                title: "трехсекционные"
+                desc:  "трехсекционные"
+
+            4_sekcionnyy:
+                caption: "4-х секционный"
+                h1: "4-х секционные"
+                title: "4-х секционные"
+                desc:  "4-х секционные"
+
+            odnostvorchatyy:
+                caption: "Одностворчатый"
+                h1: "одностворчатые"
+                title: "одностворчатые"
+                desc:  "одностворчатые"
+
+            dvuhstvorchatyy:
+                caption: "Двухстворчатый"
+                h1: "двухстворчатые"
+                title: "двухстворчатые"
+                desc:  "двухстворчатые"

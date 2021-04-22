@@ -1,0 +1,43 @@
+
+<div class="box jed-slider sliderBox">
+	<div class="bottomArrow"></div>
+	<?
+	// список слайдов
+	$active = "active";
+	foreach($DATA['slider'] as $slider){
+	$video = "";
+	if($slider['type']) $video = "video";
+        $color = Func::hextorgb($slider['bg_color']);
+	?>
+        <div class="slide <?=$active?> <?=$video?>" data-images="<?=$slider['image']?>;<?=$slider['image_tablet']?>;<?=$slider['image_mobile']?>" style="background-color: <?=$slider['bg_color']?>;)">
+            <div class="bg" style="background-color: rgba(<?=$color['r']?>, <?=$color['g']?>, <?=$color['b']?>, 0.0)"></div>
+                <?if($video){?>
+                <video loop>
+                    <source src="<?=$slider['mp4']?>" type="video/mp4"/>
+                    <source src="<?=$slider['ogv']?>" type="video/ogg"/>
+                    <source src="<?=$slider['webm']?>" type="video/webm"/>
+                </video>
+                <?}?>
+                <div class="main sliderMain">
+					<div class="textArea">
+						<div class="slide-title"><span style="color:<?=$slider['text_color']?>"><?=Func::templateCityVars($slider['title'])?></span></div>
+						<?if($slider['description']!=""){?><div class="slide-desc"><span><?=Func::templateCityVars($slider['description'])?></span></div><?}?>
+						<div class="slide-buttons">
+							<a href="<?=$slider['link']?>" class="slide-button jbutton large"><?=$slider['button']?></a>
+							<?if($slider['link2']!=""){?>
+							<a href="<?=$slider['link2']?>" class="slide-button jbutton large form-modal"><?=$slider['button2']?></a>
+							<?}?>
+						</div>
+					</div>
+                </div>
+        </div>
+    <?
+        $active = "";
+    }?>
+    <div class="box jed-slider-arrow">
+        <div class="main">
+            <div class="slide-left"><span></span></div><div class="slide-right"><span></span></div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+	<form class="feedback_form" id="feedback_<?=$DATA['name']?>" method="POST" action="/ajax/mod-mod_feedback/send-message">
+		<div class="feedback_loading">Идет отправка...</div>
+		<div class="feedback_result"></div>
+
+		<?=$DATA['']['fields']?>
+		<input name="send" type="hidden" value="1"/>
+		<input name="url_before" type="input" class="url_before" value=""/>
+		<input name="url" type="hidden" value="<?=Engine::$url?>"/>
+		<input name="info" type="hidden" value="" class="form_info"/>
+		<input name="mod" type="hidden" value="<?=$DATA['name']?>"/>
+		<input name="target_id" type="hidden" value="<?=$DATA['target_id']?>"/>
+		<div class="formabout">Отправляя заявку вы соглашаетесь на обработку <a href="/oferta">персональных данных</a></div>
+
+		<span class="feedback_button <?=$DATA['button_class']?>"><?=$DATA['button_name']?></span>
+	</form>

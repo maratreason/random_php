@@ -1,0 +1,9 @@
+title: Админ панель страницы
+extends: module
+unit-template: left75
+admin-description: Информационная панель на странице
+areas:
+    # Static params
+    # Super admin params
+
+    # Params

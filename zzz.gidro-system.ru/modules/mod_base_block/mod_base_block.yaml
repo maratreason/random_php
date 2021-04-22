@@ -1,0 +1,50 @@
+title: Вывод из базы
+extends: module
+unit-template: left75
+admin-description: Вывод информации из указанной базы
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+	base_name:
+        caption: Название базы
+        desc: Название базы данных в системе, все базы можно просмотреть в разделе Данные
+        type: text
+        editor: linetext
+	
+	base_count:
+        caption: Количество записей
+        desc: Сколько записей надо запросить из указанной базы
+        type: int(11)
+        editor: integer
+
+	base_random:
+        caption: Вид выборки
+        desc: Как получить записи из базы, первые или случайные
+        editor: select
+        select:
+            0: Первые
+            1: Случайные
+        type: int(11)
+
+	base_sort:
+        caption: Сортировка
+        desc: Поле в таблице по каторому сортировать получаемые записи
+        type: text
+        editor: linetext
+        
+	template_list:
+        caption: Шаблон вывода
+        desc: Шаблон вывода записей
+        type: text
+        editor: linetext
+	
+	block_caption:
+        caption: Заголовок 
+        desc: Заголовок блоков
+        type: text
+        editor: linetext		
+	
+		
+		

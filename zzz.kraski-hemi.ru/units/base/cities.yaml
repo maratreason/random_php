@@ -1,0 +1,57 @@
+title: Города
+admin-description: База всех городов России
+icon: icon-var.png
+areas:
+
+	i:
+        caption: Город
+        type: text
+        editor: linetext
+        table: show
+
+	i_eng:
+        caption: Город на английском
+        type: text
+        editor: linetext
+        table: show
+
+	r:
+        caption: Родительный
+        type: text
+        editor: linetext
+
+	d:
+        caption: Дательный
+        type: text
+        editor: linetext
+
+	v:
+        caption: Винительный
+        type: text
+        editor: linetext
+
+	t:
+        caption: Творительный
+        type: text
+        editor: linetext
+
+	p:
+        caption: Предложный
+        type: text
+        editor: linetext
+
+	region:
+        caption: Регион
+        type: text
+        editor: linetext
+        table: show
+        
+	lat:
+        caption: Широта
+        type: text
+        editor: linetext
+
+	lng:
+        caption: Долгота
+        type: text
+        editor: linetext

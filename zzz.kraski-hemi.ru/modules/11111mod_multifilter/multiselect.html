@@ -1,0 +1,17 @@
+<div class="jedfilter multiselect" id="filter_<?=$DATA['name']?>">
+    <div class="name"><?=$DATA['caption']?></div>
+    <?foreach($DATA['select'] as $value=>$name){?>
+	<?
+		//print_r($name);
+		$hide = "";
+		//if(isset($name['key'])) $hide="class='hide {$name['key_name']}'";
+	?>	
+    <label class="<?=$name['key']?>"><input type="checkbox" name="" value="<?=$value?>" <?=@$DATA["_checked"][$value]?>><span>
+		<?if($DATA["_url"][$value]){?>
+		<a href="<?=$DATA["_url"][$value]?>"><?=$name['caption']?></a>
+		<?} else {?>
+			<span><?=$name['caption']?></span>
+		<?}?>
+		</span></label>
+    <?}?>
+</div>

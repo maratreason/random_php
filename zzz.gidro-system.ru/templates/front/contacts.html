@@ -1,0 +1,101 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<?
+$b = new DATABASE('managers');
+$data = $b->get()->all();
+?>
+
+<div class="contact bg2 catalog-expand-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs-main">
+                        <ol class="breadcrumb">
+                            <?=Engine::module('mod_path')->main()?>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-title pb30">
+                    <div class="h1">Контакты</div>
+                </div>
+
+                <div class="contact-item">
+                    <div>Адрес: <?=Engine::constant('adress');?></div>
+                    <div>Телефон: <?=Engine::constant('telefon');?></div>
+                    <div>Email: <?=Engine::constant('email');?></div>
+                    <p><?=Engine::constant('office-address');?></p>
+                </div>
+
+                <div class="contact-subtitle">
+                    <div class="h3">Отдел по работе с клиентами</div>
+                </div>
+
+                <div class="contact-item-person">
+                    <?php foreach($data as $person) { ?>
+                    <? if ($person['id'] < 6) { ?>
+                    <div class="contact-person">
+                        <div><b><?=$person['name']?></b></div>
+                        <div><?=$person['name_type']?></div>
+                        <div><?=$person['telefon']?></div>
+                        <div><?=$person['email']?></div>
+                    </div>
+                    <?php }} ?>
+                </div>
+                <hr>
+                <div class="contact-subtitle">
+                    <div class="h3">Тендерный отдел</div>
+                </div>
+
+                <div class="contact-item-person">
+                    <div class="contact-person">
+                        <div><b><?=$data[4]['name']?></b></div>
+                        <div><?=$data[4]['name_type']?></div>
+                        <div><?=$data[4]['telefon']?></div>
+                        <div><?=$data[4]['email']?></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="contact-subtitle">
+                    <div class="h3">Руководство компании</div>
+                </div>
+
+                <div class="contact-item-person">
+                    <div class="contact-person">
+                        <div><b><?=$data[5]['name']?></b></div>
+                        <div><?=$data[5]['name_type']?></div>
+                        <div><?=$data[5]['telefon']?></div>
+                        <div><?=$data[5]['email']?></div>
+                    </div>
+
+                    <div class="contact-person">
+                        <div><b><?=$data[6]['name']?></b></div>
+                        <div><?=$data[6]['name_type']?></div>
+                        <div><?=$data[6]['telefon']?></div>
+                        <div><?=$data[6]['email']?></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="contact-subtitle">
+                    <div class="h3">Бухгалтерия</div>
+                </div>
+
+                <div class="contact-item-person">
+                    <div class="contact-person">
+                        <div><b><?=$data[7]['name']?></b></div>
+                        <div><?=$data[7]['name_type']?></div>
+                        <div><?=$data[7]['telefon']?></div>
+                        <div><?=$data[7]['email']?></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

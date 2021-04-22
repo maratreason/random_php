@@ -1,0 +1,58 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="tech-podderzhka">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="title-text podderzhka">
+                    <div class="h2">Техническая поддержка</div>    
+                </div>
+                <div class="contacts__label">
+                    <span>Телефон: </span
+                    ><a href="tel:<?=$city['telefon']?>"><?=Func::templateCityVars($city['telefon']);?></a>
+                </div>
+                <div class="contacts__label">
+                    <span>Телефон (моб.): </span>
+                    <a href="tel:<?=Func::templateCityVars($city['telefon_mob']);?>">
+                        <?=Func::templateCityVars($city['telefon_mob']);?>
+                    </a>
+                </div>
+                
+                <div class="contacts__label">
+                    <span>Email: </span
+                    ><a href="mailto:<?=$city['email']?>"><?=Func::templateCityVars($city['email']);?></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 col-offset-2">
+                <form class="tech-podderzhka__form" enctype="multipart/form-data" method="POST">
+                    <div class="input-form">
+                        Заголовок
+                        <input type="text" name="title" value="" />
+                        Текст сообщения
+                        <textarea type="text" name="desc" value=></textarea>
+                    </div>
+                    <div class="buttons-form">
+                        <div>
+                            <label class="custom-file-upload btn btn-primary">
+                                <input type="file" name="f" /> Выберите файл
+                                <img src="/uploads/icons/drag&drop.png" alt="">
+                            </label>
+                            <div class="file"></div>
+                        </div>
+                        <input 
+                            type="submit" 
+                            class="btn btn-primary g-recaptcha"
+                            value="Отправить" 
+                        />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

@@ -1,0 +1,36 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="block news-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs-main">
+                        <ol class="breadcrumb">
+                            <?=Engine::module('mod_path')->main()?>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-title" itemprop="description">
+                    <div class="h1 mb0"><?=Func::templateCityVars($DATA['url_name']);?></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?=Engine::position('news-block');?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-5">
+                <a href="<?=$DATA['_parent']['url']?>" class="button-button">Все новости</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

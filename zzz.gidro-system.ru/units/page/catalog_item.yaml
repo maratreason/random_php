@@ -1,0 +1,124 @@
+title: Продукт
+extends: page
+admin-description: Продукция
+unit-template: catalog_item_default
+style: 'color:#f07100'
+
+groups:
+	0:
+        caption: Основные характеристики
+	1:
+        caption: Технические характеристики
+	2:
+        caption: Дополнительные характеристики
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: product
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, catalog, 
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: unicum_content
+        systemtype: static
+
+# Post functions for areas. area = function
+	pre_func:
+        caption: "Пред обработчики полей"
+        type: text
+        editor: text
+        value: |
+        systemtype: static
+
+# Native params
+
+	multi_images:
+        caption: "Картинки продукта"
+        type: text
+        editor: multiimage
+
+	multi_images2:
+        caption: "Сертификаты продукта"
+        type: text
+        editor: multiimage
+
+	url_name:
+        caption: "Название продукта"
+        desc: "Выводится на странице списка продуктов"
+        type: text
+        editor: linetext
+
+	content_title:
+        caption: "Заголовок продукта"
+        desc: "Выводится на странице самого продукта"
+        type: text
+        editor: linetext
+
+	content:
+        caption: "Технические характеристики"
+        type: text
+        editor: tiny
+        
+	content2:
+        caption: "Рекомендации по применению"
+        type: text
+        editor: tiny
+
+	material:
+        caption: "Материал"
+        type: text
+        editor: linetext
+
+	stretch:
+        caption: "Временное сопротивление при растяжении, МПа"
+        type: varchar(100)
+        editor: linetext
+
+	mass:
+        caption: "Масса, кг"
+        type: varchar(100)
+        editor: linetext
+
+	diameter:
+        caption: "Диаметр, мм"
+        type: varchar(100)
+        editor: linetext
+        
+	diameter_proema:
+        caption: "Диаметр проема, мм"
+        type: varchar(100)
+        editor: linetext
+
+	vysota_lyuka:
+        caption: "Высота люка, мм"
+        type: varchar(100)
+        editor: linetext
+
+	nagruzka_nominal:
+        caption: "Номинальная нагрузка, кН ГОСТ 3634-99"
+        type: varchar(100)
+        editor: linetext
+
+	nagruzka_ispytanie:
+        caption: "Популярный продукт"
+        type: varchar(100)
+        editor: linetext

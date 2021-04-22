@@ -1,0 +1,28 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="textpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="textpage__content-title content">
+                    <div class="h1"><?=func::templateCityVars($DATA['content_title']);?></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="textpage__content-text1 content">
+                    <?=func::templateCityVars($DATA['content']);?>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="textpage__content-text1 content">
+                    <?=func::templateCityVars($DATA['content2']);?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

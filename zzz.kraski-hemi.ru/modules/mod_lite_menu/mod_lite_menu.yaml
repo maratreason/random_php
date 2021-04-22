@@ -1,0 +1,43 @@
+title: Простое меню
+extends: module
+unit-template: left75
+admin-description: Выводит список указанных страниц в виде меню
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	menu_pages:
+        caption: Список страниц меню
+        type: text
+        editor: linetext
+	
+	menu_block:
+        caption: Обёртка меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+        
+	menu_link:
+        caption: Пункт меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+        
+	menu_selectlink:
+        caption: Выделеный пункт меню
+        type: text
+        editor: codehtml
+		height: 100
+		systemtype: superadmin
+        
+	menu_border:
+        caption: Разделитель пунктов меню
+        type: text
+        editor: codehtml		
+		height: 100
+		systemtype: superadmin

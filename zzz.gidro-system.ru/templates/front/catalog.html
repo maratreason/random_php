@@ -1,0 +1,54 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<div class="bg2">
+    <div class="bg3">
+        <div class="catalog catalog-expand">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 product-sidebar">
+                        <?=Engine::position('sidebar-menu');?>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="breadcrumbs">
+                                        <div class="breadcrumbs-main">
+                                            <ol class="breadcrumb">
+                                                <?=Engine::module('mod_path')->main()?>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="block-title">
+                                        <div class="h1"><?=Func::templateCityVars($DATA['url_name']);?></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="catalog-content content">
+                                <?=Func::templateCityVars($DATA['content']);?>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 mb70">
+                                    <?=Engine::position('category-list')?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <?//=Engine::position('text-graphic-block-2')?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?include_once(Engine::$root.Config::$front_template."/footer.html")?>

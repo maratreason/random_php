@@ -1,0 +1,89 @@
+.admin_page_panel{
+	position:fixed;
+	background-color:rgba(0,0,0,0.8);
+	padding:10px;
+	margin-top:100px;
+	border-radius:0px 5px 5px 0px;
+	z-index:1000;
+	line-height:10px;
+}
+
+/*стиль ссылок кнопок*/
+
+
+.admin_page_panel .button{
+	border:0px;
+	display:table;
+	padding:8px 12px 8px 12px;
+	color:#FFF;
+	text-decoration:none;
+	background-color:#0091c8;
+	overflow:auto;
+	font-size:14px !important;
+	cursor:pointer;
+	line-height:22px;
+	transition: 0.02s;
+	border-radius:3px;
+	box-shadow:inset 0px -4px rgba(0,0,0,0.2);
+	outline:none;
+}
+.admin_page_panel .button img{
+    -webkit-filter: grayscale(100%) brightness(1000%);
+	-moz-filter: grayscale(100%) brightness(1000%);
+	-ms-filter: grayscale(100%) brightness(1000%);
+	-o-filter: grayscale(100%) brightness(1000%);
+	filter: grayscale(100%) brightness(1000%);
+	float:left;
+	display:block;
+	margin-left:-4px;
+}
+
+.admin_page_panel .button:hover{
+	background-color:#0081B8;
+	background-color:#a1c200;
+	//box-shadow:inset 0px -3px rgba(0,0,0,1);
+	color:#FFF;
+	
+}
+
+/*обесцвечивает иконки в белый цвет*/
+.admin_page_panel .button:hover img{
+    -webkit-filter: grayscale(100%) brightness(1000%);
+	-moz-filter: grayscale(100%) brightness(1000%);
+	-ms-filter: grayscale(100%) brightness(1000%);
+	-o-filter: grayscale(100%) brightness(1000%);
+	filter: grayscale(100%) brightness(1000%);
+}
+.admin_page_panel .button:active{
+	padding-bottom:6px;
+	margin-top:2px;
+	box-shadow:none;
+}
+.admin_page_panel .button-active{
+	//background-color:#111;
+}
+
+
+.admin_page_panel .button img.plus-text{
+	margin-right:7px;
+}
+
+/*Типы кнопок*/
+.admin_page_panel .icon-button{
+	padding:3px 3px 3px 3px;
+	background-color:transparent;
+	box-shadow:none;
+	float:left;
+	border-radius:0px;
+}
+.admin_page_panel .icon-button:hover{
+	background-color:#0091c8;
+}
+.admin_page_panel .icon-button img{
+    -webkit-filter: none;
+	-moz-filter: none;
+	-ms-filter: none;
+	-o-filter: none;
+	filter: none;
+	margin-left:0px;
+}

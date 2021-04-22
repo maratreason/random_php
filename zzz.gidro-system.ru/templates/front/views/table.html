@@ -1,0 +1,8 @@
+<table class="table table-bordered">
+    <?php foreach($DATA['_block'] as $item) {?>
+    <tr>
+        <td><div><p><?=$item['url_name'];?></p></div></td>
+        <td class="short-td"><a href="<?=$item['url'];?>" class="button-button secondary-button">Заказать</a></td>
+    </tr>
+    <?php } ?>
+</table>

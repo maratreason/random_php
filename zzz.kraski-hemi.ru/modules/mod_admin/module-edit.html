@@ -1,0 +1,9 @@
+<div class="top-panel">
+<h1><?=$DATA['_title']?></h1>
+<?=$DATA['_buttons']?>
+</div>
+<form class="form page-form top-panel-margin" action="/ajax/mod-mod_admin/modules-save" id="module-form">
+<?if(isset($DATA['_admin'])) echo $DATA['_admin']?>
+<?=$DATA['_content']?>
+
+</form>

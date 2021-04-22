@@ -1,0 +1,61 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<section class="section__catalog">
+    <div class="container">
+        <div class="row catalog-row">
+            <div class="col-md-3">
+                <div class="section__catalog-main">
+                    <span class="catalog__main-title">Каталог</span>
+                    <?=Engine::position('sidebar-menu');?>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="top__content">
+                    <div class="block__text">
+                        <div class="h1" data-id="scroll-pos"><?=func::templateCityVars($DATA['content_title'])?></div>
+                    </div>
+                    <div class="top__content-text">
+                        <p>
+                            <?=Func::templateCityVars($DATA['url_desc']);?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section__row-container">
+            <div class="col-md-3">
+                <div class="section__top-filter">
+                    <?=Engine::position('filter')?>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?=Engine::position('filter-items-list')?>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="top__content bottom">
+                                <div class="block__text">
+                                    <div class="h2"><?=Func::templateCityVars($DATA['url_menu_desc']);?></div>
+                                    <div><?=Func::templateCityVars($DATA['content']);?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="consult-form">
+    <?=Engine::position('feed-us')?>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

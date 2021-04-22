@@ -1,0 +1,377 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<?
+  $page = new Page();
+  $pages = $page->get('url_name')->all();
+?>
+
+<section class="section__catalog">
+    <div class="container">
+        <div class="row catalog-row">
+
+            <div class="col-md-3">
+                <div class="section__catalog-main">
+                    <span class="catalog__main-title">Каталог</span>
+                    <?=Engine::position('sidebar-menu');?>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="top__content" itemscope itemtype="http://schema.org/Product">
+
+                    <div class="top__content-block">
+                        <div class="top__content-block-wrapper">
+                            <?php
+                                $images = json_decode($DATA['multi_images']);
+                                if($images) {
+                            ?>
+                            <div class="top__content-block-img" itemscope itemtype="http://schema.org/ImageObject"
+                                style="background: url(<?=$images[0][0]?>); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                                <img itemprop="contentUrl" src="<?=$images[0][0]?>" alt="<?=$images[0][1]?>" />
+                            </div>
+                            <div class="top__content-block-subimg">
+                                <? if (count($images) > 1) { ?>
+                                <? foreach($images as $img) {?>
+                                <div
+                                    style="background: url(<?=$img[0];?>); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                                    <img itemprop="contentUrl" src="<?=$img[0];?>" alt="<?=$img[1];?>" />
+                                </div>
+                                <?}}?>
+                            </div>
+                            <?}?>
+                        </div>
+
+                        <div class="top__content-text">
+                            <a href="<?=$DATA['url']?>">
+                                <div class="block__text">
+                                    <div class="h1" itemprop="name"><?=$DATA['url_name']?></div>
+                                </div>
+                            </a>
+                            <div class="url_desc"><?=$DATA['url_desc']?></div>
+                            <div>Объем: <?=$DATA['opt_size']?></div>
+                            <div class="product__price-total">Цена:
+                                <b><?=number_format($DATA['price_float'], 0, '.', ' ');?> &#x20bd;</b></div>
+                            <div class="sklad">Наличие на складе:
+                                <div class="sklad-table">
+                                    <div>
+                                        <div class="sklad-items"><?=Engine::constant('sklad_1')?>:
+                                            <?=($DATA['sklad1'] ? '<b>' . $DATA['sklad1'] . ' шт.</b>' : '<span>нет на складе</span>')?>
+                                        </div>
+                                        <div class="sklad-items"><?=Engine::constant('sklad_2')?>:
+                                            <?=($DATA['sklad2'] ? '<b>' . $DATA['sklad2'] . ' шт.</b>' : '<span>нет на складе</span>')?>
+                                        </div>
+                                        <div class="sklad-items"><?=Engine::constant('sklad_3')?>:
+                                            <?=($DATA['sklad3'] ? '<b>' . $DATA['sklad3'] . ' шт.</b>' : '<span>нет на складе</span>')?>
+                                        </div>
+                                        <div class="sklad-items"><?=Engine::constant('sklad_4')?>:
+                                            <?=($DATA['sklad4'] ? '<b>' . $DATA['sklad4'] . ' шт.</b>' : '<span>нет на складе</span>')?>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        Общее количество:
+                                        <b><?=((int) $DATA['sklad1'] + (int) $DATA['sklad2'] + (int) $DATA['sklad3'] + (int) $DATA['sklad4']); ?>
+                                            шт.</b>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="color-form" class="mfp-hide white-popup-block">
+                                <div class="white-popup-content">
+                                    <div class="form-color-close">&#9587;</div>
+                                    <?
+                                    $backgroundColor = '';
+                                    $items = new Page();
+                                    $items = $items->get(array('*'=>'id,url,opt_color,unit_str,opt_tag','opt_tag' => $DATA['opt_tag']))->all();
+                                    foreach($items as $itemTag) {
+                                        $arr = unserialize($itemTag['unit_str']);
+                                        $subcats = trim($itemTag['opt_color'],',');
+                                        $subcats = explode(',',$subcats)[0];
+
+                                        $hashColor = explode("|", $arr['areas']['opt_color']['select'][$subcats]);
+                                        $backgroundColor = $hashColor[1];
+                                        ?>
+                                    <a href="<?=$itemTag['url']?>" class="modal-colors">
+                                        <div class="tag">RAL <?=$subcats ?></div>
+                                        <div class="hash-color" style="background: <?=$hashColor[1]?>;"></div>
+                                    </a>
+                                    <?}?>
+                                </div>
+                            </div>
+
+                            <?
+                                    $arr = unserialize($DATA['unit_str']);
+                                    $subcats = trim($DATA['opt_color'],',');
+                                    $subcats = explode(',',$subcats)[0];
+                                    $hashColor = explode("|", $arr['areas']['opt_color']['select'][$subcats]);
+                                    $backgroundColor = $hashColor[1];
+                                ?>
+                            <div class="color-picker"><a class="btn btn-primary btn-sm color-button"
+                                    href="#color-form">Выбрать цвет</a>
+                                <span style="background-color: <?=$backgroundColor;?>;"></span>
+                            </div>
+
+                            <div class="product__price-total delivery">Доставка: <?=Func::templateCityVars($city['i'])?>
+                            </div>
+                            <div class="product__price-info">
+                                Цена доставки до <?=Func::templateCityVars($city['r'])?> (до терминала ТК Деловые
+                                Линии): 800 рублей.
+                            </div>
+
+                            <div class="product__price-buttons">
+                                <button class="btn btn-primary btn-sm cart-button addBasketButton"
+                                    data-target="<?=Func::templateCityVars($DATA['url_name']);?>"
+                                    data-price="<?=number_format($DATA['price_float'], 0, '.', ' ');?>"
+                                    data-id="<?=$DATA['id']?>">
+                                    В корзину <span><img src="/img/logo/cart-white.png" alt="" /></span>
+                                </button>
+                                <a class="btn btn-primary btn-sm cart-button opt-cart-button form-modal"
+                                    data-desc="<?=$DATA['url_name']?>" href="#form-opt-modal">
+                                    В оптовый заказ <span><img src="/img/logo/opt.png" alt="" /></span>
+                                </a>
+                                <a class="btn btn-success btn-sm form-modal"
+                                    data-info="Требуется консультация по <?=$DATA['url_name']?>"
+                                    data-desc="<?=$DATA['url_name']?>" href="#form-consult">Консультация</a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row section__row-container">
+            <div class="col-md-3">
+                <div class="section__top-filter">
+                    <div class="pdf__items"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-9">
+                <div class="product__tabs">
+                    <div class="tabs__title">
+                        <div class="tabs-header active" data-id="1">Описание и область применения</div>
+                        <div class="tabs-header" data-id="2">Технические характеристики</div>
+                        <div class="tabs-header" data-id="3">Рекомендации по применению</div>
+                    </div>
+                    <div class="tabs__content">
+
+                        <div class="tabs__content-item active" id="contentId1">
+                            <div class="content">
+                                <?=Func::templateCityVars($DATA['content']);?>
+                            </div>
+                        </div>
+
+                        <div class="tabs__content-item" id="contentId2">
+                            <table border="0" cellpadding="0" cellspacing="0"
+                                class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Параметр</th>
+                                        <th>Значение</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?// сопоставим все значения из базы с их описанием
+                                            $page = new Page();
+                                            $param = func::unitParamName($DATA,"opt=true");
+
+                                            if(count($param)>0)
+                                            // Достаем файл фильтра
+                                            $category = substr($DATA['url'],0,strrpos($DATA['url'],"/"));
+
+                                            $cat = $page->get(array("url"=>$category,"unit"=>"!filter_category"))->assoc();
+                                            $multifilter = "";
+                                            if(isset($cat['multifilter'])) $multifilter = $cat['multifilter'];
+                                            $yaml = Engine::$root."/modules/mod_multifilter/filters/".$multifilter.".yaml";
+                                            $yaml = Yaml::YAMLLoad($yaml);
+
+                                            foreach($param as $name=>$gr){
+                                                foreach($gr['_items'] as $col=>$area){
+                                                    if(isset($area['_val']))
+                                                    if($area['_val']!=""){
+                                                    if(isset($area['filter'])){
+                                                        $values = explode(",",trim($DATA[$col],","));
+                                                        $str = "";
+                                                        $cont = 0;
+                                                        foreach($values as $value){
+                                                            $nn = @$yaml['filters'][$col]['name'];
+                                                            $findUrl = $category."/only-{$nn}-{$value}";
+
+                                                            $url = $page->sql("SELECT id, url, url_name FROM pages WHERE url_link LIKE :url_link", array("url_link"=>$findUrl))->assoc();
+                                                            if(isset($url['id'])){
+                                                                if($cont>0) $str .=", ";
+                                                                $str .= "<a href='{$url['url']}'>{$url['url_name']}</a>";
+                                                                $cont++;
+                                                            }
+                                                        }
+
+                                                        if($str!="") $area['_val'] = $str;
+                                                    }
+                                                ?>
+
+                                    <tr itemprop="additionalProperty" itemscope=""
+                                        itemtype="http://schema.org/PropertyValue">
+                                        <td itemprop="name"><span><?=$area['caption']?></span></td>
+                                        <td itemprop="value"><span><?=$area['_val']?> <?=@$area['unit']?></span></td>
+                                    </tr>
+
+                                    <?}}?>
+                                    <?}?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabs__content-item" id="contentId3">
+                            <div class="content">
+                                <?=Func::templateCityVars($DATA['content2'])?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="accordeon">
+                    <div class="acc-head">
+                        Описание и область применения
+                    </div>
+                    <div class="ac-body">
+                        <div class="content">
+                            <?=Func::templateCityVars($DATA['content']);?>
+                        </div>
+                    </div>
+
+                    <div class="acc-head">
+                        Технические характеристики
+                    </div>
+                    <div class="acc-body">
+                        <!--<table border="0" cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Параметр</th>
+                                    <th>Значение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?/* сопоставим все значения из базы с их описанием
+                                    $page = new Page();
+                                    $param = func::unitParamName($DATA,"opt=true");
+
+                                    if(count($param)>0)
+                                    // Достаем файл фильтра
+                                    $category = substr($DATA['url'],0,strrpos($DATA['url'],"/"));
+
+                                    $cat = $page->get(array("url"=>$category,"unit"=>"!filter_category"))->assoc();
+                                    $multifilter = "";
+                                    if(isset($cat['multifilter'])) $multifilter = $cat['multifilter'];
+                                    $yaml = Engine::$root."/modules/mod_multifilter/filters/".$multifilter.".yaml";
+                                    $yaml = Yaml::YAMLLoad($yaml);
+
+                                    foreach($param as $name=>$gr){
+                                        foreach($gr['_items'] as $col=>$area){
+                                            if(isset($area['_val']))
+                                            if($area['_val']!=""){
+                                            if(isset($area['filter'])){
+                                                $values = explode(",",trim($DATA[$col],","));
+                                                $str = "";
+                                                $cont = 0;
+                                                foreach($values as $value){
+                                                    $nn = @$yaml['filters'][$col]['name'];
+                                                    $findUrl = $category."/only-{$nn}-{$value}";
+
+                                                    $url = $page->sql("SELECT id, url, url_name FROM pages WHERE url_link LIKE :url_link", array("url_link"=>$findUrl))->assoc();
+                                                    if(isset($url['id'])){
+                                                        if($cont>0) $str .=", ";
+                                                        $str .= "<a href='{$url['url']}'>{$url['url_name']}</a>";
+                                                        $cont++;
+                                                    }
+                                                }
+
+                                                if($str!="") $area['_val'] = $str;
+                                            } */
+                                        ?>
+
+                                <tr itemprop="additionalProperty" itemscope=""
+                                    itemtype="http://schema.org/PropertyValue">
+                                    <td itemprop="name"><span><?=$area['caption']?></span></td>
+                                    <td itemprop="value"><span><?=$area['_val']?> <?=@$area['unit']?></span></td>
+                                </tr>
+
+                                <?/*}}*/?>
+                                <?/*}*/?>
+                            </tbody>
+                        </table> -->
+                        <div class="content">
+                            <?=Func::templateCityVars($DATA['content2'])?>
+                        </div>
+                    </div>
+
+                    <div class="acc-head">
+                        Рекомендации по применению
+                    </div>
+                    <div class="acc-body">
+                        <div class="content">
+                            <?=Func::templateCityVars($DATA['content3'])?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <? foreach(SEARCH_INPUT as $item) {
+                $count = 0;
+                $images = json_decode($item['multi_images']);
+
+                if ($item['url_name'] && count(SEARCH_INPUT) <= 3) { ?>
+            <div class="col-md-3">
+                <div class="content">
+                    <div class="card-item" itemscope itemtype="http://schema.org/Product">
+                        <? if ($images) ?>
+                        <a href="<?=$item['url']?>"><img itemprop="image" src="<?=$images[0][0]?>"
+                                alt="<?=$images[0][1]?>" /></a>
+                        <div itemprop="name" class="card-item__title"><?=Func::templateCityVars($item['url_name']);?>
+                        </div>
+                        <div itemprop="description" class="card-item__subtitle">
+                            <?=Func::templateCityVars($item['content_title']);?></div>
+
+                        <hr />
+
+                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <div class="card-item__price" itemprop="price">
+                                <?=$item['price_float']?>
+                                <span itemprop="priceCurrency">руб.</span>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="card__item-buttons">
+                            <button class="btn btn-success btn-sm consult-button"
+                                href="#consult-form">Консультация</button>
+                            <button class="btn btn-primary btn-sm cart-button addBasketButton"
+                                data-target="<?=Func::templateCityVars($item['url_name']);?>"
+                                data-price="<?=$item['price_float'];?>" data-id="<?=$item['id']?>">
+                                В корзину <span><img src="/img/logo/cart-white.png" alt="" /></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <?}
+            }?>
+            </div>
+        </div>
+
+</section>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

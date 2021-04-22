@@ -1,0 +1,17 @@
+/*jed item slider*/
+.jed-item-slider .slide-area{
+    overflow: hidden;
+    padding: 10px 0px;
+}
+
+.jed-item-slider .lists{
+    position: relative;
+    overflow: visible;
+}
+
+.jed-item-slider .list{
+    float: left;
+    overflow: visible;
+    padding: 0px 15px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,13 @@
+title: Цвета
+admin-description: Сопоставление RAL и WEB цветов
+icon: icon-var.png
+areas:
+	ral:
+        caption: RAL
+        type: text
+        editor: linetext
+
+	hex:
+        caption: HEX
+        type: text
+        editor: linetext

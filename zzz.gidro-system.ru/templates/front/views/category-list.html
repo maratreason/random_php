@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="product-top">
+        <div class="product-one">
+            <?foreach($DATA['_block'] as $i=>$item){?>
+            <div class="col-md-4 col-sm-6 col-xs-6 product-left">
+                <div class="product-main simpleCart_shelfItem" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="<?=$item['url'];?>" class="mask">
+                        <? $images = json_decode($item['multi_images']);?>
+                        <img class="img-responsive zoom-img" src="<?=$images[0][0];?>" alt="<?=$images[0][1];?>"
+                            itemprop="contentUrl" />
+                    </a>
+                    <div class="product-bottom">
+                        <a href="<?=$item['url'];?>" class="h3" itemprop="name"><?=Func::templateCityVars($item['url_name']);?></a>
+                        <div>
+                            <?=Func::templateCityVars($item['content']);?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php }?>
+        </div>
+    </div>
+</div>

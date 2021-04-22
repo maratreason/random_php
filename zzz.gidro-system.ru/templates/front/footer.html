@@ -1,0 +1,112 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="footer-block">
+                    <div><?=Engine::constant('company');?></div>
+                    <div><?=Engine::constant('slogan');?></div>
+                </div>
+                <div class="footer-block">
+                    <div>Приёмная <span><?=Engine::constant('telefon-priemnaya');?></span></div>
+                    <div>Отдел продаж <span><?=Engine::constant('telefon-prodazhi');?></span></div>
+                    <div><?=Engine::constant('email');?></div>
+                    <div><?=Engine::constant('worktime');?></div>
+                </div>
+                <div class="footer-block">
+                    <?=Engine::constant('adress');?>
+                </div>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-1">
+
+                <div class="logo footer-logo">
+                    <img src="/uploads/icons/logo.png" alt="">
+                    <div class="logo-text">
+                        <div class="logo-title"><?=Engine::constant('company');?></div>
+                        <div><?=Engine::constant('slogan');?></div>
+                    </div>
+                </div>
+
+                <div><?=Engine::constant('telefon-priemnaya');?></div>
+                <div class="footer-block-button">
+                    <div>
+                        <a class="button-button secondary-outline-button form-modal" href="#call-feedback">
+                            <svg version="1.1" baseProfile="full" width="23" height="23"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                            Заказать звонок
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <?=Engine::position('footer-menu');?>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-bottom-title">ООО "ГИДРОСИСТЕМА" © <?=date("Y");?></div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="footer-bottom-text">
+                        *Информация размещённая на сайте не является публичной офертой. <br>
+                        **Производитель оставляет за собой право внесения изменений в конструкцию изделий.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-bottom">
+                        <a href="http://www.mandarin5.ru" class="logo-mandarin__href">
+                            <div class="logo-mandarin">
+                                <img src="/img/logo/logo_mandarin.png" alt="logo">
+                                <div>Сайт разработан в <span class="orange"><br>Мандарин</span></div><br>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script src="/js/magnific/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="/js/instafeed.min.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/simpleCart.min.js"></script>
+
+<script src="/js/jquery.easydropdown.js"></script>
+
+<script src="/js/responsiveslides.min.js"></script>
+<script>
+// You can also use "$(window).load(function() {"
+$(function() {
+    $("#slider4").responsiveSlides({
+        pager: true,
+        nav: true,
+        speed: 500,
+        timeout: 10000,
+        namespace: "callbacks",
+        before: function() {
+            $('.events').append("<li>before event fired.</li>");
+        },
+        after: function() {
+            $('.events').append("<li>after event fired.</li>");
+        }
+    });
+
+});
+</script>
+
+<script src="/js/modal.js"></script>
+
+<?=Engine::position('cities')?>
+<?=Engine::position('modal-forms')?>
+<?=Engine::constant('scripts_footer')?>
+</body>
+
+</html>

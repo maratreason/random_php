@@ -1,0 +1,39 @@
+<div class="tab">
+	<div class="tab-name">Отзыв</div>
+	<div class="column-75">
+		<?=@$DATA['url_name']?>
+		<?=@$DATA['url_desc']?>
+		<?=@$DATA['url_image']?>
+		<?=@$DATA['content']?>
+	</div>
+	<div class="column-25 grey">
+		<?=@$DATA['status']?>
+		<?=@$DATA['unit']?>
+		<?=@$DATA['parent']?>
+	</div>
+</div>
+
+<div class="tab">
+	<div class="tab-name">Картинки</div>
+    <?=@$DATA['multi_images']?>
+</div>
+
+<div class="tab superadmin">
+	<div class="tab-name superadmin">ADMIN</div>
+    <div class="column-75">
+        <h2>Точная настройка</h2>
+        <?=@$DATA['date']?>
+        <?=@$DATA['unic_template']?>
+        <?=@$DATA['unic_modules']?>
+        <?=@$DATA['domain']?>
+        <?=@$DATA['alias']?>
+    </div>
+    <div class="column-25 grey">
+        <h2>Статичные данные</h2>
+        <?=@$DATA['type']?>
+        <?=@$DATA['template']?>
+        <?=@$DATA['modules']?>
+        <?=@$DATA['child_units']?>
+        <?=@$DATA['post_func']?>
+    </div>
+</div>

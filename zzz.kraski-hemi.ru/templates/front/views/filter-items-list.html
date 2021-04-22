@@ -1,0 +1,59 @@
+<div class="row">
+    <?
+  $data = new DATABASE('pages');
+  $arr = $data->sql(
+    "SELECT artikul, price_float, sklad1, sklad2, sklad3 FROM pages")->all();
+
+  foreach($DATA as $item){
+    $images = json_decode($item['multi_images']);
+    $existOnCart = isset($_SESSION['basket'][$item['id']]) ? $_SESSION['basket'][$item['id']] : false;
+?>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card-item" itemscope itemtype="http://schema.org/Product">
+                <? if ($images) ?>
+                    <div class="image">
+                        <a href="<?=$item['url']?>"><img itemprop="image" src="<?=$images[0][0]?>" alt="<?=$images[0][1]?>" /></a>
+                    </div>
+                    <a href="<?=$item['url']?>">
+                        <div itemprop="name" class="card-item__title">
+                            <?=Func::templateCityVars($item['url_name']);?>
+                        </div>
+                        <div>Объем:
+                            <?=trim($item['opt_fasovka'], ',')?> кг
+                        </div>
+                    </a>
+                    <div itemprop="description" class="card-item__subtitle">
+                        &nbsp;
+                        <?=Func::templateCityVars($item['content_title']);?>
+                    </div>
+
+                    <div class="card-item-bottom">
+                        <hr />
+                        <div class="card-item__summ" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <div class="card-item__price" itemprop="price">
+                                <?=number_format($item['price_float'], 0, '.', ' ');?>
+                            </div>
+                            <span itemprop="priceCurrency">&#x20bd;</span>
+                        </div>
+                        <hr />
+                        <div class="card__item-buttons">
+                            <a class="btn btn-success btn-sm form-modal"
+                                data-info="Требуется консультация по <?=$item['artikul']?>" 
+                                data-desc="<?=$item['artikul']?>" 
+                                href="#form-consult">Консультация</a>
+                            <button 
+                                class="<?=$existOnCart ? 
+                                " btn btn-primary btn-sm cart-button addBasketButton add " 
+                                : "btn btn-primary btn-sm cart-button addBasketButton "; ?>
+                                data-target=" <?=Func::templateCityVars($item[ 'url_name']);?>"
+                                data-price="<?=number_format($item['price_float'], 0, '.', ' ');?>" 
+                                data-id="<?=$item['id']?>">
+                                    <?=$existOnCart ? "Удалить" : "В корзину ";?>
+                                    <span><img src="/img/logo/cart-white.png" alt="" /></span>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <?}?>
+</div>

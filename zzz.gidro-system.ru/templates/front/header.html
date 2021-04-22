@@ -1,0 +1,160 @@
+<?
+  error_reporting( E_ERROR );
+  $DATA['title'] = func::getStrDefault($DATA['title'], $DATA['url_name']);
+  $DATA['content_title'] = func::getStrDefault($DATA['content_title'], $DATA['url_name']);
+  $DATA['title_og'] = func::getStrDefault($DATA['title_og'], $DATA['title']);
+  $DATA['description_og'] = func::getStrDefault($DATA['description_og'], $DATA['description']);
+  $city = func::getCityParams();
+?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/flexslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/memenu.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="shortcut icon" href="/uploads/favicon.png" type="image/x-icon" />
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/responsive.min.css" />
+
+    <title><?=Func::templateCityVars($DATA['title'])?></title>
+    <meta name="description" content="<?=Func::templateCityVars($DATA['description'])?>" />
+    <meta name="keywords" content="<?=Func::templateCityVars($DATA['keywords'])?>" />
+
+    <meta property="og:title" content="<?=Func::templateCityVars($DATA['title_og'])?>" />
+    <meta property="og:description" content="<?=Func::templateCityVars($DATA['description_og'])?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://<?=$city['domen']?>" />
+    <meta property="og:image" content="/uploads/logo.png" />
+    <link rel="stylesheet" href="/js/magnific/magnific-popup.css" />
+
+    <?=$DATA['meta']?>
+    <?=Engine::constant('scripts_head')?>
+</head>
+
+<body>
+    <?=Engine::module("mod_admin_panel")->main()?>
+    <div class="container menu-city-container">
+        <div class="menu-city">
+            <a href="#"><?=Func::templateCityVars($city['i'])?>
+            </a>
+        </div>
+    </div>
+
+    <div class="middle-menu-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 logo-area">
+                    <a class="logo" href="/">
+                        <img src="/uploads/icons/logo.png" alt="" />
+                        <div class="logo-text">
+                            <div class="logo-title"><?=Engine::constant('company');?></div>
+                        </div>
+                    </a>
+                    <div class="logo-desc">
+                        Официальный дилер ООО ЛТК "Свободный Сокол" в Пермском крае, Республике Удмуртия
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="menu-contacts">
+                        <div>
+                            <p>Приемная</p>
+                            <a href="tel:+7 (342) 207-08-08" class="phone">
+                                <svg version="1.1" baseProfile="full" width="23" height="23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                +7 (342) 207-08-08</a>
+                            <div class="social-widgets-desc">
+                                <?=Engine::constant('worktime');?>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="menu-contacts">
+                        <div>
+                            <p>Отдел продаж</p>
+                            <a href="tel:+7 (342) 207-08-08" class="phone">
+                                <svg version="1.1" baseProfile="full" width="23" height="23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                +7 (342) 207-08-08</a>
+                            <a href="mailto:gidrosistema@gmail.com" class="phone email">
+                                <svg version="1.1" baseProfile="full" width="23" height="23"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                gidrosistema@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <a class="call-form form-modal button-button secondary-outline-button" href="#call-feedback">
+                        Заказать звонок</a>
+                    <div class="social-widgets">
+                        <div class="social-text">Пишите нам в</div>
+                        <a href="https://web.whatsapp.com/" class="whatsapp">
+                            <svg version="1.1" baseProfile="full" width="30" height="30"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </a>
+                        <a href="https://web.telegram.org/" class="telegram">
+                            <svg version="1.1" baseProfile="full" width="30" height="30"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container no-bg">
+            <div class="row bottom-menu-border">
+                <div class="col-md-12 padding-0">
+                    <?=Engine::position('top-second-menu')?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-menu-bg-responsive">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-none">
+
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <a class="logo" href="/">
+                        <img src="/uploads/icons/logo.png" alt="" />
+                        <div class="logo-text">
+                            <div class="logo-title">ГИДРОСИСТЕМА</div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="adaptive-menu">
+                        <svg version="1.1" baseProfile="full" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-menu-unwrap">
+        <?=Engine::position('adaptive-menu1');?>
+    </div>

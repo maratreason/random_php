@@ -1,0 +1,9 @@
+title: Корзина
+extends: module
+unit-template: left75
+admin-description: Корзина
+areas:
+    # Static params
+    # Super admin params
+
+    # Params

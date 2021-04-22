@@ -1,0 +1,55 @@
+<?
+    $s = new DATABASE('pages');
+    $catalog = $s->sql("SELECT * FROM pages WHERE unit = 'catalog'")->assoc();
+
+    $p = new Page();
+    $sql = "SELECT * FROM pages WHERE unit='catalog_category'";
+    $page = $p->sql($sql)->all();
+?>
+
+
+<div class="block main">
+    <div class="main-top-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block-title p70">
+                        <div class="h1"><?=Func::templateCityVars($catalog['content_title'])?></div>
+                        <div class="h4"><?=Func::templateCityVars($catalog['content'])?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-container">
+        <div class="row justify-content-center">
+            <div class="about-top grid-1">
+                <?php foreach($page as $item) { ?>
+                    <?php $images = json_decode($item['multi_images']);?>
+                    <? if ($images ) { ?>
+                    <a href="<?=$item['url'];?>">
+                        <div class="about-left">
+                            <figure class="effect-bubba">
+                                <img class="img-responsive" src="<?=$images[0][0]?>" alt=""/>
+                                <figcaption>
+                                    <h2><?=Func::templateCityVars($item['url_name']);?></h2>
+                                    <p><?=Func::templateCityVars($item['content']);?></p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </a>
+                <?php } } ?>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="block-button">
+                <div>
+                    <a class="button-button">Смотреть все</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

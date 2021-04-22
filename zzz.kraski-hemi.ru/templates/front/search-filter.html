@@ -1,0 +1,65 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<section class="section__catalog">
+    <div class="container">
+
+        <div class="row catalog-row">
+            <div class="col-md-12">
+                <div class="top__content min-height100">
+                    <div class="block__text">
+                        <div class="h1"><?=func::templateCityVars($DATA['content_title'])?></div>
+                    </div>
+                    <div class="top__content-text">
+                        <div><?=Func::templateCityVars($DATA['content']);?></div>
+                        <p>
+                            <?=Func::templateCityVars($DATA['url_desc']);?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section__row-container">
+        <? foreach(SEARCH_INPUT as $item) {
+            $images = json_decode($item['multi_images']);
+            if ($item['url_name']) { ?>
+                <div class="col-md-3">
+                
+                    <div class="content">
+                        <div class="card-item" itemscope itemtype="http://schema.org/Product">
+                        <? if ($images) ?>
+                        <a href="<?=$item['url']?>"><img itemprop="image" src="<?=$images[0][0]?>" alt="<?=$images[0][1]?>"/></a>
+                        <div itemprop="name" class="card-item__title"><?=Func::templateCityVars($item['url_name']);?></div>
+                        <div itemprop="description" class="card-item__subtitle"><?=Func::templateCityVars($item['content_title']);?></div>
+
+                        <hr />
+
+                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <div class="card-item__price" itemprop="price">
+                                <?=$item['price_float']?>
+                                <span itemprop="priceCurrency">руб.</span>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="card__item-buttons">
+                            <button class="btn btn-success btn-sm consult-button" href="#consult-form">Консультация</button>
+                            <button 
+                                class="btn btn-primary btn-sm cart-button addBasketButton" 
+                                data-target="<?=Func::templateCityVars($item['url_name']);?>"
+                                data-price="<?=$item['price_float'];?>"
+                                data-id="<?=$item['id']?>"
+                            >В корзину <span><img src="/img/logo/cart-white.png" alt=""/></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            <?}}?>
+        </div>
+    </div>
+</section>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

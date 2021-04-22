@@ -1,0 +1,374 @@
+title: Услуга
+extends: page
+admin-description: Услуга
+style: 'color:#f07100'
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: inner2column
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, services
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: services_item, unicum_content
+        systemtype: static
+
+    # Post functions for areas. area = function
+
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+
+	# Native params
+
+	url_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: linetext
+
+	url_desc_sub:
+        caption: "Краткое описание (выпадающее)"
+        type: text
+        editor: text
+	url_desc_sub_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(1000)
+        editor: linetext
+	url_desc_basket:
+        caption: "Название в корзине"
+        type: varchar(200)
+        editor: linetext
+
+	show_type:
+        caption: "Отображение цены"
+        type: varchar(150)
+        editor: select
+        select:
+            "standart": "Основной раздел"
+            "top": "Сверху родительского раздела"
+            "bottom": "Внизу родительского раздела в строчку"
+            "table": "Внизу в виде таблицы"
+
+	price_float:
+        caption: "Цена"
+        type: decimal(9,2)
+        editor: integer
+
+	price_text:
+        caption: "Текстовое значение цены"
+        desc: "Например: БЕСПЛАТНО. Если данное поле будет заполнено, то будут игнорироваться все цены указаные для городов."
+        type: varchar(100)
+        editor: linetext
+
+	price_unit:
+        caption: "Описание едениц"
+        type: text
+        editor: linetext
+
+	price_desc:
+        caption: "Описание цены"
+        type: text
+        editor: linetext
+
+	price_city:
+        caption: ""
+        type: text
+        editor: priceCity
+
+	multi_images:
+        caption: "Фотографии услуги"
+        type: text
+        editor: multiimage
+
+	url_name:
+        caption: "Название услуги"
+        desc: "Выводится на странице списка услуг"
+        type: text
+        editor: linetext
+
+	content_title:
+        caption: "Заголовок услуги "
+        desc: "Выводится на странице самого продукта"
+        type: text
+        editor: linetext
+
+
+
+	content_desc:
+        caption: "Краткое описание услуги"
+        desc: "Выводится в списке продуктов под названием продукта"
+        type: text
+        editor: linetext
+
+	item_check:
+        caption: "Специальное предложение"
+        desc: "Выводить данный раздел на главной странице"
+        editor: select
+        select:
+            0: "Нет"
+            1: "Да"
+        type: text
+
+	popular:
+        caption: "Популярность"
+        type: int(11)
+        editor: integer
+
+
+	content:
+        caption: "Описание услуги сверху"
+        type: text
+        style: "height:320px"
+        editor: tiny
+	content2:
+        caption: "Описание услуги снизу"
+        type: text
+        editor: tiny
+        style: "height:320px"
+
+	list1_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list1_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list1_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list2_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list2_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list2_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list3_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list3_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list3_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list4_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list4_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list4_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list5_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list5_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list5_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list6_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list6_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list6_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list7_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list7_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list7_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list8_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list8_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list8_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list9_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list9_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list9_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list10_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list10_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list10_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list11_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list11_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list11_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list12_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list12_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list12_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	list13_name:
+        caption: "Нзвание"
+        type: varchar(500)
+        editor: linetext
+
+	list13_desc:
+        caption: "Краткое описание"
+        type: text
+        editor: text
+
+	list13_url:
+        caption: "Ссылка на подробнее"
+        type: varchar(500)
+        editor: linetext
+
+	status2:
+        caption: "Выводить на главной"
+        type: varchar(100)
+        editor: select
+        select:
+            "0": "НЕТ"
+            "1": "ВЫВОДИТЬ"
+
+	color:
+        caption: "Цвет"
+        type: varchar(10)
+        editor: color
+
+	parent_item:
+        caption: "Связан со следующими товарами"
+        desc: "Указать товары с которыми преобретается данный товар"
+        type: varchar(100)
+        editor: linetext
+
+	bound_item:
+        caption: "Активен при выборе товаров"
+        desc: "Данный товар будет активен к покупке при выборе одного из выбранных товаров"
+        type: varchar(100)
+        editor: linetext
+	users_add:
+        caption: "Врачи"
+        type: varchar(200)
+        editor: users

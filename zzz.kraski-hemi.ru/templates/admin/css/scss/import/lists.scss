@@ -1,0 +1,117 @@
+    @each $list in $lists{
+        $n1: nth($list,1);
+        $n2: nth($list,2);
+        $n3: nth($list,3);
+        
+        $name: ""+$n1+$n2+$n3;
+        $item: (100%-$list_margin*($n1 - 1));
+        .list-#{$name}{
+                
+                display: table;
+                width: 100%;
+                overflow: visible;
+
+            >.item{
+                    position: relative;
+                    display: inline-block;
+                    width: $item/$n1;
+                    margin-left:$list_margin/2;
+                    margin-right:$list_margin/2;
+                    margin-bottom: $list_margin;
+                    box-sizing: border-box;
+                    padding: $list_padding;
+                    vertical-align: top;
+                }
+        }
+        
+        @media only screen and (max-width: 4000px) and(min-width: $width_tablet){
+            .list-#{$name}{
+                >.item:nth-child(#{$n1}n){
+                    margin-right: 0%;
+                }
+
+                >.item:nth-child(#{$n1}n+1){
+                    margin-left: 0%;
+                    clear: left;
+                }
+                >.item:nth-last-child(-n+#{$n1}){
+                  margin-bottom: 0px;
+                }
+
+                &.no-margin > .item{
+                    width: 100%/$n1;
+                    margin: 0%;
+                }
+
+                // columns
+                @each $n in $columns {
+                    .item-#{$n}{
+                        width: $item/(100/$n);
+                    }
+                }
+
+            }
+        }
+        @media only screen and (max-width: $width_tablet) and (min-width: $width_mobile){
+           .list-#{$name}{
+                $item: (100%-$list_margin*($n2 - 1));
+
+                display: table;
+                width: 100%;
+
+                >.item{
+                    width: $item/$n2;
+                }
+
+                >.item:nth-child(#{$n2}n){
+                    margin-right: 0%;
+                }
+
+                >.item:nth-child(#{$n2}n+1){
+                    margin-left: 0%;
+                    clear: left;
+                }
+                 >.item:nth-last-child(-n+#{$n2}){
+                   margin-bottom: 0px;
+                 }
+                &.no-margin > .item{
+                    width: 100%/$n2;
+                    margin: 0%;
+                }
+
+                // columns
+                @each $n in $columns {
+                    >.item-#{$n}{
+                        width: $item/$n2;
+                    }
+                }
+
+            } 
+        }
+        
+        @media only screen and (max-width: $width_mobile) {
+           .list-#{$name}{
+                $item: (100%-$list_margin*($n3 - 1));
+
+                display: table;
+                width: 100%;
+
+                >.item{
+                    width: $item/$n3;
+                    margin-left:0%;
+                    margin-right: 0%;
+                }
+                 >.item:nth-last-child(-n+#{$n3}){
+                   margin-bottom: 0px;
+                 }
+                &.no-margin >.item{
+                    width: 100%/$n3;
+                    margin: 0%;
+                }
+
+
+            } 
+        }
+        
+        
+    }

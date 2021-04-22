@@ -1,0 +1,35 @@
+<div class="tab">
+	<div class="tab-name">Страница</div>
+	<div class="column-75">
+    <h2>Контент</h2>
+		<?=@$DATA['url_image']?>
+		<?=@$DATA['image_position']?>
+		<?=@$DATA['url_name']?>
+		<?=@$DATA['content']?>
+	</div>
+	<div class="column-25 grey">
+		<?=@$DATA['status']?>
+		<?=@$DATA['unit']?>
+		<?=@$DATA['parent']?>
+	</div>
+</div>
+
+<div class="tab superadmin">
+	<div class="tab-name superadmin">ADMIN</div>
+    <div class="column-75">
+        <h2>Точная настройка</h2>
+        <?=@$DATA['date']?>
+        <?=@$DATA['unic_template']?>
+        <?=@$DATA['unic_modules']?>
+        <?=@$DATA['domain']?>
+        <?=@$DATA['alias']?>
+    </div>
+    <div class="column-25 grey">
+        <h2>Статичные данные</h2>
+        <?=@$DATA['type']?>
+        <?=@$DATA['template']?>
+        <?=@$DATA['modules']?>
+        <?=@$DATA['child_units']?>
+        <?=@$DATA['post_func']?>
+    </div>
+</div>

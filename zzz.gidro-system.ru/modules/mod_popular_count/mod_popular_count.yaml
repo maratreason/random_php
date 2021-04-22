@@ -1,0 +1,16 @@
+title: Счетчик популярности статьи
+extends: module
+unit-template: left75
+admin-description: Повышает популярность статьи при каждом обращении
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	count:
+        caption: Число, на которое уведичивать популярность
+        type: int(11)
+        editor: integer
+	

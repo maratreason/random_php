@@ -1,0 +1,23 @@
+.table {
+  display: table;
+  width: 100%;
+}
+
+  .table>.row{
+  display: table-row;
+}
+.table>.item{
+  display: table-cell;
+  box-sizing: border-box;
+  position: relative;
+}
+
+// columns
+@each $n in $columns {
+
+  .table>.item-#{$n}{
+    display: table-cell;
+    width: 100%/(100/$n);
+    padding: $list_padding;
+  }
+}

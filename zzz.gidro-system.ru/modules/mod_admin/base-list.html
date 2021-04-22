@@ -1,0 +1,13 @@
+<div class="top-panel">
+<h1>Данные</h1>
+</div>
+<div class="top-panel-margin">
+	<?foreach($DATA['_bases'] as $name=>$base){?>
+	<a class="base-block" href="/unit/base-<?=$name?>">
+		<img src="<?=$base['icon']?>">
+		<div class="title"><?=$base['title']?></div>
+		<div class="description"><?=$base['description']?></div>
+		<div class="unit superadmin"><?=$name?>.yaml</div>
+	</a>
+	<?}?>
+</div>

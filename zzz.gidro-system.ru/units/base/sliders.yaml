@@ -1,0 +1,107 @@
+title: Слайдеры
+admin-description: Список слайдеров в шапке сайта
+icon: icon-slider.png
+areas:
+    status:
+        caption: Статус
+        editor: select
+        select:
+            1: Включен
+            0: ОТКЛЮЧЕН
+        type: int(11)
+
+    priority:
+        caption: Приоритет
+        type: int(11)
+        editor: linetext
+        table: show
+
+    title:
+        caption: Заголовок
+        type: text
+        editor: linetext
+        table: show
+
+    description:
+        caption: Текст слайдера
+        type: text
+        editor: text
+        table: show
+
+    type:
+        caption: Тип фона
+        editor: select
+        select:
+            0: Картинка
+            1: Видео
+        type: int(11)
+
+    image:
+        caption: Картинка
+        type: text
+        editor: image
+        table: show
+
+    image_tablet:
+        caption: Картинка для планшетов
+        type: text
+        editor: image
+        table: show
+
+    image_mobile:
+        caption: Картинка для мобильных устройств
+        type: text
+        editor: image
+        table: show
+
+    mp4:
+        caption: Видео .mp4
+        type: text
+        editor: image
+        table: show
+
+    ogv:
+        caption: Видео .ogv
+        type: text
+        editor: image
+        table: show
+
+    webm:
+        caption: Видео .webm
+        type: text
+        editor: image
+        table: show
+
+    link:
+        caption: Ссылка
+        type: text
+        editor: linetext
+
+    button:
+        caption: Название кнопки
+        type: text
+        editor: linetext
+        value: Узнать подробнее
+
+    link2:
+        caption: Вторая ссылка
+        type: text
+        editor: linetext
+
+    button2:
+        caption: Название второй кнопки
+        type: text
+        editor: linetext
+        value: Узнать подробнее
+
+    bg_color:
+        caption: Цвет фона
+        type: text
+        editor: color
+        value: "#000"
+
+    text_color:
+        caption: Цвет текста
+        type: text
+        editor: color
+        value: "#FFF"

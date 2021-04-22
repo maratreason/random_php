@@ -1,0 +1,50 @@
+title: Преимущество
+extends: page
+admin-description: Преимущество
+style: 'color:#2b8e00;'
+areas:
+      # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 0
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: blocks_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	
+	url_name:
+        caption: "Заголовок"
+        type: linetext
+        editor: linetext			
+        
+	content:
+        caption: "Описание"
+        type: text
+        editor: text			
+
+	url_icon:
+        caption: "Иконка преимущества"
+        type: text
+        editor: image
+
+	status_info:
+        caption: "Опции"
+        editor: multiselect
+        select:
+            prior: "Приоритетный"
+        type: varchar(100)

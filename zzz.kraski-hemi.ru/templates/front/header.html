@@ -1,0 +1,170 @@
+<?
+  error_reporting( E_ERROR );
+  $DATA['title'] = func::getStrDefault($DATA['title'], $DATA['url_name']);
+  $DATA['content_title'] = func::getStrDefault($DATA['content_title'], $DATA['url_name']);
+  $DATA['title_og'] = func::getStrDefault($DATA['title_og'], $DATA['title']);
+  $DATA['description_og'] = func::getStrDefault($DATA['description_og'], $DATA['description']);
+  $city = func::getCityParams();
+
+  $apadtiveCart = Engine::module('mod_basket')->basketPanel();
+
+  $cartTable = new DATABASE("cart");
+  $cart = $cartTable->get()->all();
+  $price = 0;
+  $count = 0;
+
+  foreach($cart as $item) {
+    $price += $item['price'];
+    $count += $item['count'];
+  }
+
+  $query = "";
+
+  if (isset($_POST['search-query']) && trim($_POST['search-query']) !== "") {
+    $query = trim($_POST['search-query']);
+  }
+
+  $page = new Page();
+  $sql = "SELECT * FROM pages WHERE url_name LIKE '$query%' AND unit LIKE 'catalog_item_%'";
+  $n = $page->sql($sql)->all();
+  define('SEARCH_INPUT', serialize(array($n)));
+
+  define('SITE_KEY', '6LfAfrMZAAAAAIDuhBnJLkzhdhQag7EGBBwynKc4');
+  define('SECRET_KEY', '6LfAfrMZAAAAAB3Ttf0bt6hqEbpPxx1BItGpy8Yf');
+
+?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/responsive.min.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <link rel="shortcut icon" href="/uploads/favicon.png" type="image/x-icon">
+
+    <title><?=Func::templateCityVars($DATA['title'])?></title>
+    <meta name="description" content="<?=Func::templateCityVars($DATA['description'])?>" />
+    <meta name="keywords" content="<?=Func::templateCityVars($DATA['keywords'])?>" />
+
+    <meta property="og:title" content="<?=Func::templateCityVars($DATA['title_og'])?>" />
+    <meta property="og:description" content="<?=Func::templateCityVars($DATA['description_og'])?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://<?=$city['domen']?>" />
+    <meta property="og:image" content="/uploads/logo.png" />
+    <link rel="stylesheet" href="/js/magnific/magnific-popup.css" />
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <?=$DATA['meta']?>
+    <?=Engine::constant('scripts_head')?>
+
+    <script>
+        function onSubmit(token) {
+            document.querySelector(".tech-podderzhka__form").submit();
+        }
+    </script>
+</head>
+
+<body>
+    <?=Engine::module("mod_admin_panel")->main()?>
+    <?=Engine::position('adaptive-menu1');?>
+
+    <section class="main-menu">
+        <div class="container">
+            <div class="top__menu">
+                <div class="top__menu-text">
+                    <a href="#"><?=Func::templateCityVars($city['i'])?></a>
+                    <p>
+                        В <?=Func::templateCityVars($city['p'])?> осуществляется доставка всей продукции с помощью тк
+                    </p>
+                </div>
+
+                <?=Engine::position('top-menu')?>
+            </div>
+        </div>
+
+        <div class="top__info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 logo" itemscope itemtype="http://schema.org/ImageObject">
+                        <a href="/" class="logo">
+                            <img itemprop="contentUrl" class="logo__img" src="/img/logo.png"
+                                alt="<?=engine::constant('company')?>" />
+                            <div itemprop="name" class="logo__title">
+                                Краски<br />
+                                Хеми
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 top__info-items">
+                        <div class="top__info-item">
+                            <h4 class="info__item-title">Оптовые продажи:</h4>
+                            <h4 class="info__item-phone">
+                                <a href="tel:<?=$city['telefon2']?>">
+                                    <i class="las la-phone"></i>
+                                    <?=$city['telefon2']?>
+                                </a>
+                            </h4>
+                            <h5 class="info__item-link">
+                                <a href="mailto:<?=$city['email2']?>"><i
+                                        class="las la-envelope"></i><?=$city['email2']?></a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top__info-items">
+                        <div class="top__info-item">
+                            <h4 class="info__item-title">Розничные продажи:</h4>
+                            <h4 class="info__item-phone">
+                                <?=$city['tel']?>
+                            </h4>
+                            <h5 class="info__item-phone">
+                                <a href="tel:7 912 88-21-831"><i class="las la-mobile"></i><?=$city['telefon_mob']?></a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top__info-items">
+
+                        <div class="top__info-cart">
+                            <?=Engine::module("mod_basket")->basketPanel()?>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="top__menu bottom-menu">
+                <form class="top__menu-search" method="POST" action="/search">
+                    <input type="text" name="search-query" class="form-control" value="" />
+                    <img src="/img/logo/search.png" alt="" />
+                </form>
+                <?=Engine::position('top-second-menu')?>
+            </div>
+        </div>
+
+        <div class="secondary-menu">
+            <div class="container secondary-menu__parent">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="secondary-menu__header-text">
+                            <div class="h1"><?=Engine::constant('company');?></div>
+                            <p><?=Engine::constant('mobile-subheader');?></p>
+                        </div>
+                    </div>
+                </div>
+                <?=Engine::position('main-menu');?>
+            </div>
+        </div>
+    </section>
+    <?=Engine::position('cities')?>
+</body>
+
+</html>

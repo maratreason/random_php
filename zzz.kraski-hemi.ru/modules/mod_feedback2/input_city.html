@@ -1,0 +1,11 @@
+<?
+    $city = func::getCityParams();
+?>
+<div class="<?if($DATA[3]) echo "input_require"?> input_string input-box">
+<label>
+    <span><?=$DATA[2]?></span>
+    <input name="value[<?=$DATA[0]?>]" type="text" placeholder="<?=$DATA[2]?>" value="<?=$city['i']?>" class="input <?=$DATA['class_']?>"/>
+    <input name="label[<?=$DATA[0]?>]" type="hidden" value="<?=$DATA[2]?>" class="input"/>
+    <?if($DATA[3]){?><span class="err_msg"></span><?}?>
+</lable>
+</div>

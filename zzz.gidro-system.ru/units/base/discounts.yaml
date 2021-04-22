@@ -1,0 +1,55 @@
+title: Акциии и скидки
+admin-description: Сикдки на товары
+icon: icon-var.png
+areas:
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Активна
+            0: НЕ АКТИВНА
+        type: int(11)
+
+	name:
+        caption: Название
+        type: text
+        editor: linetext
+        table: show
+
+	value:
+        caption: Процент скидки
+        type: text
+        editor: linetext
+        table: show
+
+	type:
+        caption: Тип
+        editor: select
+        select:
+            0: Повысить текущую цену
+            1: Понизить текущую цену
+        type: int(11)
+
+	date_start:
+        caption: Дата старта
+        type: datetime
+        editor: datetime
+        table: show
+
+	date_end:
+        caption: Дата окончания
+        type: datetime
+        editor: datetime
+        table: show
+
+	color:
+        caption: Цвет текста
+        type: text
+        editor: color
+        value: "#FFF"
+
+	bg:
+        caption: Цвет фона
+        type: text
+        editor: color
+        value: "#A00"

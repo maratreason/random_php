@@ -1,0 +1,31 @@
+<div class="top-panel">
+<h1>Список Unit'ов</h1>
+<?=$DATA['_buttons']?>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" class="table top-panel-margin" >
+<tr>
+	<td width="64">&nbsp;</td>
+	<td width="200">Unit</td>
+	<td>Название</td>
+	<?//<td>Статичные значения</td>?>
+	<td>Наследование</td>
+	<td>Страниц</td>
+	<td width="32">&nbsp;</td>
+	
+</tr>
+<?foreach($DATA['_units'] as $unit){?>
+<tr class="page-type-<?=$unit['type']?> page-status-<?=$unit['status']?> <?=$unit['_class']?>" id="page-row-<?=basename($unit['file'],".xml")?>">
+	<td><?=$unit['_buttons']?></td>
+	<td valign="middle">
+		<img style="margin-left:<?=$unit['_padding']?>px" src="<?=Config::$back_template;?>/img/icons/icon-unit.png" width="24" height="24" class="page-type-icon"/>
+		<?=$unit['file']?>
+	</td>
+	
+	<td><?=$unit['caption']?></td>
+	<?/*<td><?=$unit['_static']?></td>	*/?>
+	<td><?=$unit['extends']?></td>
+	<td align='center'><?=$unit['_pages']?></td>
+	<td><?=@$unit['_buttons_delete']?></td>
+</tr>
+<?}?>
+</table>

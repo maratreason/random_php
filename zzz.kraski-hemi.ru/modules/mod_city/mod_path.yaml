@@ -1,0 +1,38 @@
+title: Генерируемый блок
+extends: module
+unit-template: left75
+admin-description: Вывод генерируемого блока по шаблону
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	content_flag:
+        caption: Данные страницы
+        editor: select
+        select:
+            0: Взять из текущей страницы
+            1: Взять из страницы по умолчанию
+        type: int(11)
+		
+	cur_page_id:
+        caption: Страницы по умолчанию
+        desc: Если страница не будет иметь указанных полей или они будут пустые, то поля будут браться со страницы по умолчанию. Необходимо указать ID страницы.
+        type: int(11)
+        editor: integer
+        
+	page_field:
+        caption: Поля
+        desc: Индификаторы полей через запятую, которые необходимо будет обработать
+        type: text
+        editor: linetext
+        
+	template_list:
+        caption: Шаблон вывода
+        desc: Шаблон вывода блока
+        type: text
+        editor: linetext
+	
+		
+		

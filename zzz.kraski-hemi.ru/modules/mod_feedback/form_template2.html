@@ -1,0 +1,32 @@
+	<form class="feedback_form" id="feedback_<?=$DATA['name']?>" enctype="multipart/form-data" method="POST" action="/ajax/mod-mod_feedback/send-message">
+		<? $input = $DATA['']['fields']?>
+		<div class="jgrid211">
+			<div class="jitem p30 leftInputs">
+				<?=$input['fio']?>
+				<?=$input['city']?>
+				<?=$input['telefon']?>
+				<?=$input['email']?>
+				<?=$input['text']?>
+			</div>
+			<div class="jitem p70 rightInputs">
+				<?=$input['type1']?>
+				<?=$input['type2']?>
+				<?=$input['type3']?>
+				<?=$input['date']?>
+		<div class="formabout">Отправляя заявку вы соглашаетесь на обработку <a href="/oferta">персональных данных</a></div>
+		<span class="feedback_button <?=$DATA['button_class']?>"><?=$DATA['button_name']?></span>
+			</div>
+		</div>
+		<input name="form" type="hidden" value=""/>
+		<input name="url" type="hidden" value="<?=Engine::$url?>"/>
+		<input name="page_id" type="hidden" value="<?=$DATA['_page_id']?>" />
+		<input name="info" type="hidden" value="" class="form_info"/>
+		<input name="mod" type="hidden" value="<?=$DATA['name']?>"/>
+		<input name="target_id" type="hidden" value="<?=$DATA['target_id']?>"/>
+
+	</form>
+
+	<div class="results">
+		<div class="loading">Идет отправка...</div>
+		<div class="result"></div>
+	</div>

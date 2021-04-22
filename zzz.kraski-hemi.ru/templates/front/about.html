@@ -1,0 +1,74 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<section class="section__about pb-0">
+    <div class="about__block">
+        <div class="container">
+            <div class="title-text">
+                <div class="h2"><?=Func::templateCityVars($DATA['url_name']);?></div>
+            </div>
+        </div>
+        <div class="section-block-text">
+            <div class="container">
+                <div class="row">
+                    <div class="about-block">
+                        <div class="col-md-12 mt-50">
+                            <img class="about-img" src="<?=$DATA['url_image'];?>" alt="" />
+                            <div class="text">
+                                <div class="url-desc"><?=Func::templateCityVars($DATA['url_desc']);?></div>
+                                <div class="content"><?=Func::templateCityVars($DATA['content']);?></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12"><?=Func::templateCityVars($DATA['content2']);?></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-wrapper">
+        <div class="gallery__block about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-text">
+                            <div class="h2 white-color">Фотогалерея</div>
+                            <div class="gallery__block-blur">
+                                <ul class="gallery__items about">
+                                    <?php  
+                                      $images = json_decode($DATA['multi_images']);
+                                      if($images) {
+                                    ?>
+                                    <?php foreach($images as $img) { ?>
+                                    <li>
+                                        <a href="<?=$img[0];?>" title="<?=$img[1];?>"><img src="<?=$img[0];?>"
+                                                alt="Brand1" /></a>
+                                    </li>
+                                    <? } ?>
+                                </ul>
+
+                                <? } ?>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                    
+    <div class="callform-block pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 center-block">
+                    <?=Engine::position('form-main');?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

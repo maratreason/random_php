@@ -1,0 +1,193 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+
+<section class="section__catalog">
+    <div class="container">
+        <div class="row catalog-row">
+            <div class="col-md-3">
+                <div class="section__catalog-main">
+                    <span class="catalog__main-title">Каталог</span>
+                    <?=Engine::position('sidebar-menu');?>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="top__content">
+                    <div class="top__content-block">
+                        <div class="top__content-block-wrapper">
+                            <div class="top__content-block-img">
+                                <img src="/uploads/products/shpaklevka/1.jpg" alt="">
+                            </div>
+
+                            <div class="top__content-block-subimg">
+                                <div><img src="/uploads/products/shpaklevka/1.jpg" alt=""></div>
+                                <div><img src="/uploads/products/shpaklevka/1.jpg" alt=""></div>
+                            </div>
+                        </div>
+
+                        <div class="top__content-text">
+                            <div class="block__text"><h1><?=$DATA['content_title']?></h1></div>
+                            <div>Артикул фыа345623ав</div>
+                            <div>Объем: 10л.</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem, vero dolorum esse laboriosam porro,
+                                consectetur eveniet culpa accusamus delectus molestiae eos labore, expedita quam. Modi quam expedita nobis beatae.
+                            </p>
+                            <div class="color-picker">Цвет: <span></span></div>
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-6">
+            <div class="top__content-colors">
+                <div class="top__content-colors__items">
+                    <div><span>#FBCEB1</span></div>
+                    <div><span>#FDD9B5</span></div>
+                    <div><span>#B5B8B1</span></div>
+                    <div><span>#7FFFD4</span></div>
+                    <div><span>#78DBE2</span></div>
+                    <div><span>#E32636</span></div>
+                    <div><span>#FF2400</span></div>
+                    <div><span>#AB274F</span></div>
+                    <div><span>#F19CBB</span></div>
+                    <div><span>#E52B50</span></div>
+                    <div><span>#9F2B68</span></div>
+                    <div><span>#ED3CCA</span></div>
+                    <div><span>#CD2682</span></div>
+                    <div><span>#FF033E</span></div>
+                    <div><span>#9966CC</span></div>
+                    <div><span>#CD9575</span></div>
+                    <div><span>#293133</span></div>
+                    <div><span>#464451</span></div>
+                    <div><span>#44944A</span></div>
+                    <div><span>#2F4F4F</span></div>
+                    <div><span>#4E5754</span></div>
+                    <div><span>#614051</span></div>
+                    <div><span>#990066</span></div>
+                    <div><span>#6E5160</span></div>
+                    <div><span>#FAE7B5</span></div>
+                    <div><span>#CCCCFF</span></div>
+                    <div><span>#C5D0E6</span></div>
+                    <div><span>#79553D</span></div>
+                    <div><span>#C1876B</span></div>
+                    <div><span>#6D6552</span></div>
+                    <div><span>#F5F5DC</span></div>
+                    <div><span>#A5A5A5</span></div>
+                    <div><span>#BDECB6</span></div>
+                    <div><span>#FFFAFA</span></div>
+                    <div><span>#FAEBD7</span></div>
+                    <div><span>#FFDEAD</span></div>
+                    <div><span>#003153</span></div>
+                    <div><span>#77DDE7</span></div>
+                    <div><span>#1E5945</span></div>
+                    <div><span>#3F888F</span></div>
+                    <div><span>#30D5C8</span></div>
+                    <div><span>#FFE4C4</span></div>
+                    <div><span>#A5260A</span></div>
+                    <div><span>#3D2B1F</span></div>
+                    <div><span>#ABCDEF</span></div>
+                    <div><span>#FFDB8B</span></div>
+                    <div><span>#8D917A</span></div>
+                    <div><span>#89AC76</span></div>
+                    <div><span>#EEE8AA</span></div>
+                    <div><span>#B03F35</span></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product__price-block">
+                <div class="product__price-total">Цена: <b>4300 рублей</b></div>
+                <div class="product__price-buttons">
+                    <button class="btn btn-primary btn-sm cart-button">
+                        В корзину <span><img src="/img/logo/cart-white.png" alt=""/></span>
+                    </button>
+                    <button class="btn btn-primary btn-sm cart-button">
+                        В оптовый заказ <span><img src="/img/logo/opt.png" alt=""/></span>
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm">Консультация</button>
+                </div>
+                <div class="product__price-total">Доставка: Казань</div>
+                <div class="product__price-info">
+                    Цена доставки до Казани (до терминала ТК Деловые Линии): 800 рублей.
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="row section__row-container">
+            <div class="col-md-3">
+                <div class="section__top-filter">
+                    <div class="pdf__items"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-9">
+                <div class="product__tabs">
+                    <div class="tabs__title">
+                        <div class="tabs-header active">Описание и область применения</div>
+                        <div class="tabs-header">Технические характеристики</div>
+                        <div class="tabs-header">Рекомендации по применению</div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="tabs__content-item active">
+                            <p>Ферра ЖД-АУ-1004. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Accusamus ipsam non blanditiis possimus maxime optio, incidunt beatae quasi laborum dignissimos,
+                            quam minima iusto adipisci illum ducimus expedita eum fugiat odit tenetur vitae, praesentium ullam.
+                            Obcaecati cupiditate porro laudantium quas iusto minus, sapiente perferendis tenetur odit dolor
+                            praesentium qui at perspiciatis? Soluta iusto vitae reiciendis minus recusandae? A voluptatem eos sequi?
+                            </p>
+                            <p>
+                                Obcaecati cupiditate porro laudantium quas iusto minus, sapiente perferendis tenetur odit dolor
+                                praesentium qui at perspiciatis? Soluta iusto vitae reiciendis minus recusandae? A voluptatem eos sequi?
+                            </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Accusamus ipsam non blanditiis possimus maxime optio, incidunt beatae quasi laborum dignissimos,
+                                quam minima iusto adipisci illum ducimus expedita eum fugiat odit tenetur vitae, praesentium ullam.
+                                Obcaecati cupiditate porro laudantium quas iusto minus, sapiente perferendis tenetur odit dolor
+                                praesentium qui at perspiciatis? Soluta iusto vitae reiciendis minus recusandae? A voluptatem eos sequi?
+                            </p>
+                            <div>Особенности</div>
+                            <ul>
+                                <li>Высокая стойкость к атмосферным воздействиям</li>
+                                <li>Загущенная структура. Большая толщина нестекающего мокрого слоя</li>
+                                <li>Все цвета по картотеке RAL</li>
+                                <li>Хорошая стойкость покрытий к трению и износу</li>
+                            </ul>
+                        </div>
+                        <div class="tabs__content-item">
+                            2
+                            <hr>
+                            <ul>
+                                <li>Высокая стойкость к атмосферным воздействиям</li>
+                                <li>Загущенная структура. Большая толщина нестекающего мокрого слоя</li>
+                                <li>Все цвета по картотеке RAL</li>
+                                <li>Хорошая стойкость покрытий к трению и износу</li>
+                            </ul>
+                        </div>
+                        <div class="tabs__content-item">
+                            3
+                            <p>Ферра ЖД-АУ-1004. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Accusamus ipsam non blanditiis possimus maxime optio, incidunt beatae quasi laborum dignissimos,
+                            quam minima iusto adipisci illum ducimus expedita eum fugiat odit tenetur vitae, praesentium ullam.
+                            Obcaecati cupiditate porro laudantium quas iusto minus, sapiente perferendis tenetur odit dolor
+                            praesentium qui at perspiciatis? Soluta iusto vitae reiciendis minus recusandae? A voluptatem eos sequi?
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

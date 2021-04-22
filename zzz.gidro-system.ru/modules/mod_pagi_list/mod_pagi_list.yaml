@@ -1,0 +1,94 @@
+title: Постраничный вывод
+extends: module
+unit-template: left75
+admin-description: Выводит постранично внутреннее содержимое раздела
+
+areas:
+    # Static params
+    # Super admin params
+
+    # Params
+	count:
+        caption: Количество записей на странице
+        type: int(11)
+        editor: integer
+        value: 100
+
+	count_inblock:
+        caption: Количество записей в одном блоке
+        desc: Записи можно группировать, таким образом можно создать табличный вывод
+        type: int(11)
+        editor: integer
+        value: 1000
+
+	menu_category:
+        caption: Категория
+        type: text
+        editor: selectallparent
+
+	category_list:
+        caption: Тип вывода
+        editor: select
+        select:
+            1: Только страницы текущего раздела                        
+            2: Страницы из поля родителя            
+            3: Все страницы               
+        type: int(11)
+
+	page_list:
+        caption: Взять страницы из поля родителя
+        editor: linetext
+        type: text
+        desc: "У родителя можует быть поле multiselect с которого будут взяты страницы"
+
+	page_type:
+        caption: Тип страниц для вывода
+        editor: linetext
+        type: text
+        desc: "Имя UNIT страниц, которые будут выводиться"
+
+	template_list:
+        caption: Шаблон вывода
+        editor: linetext
+        type: text
+        desc: "Шаблон вывода списка блоков, шаблон должен находится в папке с основным шаблоном сайта. Необходимо указать имя шаблона без расширения .html"
+
+	sort:
+        caption: Сортировать
+        editor: linetext
+        type: text
+        desc: "Поле сортировки в базе"
+
+	sort_type:
+        caption: Сортировать
+        editor: select
+        select:
+            ASC: По возрастанию
+            DESC: По убыванию
+        type: text
+
+	alias_page:
+        caption: Свой алиас вывода
+        editor: linetext
+        type: text
+
+	content_flag:
+        caption: Вывод контента
+        editor: select
+        select:
+            1: Выводить только на первой странице
+            0: Выводить на всех страницах
+        type: int(11)
+
+	page_flag:
+        caption: Выводить пагинацию
+        editor: select
+        select:
+            1: Выводить
+            0: Не выводить
+        type: int(11)
+
+	sql_text:
+        caption: Дополнительный SQL
+        editor: linetext
+        type: text

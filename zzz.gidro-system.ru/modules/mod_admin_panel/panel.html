@@ -1,0 +1,6 @@
+<div class="adminPanel">
+    <a href="/unit/pages-edit/id-<?=Engine::$page['id']?>" class="btn" target="_blank"></a>
+    <?if(Engine::$page['type']==1){?>
+    <a href="/unit/pages-edit/create-page/parent-<?=Engine::$page['id']?>" class="btn add" target="_blank"></a>
+    <?}?>
+</div>

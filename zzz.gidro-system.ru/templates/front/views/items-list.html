@@ -1,0 +1,9 @@
+<div class="h2">Карточки товара раздела <?=$DATA['_parent']['url_name']?></div> 
+<?foreach($DATA['_block'] as $i=>$data){
+    ?>
+<div class="item">
+    <h3><?=$data['url_name']?></h3>
+    <div class="price"><?=$data['price_float']?></div>
+    <a href="<?=$data['url']?>" class="link">Подробнее</a>
+</div>
+<?}?>

@@ -1,0 +1,196 @@
+title: Раздел каталога
+extends: page
+admin-description: Раздел каталога
+style: 'color:#8605C5; font-weight:600'
+pre_func: |
+		alias = setalias
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: catalog-expand
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main, catalog, form-consult
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: catalog_category, catalog_item
+        systemtype: static
+
+    # Post functions for areas. area = function
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+	# Native params
+
+	multifilter:
+        caption: "Файл фильтра"
+        desc: "Файл настройки фильтра"
+        type: text
+        editor: linetext
+
+	status_info:
+        caption: "Отображение"
+        editor: multiselect
+        select:
+            show_property: "Показать характеристики"
+            show_docs: "Показать документы"
+            show_main: "Показывать в шапке"
+            show_cat: "Показывать в разделе применения"            
+        type: varchar(100)
+
+	objects_add:
+        caption: "Объекты"
+        type: text
+        editor: objects
+        id: "259"
+
+	items_add:
+        caption: "Товары"
+        type: text
+        editor: objects
+        units: catalog_item        
+        id: "237"
+        
+	title2:
+        caption: "Контент вверху"
+        type: text
+        editor: linetext
+        style: "height:320px"
+        replace: true
+        
+	desc2:
+        caption: "Контент вверху"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content:
+        caption: "Контент вверху"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content2:
+        caption: "Контент №2"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true
+
+	content3:
+        caption: "Контент №3"
+        type: text
+        editor: tiny
+        style: "height:320px"
+        replace: true       
+         
+	content_tag:
+        caption: "Теги"
+        type: text
+        editor: text
+        style: "height:100px"
+        replace: true           
+
+	subcatalog_title:
+        caption: "Заголовок разделов подкаталога"
+        type: text
+        editor: linetext
+        replace: true   
+
+	items_title:
+        caption: "Преписка к карточкам товаров"
+        type: text
+        editor: linetext
+        replace: true
+
+	marketcat:
+        caption: "Карточки товара из разделов"
+        type: text
+        editor: marketcat
+        replace: true
+
+	price_desc:
+        caption: "Описание цены"
+        desc: "Напрмиер: руб., руб./кг, за тонну и т.д."
+        type: text
+        editor: linetext
+        
+	price_float:
+        caption: "Цена товара"
+        type: decimal(9,2)
+        editor: integer
+        gen: true
+
+	material:
+        caption: "Материал"
+        type: text
+        editor: linetext
+
+	stretch:
+        caption: "Временное сопротивление при растяжении, МПа"
+        type: varchar(100)
+        editor: linetext
+
+	mass:
+        caption: "Масса, кг"
+        type: varchar(100)
+        editor: linetext
+
+	gabaritnye_razmery:
+        caption: "Габаритные размеры, мм"
+        type: varchar(100)
+        editor: linetext
+
+	diameter:
+        caption: "Диаметр, мм"
+        type: varchar(100)
+        editor: linetext
+        
+	diameter_proema:
+        caption: "Диаметр проема, мм"
+        type: varchar(100)
+        editor: linetext
+
+	razmer_proema:
+        caption: "Размер проема, мм"
+        type: varchar(100)
+        editor: linetext
+
+	vysota_lyuka:
+        caption: "Высота люка, мм"
+        type: varchar(100)
+        editor: linetext
+
+	nagruzka_nominal:
+        caption: "Номинальная нагрузка, кН ГОСТ 3634-99"
+        type: varchar(100)
+        editor: linetext
+
+	nagruzka_ispytanie:
+        caption: "Нагрузка при испытании, кН"
+        type: varchar(100)
+        editor: linetext

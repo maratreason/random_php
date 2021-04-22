@@ -1,0 +1,80 @@
+<div class="tab">
+	<div class="tab-name">Страница</div>
+	<div class="column-75">
+		<?=@$DATA['url']?>
+    <h2>Описания</h2>
+		<?=@$DATA['url_name']?>
+		<?=@$DATA['url_desc']?>
+    <h2>Контент</h2>
+		<?=@$DATA['content_title']?>
+		<?=@$DATA['content']?>
+		<?=@$DATA['content2']?>
+	</div>
+	<div class="column-25 grey">
+		<?=@$DATA['status']?>
+		<?=@$DATA['unit']?>
+		<?=@$DATA['parent']?>
+<?=@$DATA['file_load']?>
+	</div>
+</div>
+<div class="tab">
+	<div class="tab-name">Шапка</div>
+	<?=@$DATA['color1']?>
+	<table width="100%">
+		<tr>
+			<td><?=@$DATA['head_image']?></td>
+			<td><?=@$DATA['head_image2']?></td>
+		</tr>
+	</table>
+	<?=@$DATA['head_title']?>
+	<?=@$DATA['color2']?>
+
+
+	<?=@$DATA['head_content']?>
+	<?=@$DATA['color3']?>
+	<?=@$DATA['head_button_desc']?>
+	<?=@$DATA['head_button_name']?>
+	<?=@$DATA['head_button_url']?>
+</div>
+<div class="tab">
+	<div class="tab-name">Картинки</div>
+    <?=@$DATA['url_icon']?>
+    <?=@$DATA['url_image']?>
+	<?=@$DATA['multi_images']?>
+</div>
+
+<div class="tab">
+    <div class="tab-name">Настройка раздела</div>
+    <?=@$DATA['url_generic']?>
+</div>
+
+<div class="tab">
+	<div class="tab-name">SEO</div>
+    <?=@$DATA['search_index']?>
+	<?=@$DATA['title']?>
+	<?=@$DATA['description']?>
+	<?=@$DATA['title_og']?>
+	<?=@$DATA['description_og']?>
+    <?=@$DATA['keywords']?>
+    <?=@$DATA['meta']?>
+</div>
+
+<div class="tab superadmin">
+	<div class="tab-name superadmin">ADMIN</div>
+    <div class="column-75">
+        <h2>Точная настройка</h2>
+        <?=@$DATA['date']?>
+        <?=@$DATA['unic_template']?>
+        <?=@$DATA['unic_modules']?>
+        <?=@$DATA['domain']?>
+        <?=@$DATA['alias']?>
+    </div>
+    <div class="column-25 grey">
+        <h2>Статичные данные</h2>
+        <?=@$DATA['type']?>
+        <?=@$DATA['template']?>
+        <?=@$DATA['modules']?>
+        <?=@$DATA['child_units']?>
+        <?=@$DATA['post_func']?>
+    </div>
+</div>

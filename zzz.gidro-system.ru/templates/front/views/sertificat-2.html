@@ -1,0 +1,40 @@
+<div class="block partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-title p70">
+                    <div class="h2 pb30"><?=$DATA['_parent']['url_name']?></div>
+                    <p><?=$DATA['_parent']['content']?></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <?php $multiImages = json_decode($DATA['_parent']['multi_images']); ?>
+            
+            <?php foreach($DATA['_block'] as $cat) {?>
+                <?php if (!empty($cat['childs_page_id'])) {?>
+                    <?php
+                        $childs_page_id = $cat['childs_page_id'];
+                        $page = new Page();
+                        $sql = "SELECT * FROM pages WHERE id='$childs_page_id'";
+                        $n = $page->sql($sql)->all();
+                        print_r($n);
+
+                        // define('SEARCH_INPUT', serialize(array($n)));
+                        ?>
+                    <div class="col-md-4">
+                        <div class="sertificat-wrapper">
+                            <? echo '<pre>'; print_r($cat); echo '</pre>';?>
+                            <div class="h3"><?=$cat['url_name'];?></div>
+                            <div>
+                                <a href="<?=$cat['url'];?>" class="sertificat-link"><?=$cat['url_name'];?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+                    

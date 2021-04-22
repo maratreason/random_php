@@ -1,0 +1,86 @@
+<div class="jedfilter multiselect" id="filter_<?=$DATA['name']?>">
+    <div class="name"><?=$DATA['caption']?></div>
+    <?
+
+        // сортируем чтобы выделеные чеки были выше
+        $chekedCount = 0;
+        $masCheck = array();
+        $masNoCheck = array();
+        foreach($DATA['select'] as $value=>$name){
+            if(@$DATA["_checked"][$value]){
+                $masCheck[$value] = $DATA['select'][$value];
+            } else {
+                $masNoCheck[$value] = $DATA['select'][$value];
+            }
+        }
+    ?>
+
+
+    <?
+    // выделенные значение
+    foreach($masCheck as $value=>$name){?>
+	<?
+
+		$hide = "";
+        if($name['disable']==true) continue;
+        $dop="";
+        if($name['disable']==true) $dop = "-";
+        //if($count==$showCount) echo "<div class='down'>";
+	?>
+    <label class="<?=$name['key']?>"><input type="checkbox" name="" value="<?=$value?>" <?=@$DATA["_checked"][$value]?>><span>
+		<?if($DATA["_url"][$value]){
+            $type = 0;
+            $url = $DATA["_url"][$value];
+            if(strpos($url,"only-")==false) $type = 1;
+            ?>
+
+            <?if($type == 1){?><a href="<?=$DATA["_url"][$value]?>"><?=$name['caption']?></a><?}?>
+            <?if($type == 0){?><span data-href="<?=$DATA["_url"][$value]?>" class="jlink"><?=$dop?><?=$name['caption']?></span><?}?>
+		<?} else {?>
+			<span><?=$dop?><?=$name['caption']?></span>
+		<?}?>
+		</span></label>
+    <?}?>
+
+    <?
+    // НЕ выделенные значение
+    //if(count($masNoCheck)>=0){
+    //echo "<div class='down'>";
+    $showCount = 10+1;
+    $count = 0;
+    $maxCount = count($masNoCheck);
+    foreach($masNoCheck as $value=>$name){?>
+	<?
+
+		$hide = "";
+        if($name['disable']==true) continue;
+        $count++;
+        $dop="";
+        if($name['disable']==true) $dop = "-";
+        if($count==$showCount) echo "<div class='down'>";
+	?>
+    <label class="<?=$name['key']?>"><input type="checkbox" name="" value="<?=$value?>" <?=@$DATA["_checked"][$value]?>><span>
+		<?if($DATA["_url"][$value]){
+            $type = 0;
+            $url = $DATA["_url"][$value];
+            if(strpos($url,"only-")==false) $type = 1;
+            $b = $name['caption'];
+            $colorName = explode("|", $name['caption']);
+
+            if($DATA['_column']=="opt_color") $b = "<div class='ral-colors'>". $colorName[0] ."<span style='background-color:".$colorName[1]."'></span></div>";
+            ?>
+
+            <?if($type == 1){?><a href="<?=$DATA["_url"][$value]?>"><?=$b?></a><?}?>
+            <?if($type == 0){?><span data-href="<?=$DATA["_url"][$value]?>" class="jlink"><?=$dop?><?=$b?></span><?}?>
+		<?} else {?>
+			<span><?=$dop?><?=$name['caption']?></span>
+		<?}?>
+		</span></label>
+    <?}?>
+    <?
+        if($count>=$showCount){
+            echo "</div>";
+            echo "<div class='showAll'>Все варианты</div>";
+        }
+    ?>
+</div>

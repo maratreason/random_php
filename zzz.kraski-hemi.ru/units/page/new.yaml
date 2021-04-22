@@ -1,0 +1,102 @@
+title: Блоки
+extends: page
+admin-description: Блоки
+style: 'color:#00cdcb; font-weight:600'
+
+areas:
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: main
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: unicum_content
+        systemtype: static
+
+	pre_func:
+        caption: "Пост обработчики полей"
+        type: text
+        editor: text
+        value: |
+          url = auto_url
+        systemtype: static
+    # Static params
+    
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: blocks_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	
+
+	url_name:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext			
+
+	url_image:
+        caption: "Картинка"
+        desc: "Может использоваться при выводе списка разделов с картинками"
+        type: text
+        editor: image
+        
+	url_icon:
+        caption: "Иконка"
+        desc: "Используется для генерации меню c иконкой"
+        type: text
+        editor: image  	
+	
+	multi_images:
+        caption: "Дополнительные картинки"
+        desc: ""
+        type: text
+        editor: multiimage
+		
+	content_title:
+        caption: "Описание"
+        desc: ""
+        type: text
+        editor: linetext
+        
+	content:
+        caption: "Контент"
+        type: text
+        editor: tiny
+        style: "width:800px"		

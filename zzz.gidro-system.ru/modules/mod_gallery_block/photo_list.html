@@ -1,0 +1,8 @@
+
+<div class="list-421 photo-gallery">
+    <?foreach($DATA['_images'] as $data){?>
+    <div class="item">
+        <a href="<?=$data['image_full']?>"><img src="<?=$data['image_preview']?>" alt="<?=$data['image_caption']?>"/></a>
+    </div>
+    <?}?>
+</div>

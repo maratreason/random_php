@@ -1,0 +1,60 @@
+title: Пользователи
+admin-description: Настройка пользоватлей и их прав в системе
+icon: icon-users.png
+    # Post functions for areas. area = function
+pre_func: |
+		pass = password
+areas:
+	name:
+        caption: Логин
+        type: text
+        editor: linetext
+        table: show
+	
+	pass:
+        caption: Пароль
+        type: text
+        editor: linetext
+	
+	status:
+        caption: Статус
+        editor: select
+        select:
+            0: НЕ АКТИВЕНТ
+            1: АКТИВЕН
+        type: int(11)	
+		
+	fio:
+        caption: ФИО
+        type: text
+        editor: linetext
+        table: show		
+	type:
+        caption: Тип пользователя
+        editor: select
+        select:
+            1: Администратор
+            2: Писатель
+        type: int(11)
+	
+	sys_edit_pages:
+        caption: Редактирование страниц
+        editor: select
+        select:
+            0: Нет
+            1: Да
+        type: int(11)
+
+	sys_edit_mods:
+        caption: Редактирование модулей
+        editor: select
+        select:
+            0: Нет
+            1: Да
+        type: int(11)
+	
+	sys_edit_units:
+        caption: Типы страниц
+        editor: linetext
+        type: text
+        table: show		

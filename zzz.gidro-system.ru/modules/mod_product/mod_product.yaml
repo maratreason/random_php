@@ -1,0 +1,42 @@
+title: Вывод продукта
+extends: module
+unit-template: left75
+admin-description: Выводит страницу по шаблону
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+	
+	image_show:
+        caption: Выводить главную картинку
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+	category_show:
+        caption: Выводить категорию продукта
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+		
+	author_show:
+        caption: Выводить автора
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+	comment_show:
+        caption: Разрешить комментарии
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)

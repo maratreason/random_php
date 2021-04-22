@@ -1,0 +1,50 @@
+title: Сотрудники
+admin-description: Сотрудники и представители компании
+icon: icon-var.png
+areas:
+
+	name:
+        caption: ФИО
+        type: text
+        editor: linetext
+        table: show
+
+	name_type:
+        caption: Должность
+        type: text
+        editor: linetext
+        table: show
+
+	name_status:
+        caption: Тип
+        editor: multiselect
+        select:
+            manager: "Менеджер"
+            buhgalter: "Бухгалтер"
+            director: "Директор"
+        type: text
+
+	telefon:
+        caption: Телефон
+        type: varchar(255)
+        editor: linetext
+
+	email:
+        caption: E-mail
+        type: varchar(255)
+        editor: linetext
+
+	foto:
+        caption: Фото
+        type: varchar(255)
+        editor: image
+
+	name_desc:
+        caption: Описание
+        type: text
+        editor: text
+
+	priority:
+        caption: Приоритет
+        type: int(11)
+        editor: linetext

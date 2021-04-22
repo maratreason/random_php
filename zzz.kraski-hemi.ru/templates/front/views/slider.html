@@ -1,0 +1,48 @@
+<section class="section__block">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <?foreach($DATA['_block'] as $slide){
+                $bg = func::imageToWidth($slide['url_image'],1980);    
+            ?>
+            <div class="swiper-slide" itemscope itemtype="http://schema.org/ImageObject">
+                <div class="main-background" style="background-image:url(<?=$bg?>);">
+                    <div class="container">
+                        <div class="slider-text">
+                            <div itemprop="name" class="slider-text__title"><?=func::templateCityVars($slide['url_name'])?></div>
+                            <p itemprop="description" class="slider-text__desc"><?=$slide['content']?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?}?>
+        </div>
+
+        <div class="container slider__buttons">
+            <i class="las la-angle-left"></i>
+            <i class="las la-angle-right btn-right"></i>
+        </div>
+
+        <div class="container brand">
+            <div class="brand-container">
+                <ul class="support__items">
+                    <?
+                        $s = func::getStrDefault($slide['url_desc'], $slide['url_name'],"Слайд");
+                        $count = 0;
+                        foreach($DATA['_block'] as $slide) {
+                            $count++;
+                            // $preview = func::imageToWidth($slide['url_image'],190);
+                            if ($slide["url_name"] && $slide["url_name"] !== "") {?>
+                                <li id="<?=$count?>" class="">
+                                    <?=func::templateCityVars($slide['url_name'])?>
+                                </li>
+                            <?} else {
+                                echo $slide['url_name'];
+                            }
+                        }?>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</section>

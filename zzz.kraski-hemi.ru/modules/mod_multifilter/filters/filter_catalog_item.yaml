@@ -1,0 +1,125 @@
+h1_start: ""
+h1_end: ""
+title_start: ""
+title_end: ""
+desc_start: ""
+desc_end: ""
+filters:
+	opt_fasovka:
+		caption: "Фасовка"
+		name: "fasovka"
+		h1_show: "true"
+		h1_start: ""
+		h1_end: ""
+		title_start: ""
+		title_end: ""
+		desc_start: ""
+		desc_end: ""
+		type: "multiselect"
+		etype: "multiselect"
+		select:
+			0.8:
+				caption: "0,8"
+				h1: "0,8"
+				title: ""
+				desc: ""
+			0.9:
+				caption: "0,9"
+				h1: "0,9"
+				title: ""
+				desc: ""
+			1:
+				caption: "1"
+				h1: "1"
+				title: ""
+				desc: ""
+			2.3:
+				caption: "2,3"
+				h1: "2,3"
+				title: ""
+				desc: ""
+			2.5:
+				caption: "2,5"
+				h1: "2,5"
+				title: ""
+				desc: ""
+			2.7:
+				caption: "2,7"
+				h1: "2,7"
+				title: ""
+				desc: ""
+			3:
+				caption: "3"
+				h1: "3"
+				title: ""
+				desc: ""
+			3.5:
+				caption: "3,5"
+				h1: "3,5"
+				title: ""
+				desc: ""
+			5:
+				caption: "5"
+				h1: "5"
+				title: ""
+				desc: ""
+			8:
+				caption: "8"
+				h1: "8"
+				title: ""
+				desc: ""
+			8.1:
+				caption: "8,1"
+				h1: "8,1"
+				title: ""
+				desc: ""
+			9:
+				caption: "9"
+				h1: "9"
+				title: ""
+				desc: ""
+			10:
+				caption: "10"
+				h1: "10"
+				title: ""
+				desc: ""
+			12:
+				caption: "12"
+				h1: "12"
+				title: ""
+				desc: ""
+			18:
+				caption: "18"
+				h1: "18"
+				title: ""
+				desc: ""
+			20:
+				caption: "20"
+				h1: "20"
+				title: ""
+				desc: ""
+			20.7:
+				caption: "20,7"
+				h1: "20,7"
+				title: ""
+				desc: ""
+			25:
+				caption: "25"
+				h1: "25"
+				title: ""
+				desc: ""
+			30:
+				caption: "30"
+				h1: "30"
+				title: ""
+				desc: ""
+			50:
+				caption: "50"
+				h1: "50"
+				title: ""
+				desc: ""
+			200:
+				caption: "200"
+				h1: "200"
+				title: ""
+				desc: ""

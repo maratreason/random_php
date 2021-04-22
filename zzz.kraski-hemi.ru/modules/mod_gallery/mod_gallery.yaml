@@ -1,0 +1,36 @@
+title: Фотогалерея
+extends: module
+unit-template: left75
+admin-description: Вывод фотогалереи
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	page_id:
+        caption: ID страницы
+        desc: ID страницы с которой брать фотогалерею. Если данное поле равно 0, то будет браться текущая страница.
+        type: int(11)
+        editor: integer
+        
+	page_field:
+        caption: Поле картинок
+        desc: Индификатор поля в котором находятся картинки. Поле имет редактор multiimage.
+        type: text
+        editor: linetext	
+        
+	template_list:
+        caption: Шаблон вывода
+        desc: Шаблон вывода фотогалереи
+        type: text
+        editor: linetext
+	
+	block_caption:
+        caption: Заголовок фотогалереи
+        desc: 
+        type: text
+        editor: linetext	
+		
+		

@@ -1,0 +1,89 @@
+<?include_once(Engine::$root.Config::$front_template."/header.html")?>
+<div class="bg2">
+    <div class="bg3">
+        <div class="catalog catalog-expand-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 product-sidebar">
+                        <?=Engine::position('sidebar-menu');?>
+                    </div>
+                    <div class="col-md-9 product-col">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="breadcrumbs">
+                                        <div class="breadcrumbs-main">
+                                            <ol class="breadcrumb">
+                                                <?=Engine::module('mod_path')->main()?>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="block-title" itemprop="description">
+                                        <div class="h1"><?=Func::templateCityVars($DATA['content_title']);?></div>
+                                        <p><?=Func::templateCityVars($DATA['content'])?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-expand">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="catalog-content text-center pt30">
+                                            <div class="h2">Преимущества заказа у нас</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <?php
+                                        $data = json_decode($DATA['multi_images2']);
+                                        foreach($data as $item) {
+                                        $title = explode('---', $item[1])[0];
+                                        $desc = explode('---', $item[1])[1];
+                                    ?>
+                                    <div class="col-lg-6 col-md-12 col-off-margin">
+                                        <div class="advantage-card parallax-card">
+                                            <div class="icon">
+                                                <svg version="1.1" baseProfile="full" width="100" height="100"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <image xlink:href="<?=$item[0]?>" x="10" y="5" height="50px"
+                                                        width="50px" />
+                                                </svg>
+                                                <div>
+                                                    <div class="h3"><?=Func::templateCityVars($title);?></div>
+                                                    <p><?=Func::templateCityVars($desc);?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb30">
+                                        <div>
+                                            <?=Engine::position('table');?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb70">
+                                        <?=Func::templateCityVars($DATA['content2']);?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?include_once(Engine::$root.Config::$front_template."/footer.html")?>

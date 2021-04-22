@@ -1,0 +1,96 @@
+<?/*
+// скрыть поля
+<?=@$DATA['url_generic']?>
+<?=@$DATA['url_image']?>
+<?=@$DATA['opt_lock']?>
+<?=@$DATA['opt_section']?>
+*/?>
+<div class="tab">
+    <div class="tab-name">Продукт</div>
+    <div class="column-75">
+        <?=@$DATA['url']?>
+        <h2>Описания</h2>
+        <?=@$DATA['url_name']?>
+        <?=@$DATA['url_desc']?>
+
+        <h2>Продукт</h2>
+        <?=@$DATA['content_title']?>
+        <?=@$DATA['artikul']?>
+        <table cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="50%"><?=@$DATA['price_float']?></td>
+                <td width="50%"><?=@$DATA['opt_tag']?></td>
+            </tr>
+        </table>
+        <?=@$DATA['content3']?>
+        <?=@$DATA['content']?>
+        <?=@$DATA['content2']?>
+    </div>
+    <div class="column-25 grey">
+        <?=@$DATA['status']?>
+        <?=@$DATA['unit']?>
+        <?=@$DATA['parent']?>
+        <?/*
+    <h2>Метки</h2>
+    	<?//=@$DATA['item_labels']?>
+        <?//=@$DATA['item_discounts']?>
+        <?=@$DATA['popular']?> */?>
+    </div>
+
+</div>
+
+<?/*
+<div class="tab">
+	<div class="tab-name">Шапка</div>
+		<?=@$DATA['head_image']?>
+<?=@$DATA['head_title']?>
+<?=@$DATA['head_content']?>
+<?=@$DATA['head_button_name']?>
+<?=@$DATA['head_button_url']?>
+</div>
+*/?>
+<div class="tab">
+    <div class="tab-name">Фото продукта</div>
+    <?=@$DATA['url_icon']?>
+    <?=@$DATA['multi_images']?>
+    <?=@$DATA['multi_images2']?>
+</div>
+
+
+<div class="tab">
+    <div class="tab-name">Характеристики продукта</div>
+    <?=@$DATA['_free']?>
+</div>
+
+
+<div class="tab">
+    <div class="tab-name">SEO</div>
+    <?=@$DATA['search_index']?>
+    <?=@$DATA['title']?>
+    <?=@$DATA['description']?>
+    <?=@$DATA['title_og']?>
+    <?=@$DATA['description_og']?>
+    <?=@$DATA['keywords']?>
+    <?=@$DATA['meta']?>
+</div>
+
+<div class="tab superadmin">
+    <div class="tab-name superadmin">ADMIN</div>
+    <div class="column-75">
+        <h2>Точная настройка</h2>
+        <?=@$DATA['date']?>
+        <?=@$DATA['unic_template']?>
+        <?=@$DATA['unic_modules']?>
+        <?=@$DATA['domain']?>
+        <?=@$DATA['alias']?>
+    </div>
+    <div class="column-25 grey">
+        <h2>Статичные данные</h2>
+        <?=@$DATA['type']?>
+        <?=@$DATA['template']?>
+        <?=@$DATA['modules']?>
+        <?=@$DATA['child_units']?>
+        <?=@$DATA['post_func']?>
+        <?=@$DATA['pre_func']?>
+    </div>
+</div>

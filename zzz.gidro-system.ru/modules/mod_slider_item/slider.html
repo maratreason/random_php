@@ -1,0 +1,32 @@
+<?
+    $lists = array_chunk($DATA['_block'],4);
+?>                    
+    <div class="jed-item-slider">
+            <div class="slide-area">
+                <div class="lists">
+                <?
+                    foreach($lists as $list){
+                ?>
+                    <div class="list-421 no-margin list">
+                        <?
+                            foreach($list as $data){
+                            $image = json_decode($data['multi_images']);
+                            $image = $image[0][0];
+                            if(!file_exists(Engine::$root.$image)||trim($image)==""){
+                                $image = "/uploads/catalog-image-default.png";
+                            }     
+                        ?> 
+                        <div class="item">
+                            <img src="<?=$image;?>">
+                            <div class="image"></div>
+                            <div class="desc"><?=$data['url_name'];?></div>
+                            <div class="price"><?=$data['price_float'];?> руб.</div>
+                            <a href="<?=$data['url'];?>" class="button">Подробнее</a>
+                        </div>
+                        <?}?>
+                    </div>
+                <?}?>
+                </div>
+            </div>
+            <div class="pointers"></div>     
+        </div>

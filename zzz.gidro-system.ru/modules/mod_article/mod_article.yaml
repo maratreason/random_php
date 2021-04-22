@@ -1,0 +1,50 @@
+title: Вывод статьи
+extends: module
+unit-template: left75
+admin-description: Выводит статью по шаблону
+areas:
+    # Static params
+    # Super admin params
+        
+    # Params
+
+	
+	image_show:
+        caption: Выводить главную картинку статьи
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+	category_show:
+        caption: Выводить категорию статьи
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+	date_show:
+        caption: Выводить дату
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+		
+	author_show:
+        caption: Выводить автора
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)
+
+	comment_show:
+        caption: Разрешить комментарии
+        editor: select
+        select:
+            1: Да
+            0: Нет
+        type: int(11)

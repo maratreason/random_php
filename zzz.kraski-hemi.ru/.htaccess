@@ -1,0 +1,31 @@
+php_flag display_errors on
+php_value error_reporting 2047
+
+AddType text/x-component .htc
+
+AddDefaultCharset UTF-8
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
+# RewriteCond %{HTTP_HOST} ^www\.new.bergroup\.ru$ [NC]
+# RewriteRule ^(.*)$ http://new.bergroup.ru/$1 [R=301, L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^img/(.*)$  /templates/front/img/$1 [L]
+RewriteRule ^js/(.*)$  /templates/front/js/$1 [L]
+RewriteRule ^css/(.*)$  /templates/front/css/$1 [L]
+RewriteRule ^assets/(.*)$  /templates/front/assets/$1 [L]
+
+RewriteRule ^uploads/(.*)$  uploads/$1 [L]
+RewriteRule ^include/(.*)$  include/$1 [L]
+RewriteRule ^modules/(.*)$  modules/$1 [L]
+RewriteRule ^templates/(.*)$  templates/$1 [L]
+
+RewriteRule ^(.*)$  index.php
+RewriteRule ^.htaccess*$ - [F]
+

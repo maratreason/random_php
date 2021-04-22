@@ -1,0 +1,36 @@
+title: Вкладки
+extends: page
+admin-description: Вкладки
+style: 'color:#00cdcb; font-weight:600'
+
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+             
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: tabs_item
+        systemtype: static        
+
+	# Native params
+	status:
+        caption: "Статус"
+        editor: select
+        select:
+            1: Опубликована
+            0: НЕ ОПУБЛИКОВАНА
+        type: int(11)
+		  	
+
+	url_name:
+        caption: "Заголовок"
+        desc: ""
+        type: text
+        editor: linetext			

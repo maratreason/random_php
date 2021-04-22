@@ -1,0 +1,173 @@
+title: Продукт
+extends: page
+admin-description: Продукция
+unit-template: market_item_default
+style: 'color:#f07100'
+groups:
+groups:
+	0:
+        caption: Основные характеристики
+	1:
+        caption: Технические характеристики
+	2:
+        caption: Дополнительные характеристики
+areas:
+    # Static params
+	type:
+        caption: "Тип страницы"
+        type: int(11)
+        editor: integer
+        value: 1
+        systemtype: static
+
+	template:
+        caption: "Шаблон"
+        type: text
+        editor: linetext
+        value: marketItem
+        systemtype: static
+
+	modules:
+        caption: "Модули"
+        type: text
+        editor: linetext
+        value: main
+        systemtype: static
+
+	child_units:
+        caption: "Unit-ы для дочерних элементов"
+        type: text
+        editor: linetext
+        value: unicum_content
+        systemtype: static
+
+# Post functions for areas. area = function
+	pre_func:
+        caption: "Пред обработчики полей"
+        type: text
+        editor: text
+        value: |
+        systemtype: static
+
+	# Native params
+
+	multi_images:
+        caption: "Картинки продукта"
+        type: text
+        editor: multiimage
+
+	multi_images2:
+        caption: "Сертификаты продукта"
+        type: text
+        editor: multiimage
+
+	url_name:
+        caption: "Название продукта"
+        type: text
+        editor: linetext
+
+	url_desc:
+        caption: "Краткое описание в списке продуктов"
+        type: text
+        editor: linetext
+
+	url_desc2:
+        caption: "Размер или краткие характеристики"
+        type: text
+        editor: linetext
+
+	content_title:
+        caption: "Заголовок продукта"
+        desc: "Выводится на странице самого продукта"
+        type: text
+        editor: linetext
+
+	content:
+        caption: "Описание продукта"
+        type: text
+        editor: tiny
+
+	content2:
+        caption: "Характеристики продукта"
+        type: text
+        editor: tiny
+
+	content3:
+        caption: "Комплектация продукта"
+        type: text
+        editor: tiny
+
+	price_float:
+        caption: "Цена 1 шт"
+        type: decimal(9,2)
+        editor: integer
+
+	price2_float:
+        caption: "Цена от 10 шт"
+        type: decimal(9,2)
+        editor: integer
+
+	price3_float:
+        caption: "Цена от 50 шт"
+        type: decimal(9,2)
+        editor: integer
+
+	price4_float:
+        caption: "Цена от 100 шт"
+        type: decimal(9,2)
+        editor: integer
+
+	price_desc:
+        caption: "Описание цены"
+        desc: "Напрмиер: руб., руб./кг, за тонну и т.д."
+        type: text
+        editor: linetext
+
+
+
+	item_discounts:
+        caption: "Акции"
+        type: text
+        editor: discounttags
+
+	opt_mass:
+        caption: "Вес"
+        type: varchar(100)
+        editor: linetext
+
+
+	opt_fasovka:
+        caption: "Фасовка"
+        type: varchar(255)
+        editor: linetext
+
+	popular:
+        caption: "Популярность"
+        type: int(11)
+        editor: integer
+
+	status_info:
+        caption: "Популярный продукт"
+        editor: select
+        select:
+            0: НЕТ
+            1: Популярный продукт
+        type: int(11)
+       
+	item_order:
+        caption: "Под заказ"
+        type: text
+        editor: linetext
+
+
+	item_labels:
+        caption: ""
+        editor: multiselect
+        select:
+            count: "Есть в наличии"
+        type: text
+
+	item_counts:
+        caption: "Наличие, шт."
+        type: text
+        editor: linetext
